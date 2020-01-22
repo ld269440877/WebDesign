@@ -452,10 +452,8 @@ CSS有一套优先性的定义，顺序如下：
 <h2>在脚本中修改显示样式</h2>
 <p>在很多情况下，需要使用脚本来动态控制页面的显示效果，实现起来也很简单，只需要在脚本中获取到该元素，然后修改它的CSS样式就可以了。</p>
 <ol>
-    <li><a title="随机改变页面的背景颜色很简单，这里我们使用“rgb（a,b,c）”属性来实现，
+    <li><a title="随机改变页面的背景颜色很简单，这里我们使用&quot;rgb（a,b,c）&quot;属性来实现，
 只需要随机生成a、b、c的值就可以了，a、b、c取值在0～256">随机改变页面的背景色</a></li>
-    <li><a title="">动态增加立体效果</a></li>
-</ol>
 
 
 <html>
@@ -464,15 +462,51 @@ CSS有一套优先性的定义，顺序如下：
     <title>Title</title>
 </head>
 <body id="body">
-<input type='button' value='刷新页面，随机切换背景色'/>
+<input type="button" value="刷新页面，随机切换背景色"/>
 </body>
 </html>
 <script>
-    var r = Math.floor(Math.random()*256);
-    var g = Math.floor(Math.random()*256);
-    var b = Math.floor(Math.random()*256);
-    var color = 'rgb(${r},${g},${b})';
-    var bd = document.getElementById("body");
-    bd.style.background=color;
+    var r =  Math.floor(Math.random( ) * 256);  //随机生成256以内的值，赋值给变量r
+    var g = Math.floor(Math.random( ) * 256);   //随机生成256以内的值，赋值给变量g
+    var b = Math.floor(Math.random( ) * 256);   //随机生成256以内的值，赋值给变量b
+    var color = "rgb(${r},${g},${b})";  //使用ES6语法拼接rgb格式颜色
+    var bd = document.getElementById("body");   //获取页面中的body元素
+    bd.style.background=color;  //设置body元素的背景为color
 </script>
+
+    <li><a title="在CSS中，通过简单的色差来实现简单的立体效果。
+如下面的案例，分别设置div四边边框的颜色，产生了一个色差，呈现出立体的效果。同时还添加了一个按钮，来动态控制立体效果。当单击按钮时，div呈现立体效果。">动态增加立体效果</a></li>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        .show{
+            width: 150px;
+            height:50px;
+            text-align:center;
+            line-height:50px;
+            border-right:#222222 20px solid;
+            border-bottom:#222222 20px solid;
+            border-left:#222222 20px solid;
+            border-top:#222222 20px solid;
+            background-color:#cccccc;
+        }
+    </style>
+</head>
+<body>
+    <input type='button' value='动态增加立体效果' onelick="change()"/>
+    <hr/>
+    <div id="box">立体效果</div>
+</body>
+</html>
+<script>
+//定义change函数
+    function change(){
+        document.getElementById("box").className="show"; //给box添加show样式
+    }
+</script>
+</ol>
+
 
