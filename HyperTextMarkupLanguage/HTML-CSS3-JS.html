@@ -1,0 +1,451 @@
+<h1 style="color:rgb(255, 0, 0); text-align: center; background-color: #FFFF00; ">第一篇 基础知识></h1>
+<h1 style="color:rgb(0, 132, 255); text-align: left;">第一章 HTML 5 基础入门</h1>
+<p>
+    <font color="red">HTML是标记语言</font>
+    ，它由W3C组织提供的一套标记标签组成。程序员使用这些标签进行叠加，可以开发出各种各样的网页。HTML使用标记标签来描述网页。一个网页除了由大量的标签组成，还有后续要学习的CSS样式和JavaScript脚本组合而成。
+</p>
+<p>
+    <font color="orange">XHTML是可扩展超文本标记语言</font>，是一种置标语言，表现方式与HTML类似，不过语法上更加严格，是更纯净的HTML版本。它是W3C的一个标准，与HTML 4.01几乎相同。
+    <ul>
+        <li>XHTML是以XML格式编写的HTML，是指可扩展超文本编辑语言，与HTML 4.01版本几乎相同，可以说XHTML是更严格、更纯净的HTML版本。</li>
+        <li>XHTML是以XML应用的方式定义的HTML，在2001年1月，W3C推荐发布为标准，目前，几乎得到所有主流浏览器的支持。</li>
+        <li>XHTML具有 &lt; !DOCTYPE .... &gt; 强制性、元素必须合理嵌套、元素必须有关闭标签、空元素必须包含关闭标签、元素必须是小写、属性名称必须是小写、属性值必须有引号和不允许属性简写等特性。
+        </li>
+    </ul>
+</p>
+<hr>
+
+<h2 style="align: left; color:rgb(0, 132, 255) ">HTML 5的优势</h2>
+<ol>
+
+    <li><a title="各大浏览器厂商对于HTML 5都表示出很高的热情">解决跨浏览器问题</a></li>
+    <li><a title="某个文本框获得输入焦点html_outofocus">部分代替了原来的JavaScript</a></li>
+    <li><a title="在HTML 5以前，布局基本都是使用&lt;div&gt;标签来实现，通过id来区分，这样就缺乏明确的语义。">更明确的语义支持</a></li>
+    <li><a title="HTML对于Web应用程序来说功能太匮乏了，如上传文件时想同时选择多个文件都不行，为了弥补类似的不足，在HTML 5中新增大量API来提高应用程序性能，增强用户体验，以及对应用程序现有的功能进行扩展。">增强了Web应用程序的功能</a>
+    </li>
+</ol>
+HTML 5获取文本框的焦点<br>
+在HTML 5中，则只需要设置autofocus属性就可以代替JavaScript代码
+<br>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <form action="demo">
+        姓名: <input name="Name" type="text" value="Leung"><br>
+        成绩: &lt;input type="text" name="Grade" id="grade" autofocus&gt;<br>
+    </form>
+</body>
+
+</html>
+
+<p>HTML5 之前JavaScript来完成， html标签后添加script标签</p>
+<pre>
+<blockquote>
+&lt;script&gt;
+   document.getElementById("grade").focus()
+&lt;/script&gt;
+</blockquote>
+</pre>
+
+<p>
+    在HTML 5<font color="red">以前</font>，布局基本都是使用&lt;div&gt;标签来实现，通过id来区分，这样就缺乏明确的语义。<br>
+    HTML 5则提供了更明确的语义元素，如下：
+</p>
+
+<table>
+    <tr bgcolor="red">
+        <th bgcolor="green">
+            <font color="orange">标签1</font>
+        </th>
+        <th>标签2</th>
+        <th>标签3</th>
+    </tr>
+    <tr bgcolor="yellow">
+        <td>head </td>
+        <td>body </td>
+        <td>header </td>
+    </tr>
+    <tr bgcolor="blue">
+        <td>nav </td>
+        <td>section </td>
+        <td>footer </td>
+    </tr>
+</table>
+
+<h2>建立网站的一般流程</h2>
+<figure>
+    <center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121193704.png" title="建立网站的一般流程" alt="20200121193704" width="100" height>
+        <figcaption>
+            <font color="green">建立网站的一般流程</font>
+        </figcaption>
+    </center>
+</figure>
+
+<p>网站建设的流程基本上都包括域名注册查询、网站策划、网页设计、网站功能、网站优化技术、网站内容整理、网站推广、网站评估、网站运营、网站整体优化、网站改版等。</p>
+<ol>
+    <li><a title="有网站建设需求的客户向网站建设公司提出具体的网站建设要求，这些要求都是需要通过文字的形式，详细地向制作公司进行说明，要将需要建设的网站要求、内容，以及产品描述全部描写清楚。网站制作公司则要对客户的网站建设要求进行全方位的评估及了解，这样才能做出符合用户需求的网站。">网站建设的需求</a>
+    </li>
+    <li><a title="针对客户提出的网站建设需求，设计出整体的网站建设方案，并与客户进行再次商谈，就网站建设的风格，主题以及相关的细节进行详细的沟通，只有在与客户达到共识之后才能无所顾忌地进行网站建设。">制定网站建设方案</a>
+    </li>
+    <li><a title="    在与客户达成共识，网站建设公司便开始着手进行网站建设的工作，在双方约定的时间内给出客户网站建设的初稿，就双方约定的网站风格、网站建设主题、网站设计内容等进行初步审核。
+        在初审通过之后，便开始对网站建设的细节进行详细处理，网站建设的框架大体好规划，但是在细节方面需要花费的时间比较多，往往花费时间越多，做出来的网站效果更好。">网站建设初稿，敲定细节</a></li>
+    <li><a title="网站建设完成之后，需要网站制作公司反复审核和试验之后，才能交付给客户完工，在交付给客户之前，所有的网站制作商都要对网站进行反复的测试，特别是对于网站的核心功能模块，要进行反复的测试才可以交付给客户。
+        网站交给客户之后，还要对客户进行指导，对网站进行维护。">网站建设完成，进行验收</a></li>
+</ol>
+
+<h2>　就业面试技巧与解析</h2>
+<a title="应聘者：依然需要使用HTML。因为很多人已经习惯使用HTML作为他们的设计语言，而且，已经有数以百万计的页面是采用HTML编写的，所以在将来依然需要HTML。">面试官：XHTML是一种为适应XML而重新改造的HTML，当XML越来越成为一种趋势，就出现了这样一个问题：如果用户有了XML，是否还需要HTML?</a>
+<br>
+<a title="应聘者：HTML文件的扩展名有“.html”和“.htm”。
+“.html”是当今网页文件的一种最基本的、也是使用最广泛的保存格式，是一种超文本标记语言，页面中没有嵌入任何服务器要执行的语句，是一种静态的页面格式，一般的浏览器都能够直接解析并显示。
+关于“.htm”，其实与“.html”并没有本质意义上的区别，只是为了满足DOS的8+3（文件名不能超过8个字符，扩展名不能超过3个字符）的文件名命名规范。因为一些老的系统（32位）不能识别4位文件扩展名，所以某些服务器要求.html的最后一个字母l省略。浏览器能自动识别和打开这些文件，编写这些网页网址的时候必须是对应的，也就是说index.html和index.htm是两个不同的文件，对应着不同的地址。">面试官：HTML文件的扩展名有哪些？</a>
+
+<h1 style="color:rgb(0, 132, 255); text-align: left;">第二章 HTML 5文档基本结构</h1>
+<p>HTML 5的文档结构包括标题、段落、列表、表格、绘制的图形以及各种嵌入对象。</p>
+<h2>HTML 5文档构成</h2>
+<p>HTML 5的文档结构包括头部（head）、主体（body）两大部分。头部描述浏览器所需的信息，主体包含所要说明的具体内容</p>
+<hr>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121202804.png" title alt="20200121202804" width="300" height><figcaption><font color="green"></font></figcaption></center></figure>
+<!DOCTYPE html>
+<html>
+<!--头部-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--主体-->
+
+<body>
+    <p style="text-align: center; background: rgb(0, 133, 0);">HTML 5文档基本结构body</p>
+</body>
+
+</html>
+<hr>
+
+<ol>
+    <li><a title="引用官方的DTD文件，在HTML 5之前的版本，如XHTML、HTML 4.0都有官方的DTD文件的引用。DTD是文档类型定义，它主要对标签的使用进行定义。基于HTML 5设计的“化繁为简”准则，HTML 5中不需要引用严格意义上的DTD的规范，只需引入下面代码即可：
+        &lt;!DOCTYPE html&gt;">&lt;!DOCTYPE&gt;声明</a></li>
+    <li><a title="HTML文档的根元素，成对出现<html></html>，它代表文档的开始和结束。在HTML 5中该标签可以省略，但是为了符合Web标准和体现文档的完整性，建议不要省略该标签。">&lt;html&gt;>标签</a></li>
+    <li><a title="HTML的头部、内部提供了许多标签，用于说明文档头部的相关信息。">&lt;head&gt;标签</a></li>
+
+<html>
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
+        .tg .tg-phtq{background-color:#D2E4FC;border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        </style>
+
+        <table class="tg">
+          <tr>
+            <th class="tg-0pky">标签</th>
+            <th class="tg-0pky">作用</th>
+          </tr>
+          <tr>
+            <td class="tg-phtq">&lt;title&gt;&lt;/title&gt;</td>
+            <td class="tg-phtq">定义文档的标题</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">&lt;meta&gt;</td>
+            <td class="tg-0pky">定义html元数据</td>
+          </tr>
+          <tr>
+            <td class="tg-phtq">&lt;link&gt;</td>
+            <td class="tg-phtq">链接外部CSS资源文件</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">&lt;style&gt;&lt;/style&gt;</td>
+            <td class="tg-0pky">定义内部CSS样式</td>
+          </tr>
+          <tr>
+            <td class="tg-phtq">&lt;script&gt;&lt;/script&gt;</td>
+            <td class="tg-phtq">包含JavaScript脚本</td>
+          </tr>
+        </table>
+</html>
+        <li><a title="&lt;body&gt;标签是HTML的主体部分，网页所要显示的内容都放在该标签内，语法如下面代码所示：
+            &lt;body&gt;
+            ...
+            &lt;body&gt;">&lt;body&gt;>标签</a></li>
+</ol>
+
+<h2><a title="HTML 5为了兼容互联网中不规则的代码，在语法上有一部分的变化">HTML 5的语法变化</a></h2>
+<ol>
+    <li><a title="用户可以通过W3C提供的在线验证页面来测试上面的网页，验证网址为http://validator.w3.org/" href="http://validator.w3.org/">标签不再区分大小写</a></li>
+    <li><a title="HTML 5显得比较宽容，它允许一部分HTML标签省略结束标签，甚至允许同时省略开始和结束标签
+        虽然<html>标签没有结束标签，<body>开始标签和结束标签都没有，但这个页面是合法的。">元素可以省略结束标签</a></li>
+<hr/>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121211315.png" alt="20200121211315"  title="元素可以省略结束标签" width="600" height="" /><figcaption><font color=green>元素可以省略结束标签</font></figcaption></center></figure>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>元素可以省略结束标签</title>
+    </head>
+    <p style="text-align: center; background: rgb(0, 133, 0);">元素可以省略结束标签</p>
+    <hr/>
+    <li><a title="在HTML中有一些元素的属性，当只写属性名称而不指定属性值时，表示属性值为true，如果设置该属性值为false，则不使用该属性即可，代码如下：
+        &lt;input type=&quot;text&quot; readonly=&quot;true&quot;&gt;
+        &lt;input type=&quot;text&quot; readonly&gt;">支持boolean值的属</a></li>
+    <li><a title="在HTML 5中，属性值不使用引号也是正确的，代码如下：
+        &lt;body&gt;
+        &lt;input type=text&gt;
+        &lt;input type=checkbox&gt;
+        &lt;/body&gt;
+        注意：如果某个属性值的属性值包含空格等，容易引起浏览器混淆的属性值，那么建议读者使用引号把它的属性值引起来。">允许属性值不使用引号</a></li>
+<hr/>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121213158.png" alt="20200121213158"  title="" width="200" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+        <body>
+        <input type=text>
+        <br/>
+        <input type=checkbox>
+        </body>
+<hr/>
+</ol>
+
+<h2>HTML 5标签、元素及属性</h2>
+<p>HTML元素就是通过使用HTML标签进行定义的。</p>
+<a title="&lt;和&gt;包起来的对象，都是HTML标签。
+HTML中的文档和HTML元素是通过HTML标签进行标记的。
+单标签
+双标签">标签</a>
+<ol>
+    <li>单标签</li>
+        <ul>
+        <li><a title="在页面中起换行的作用">&lt;br/&gt;</a></li>
+        <li><a title="在页面中创建一条水平线">&lt;hr/&gt;</a></li>
+        <li><a title="元素可提供有关页面的元信息">&lt;meta/&gt;</a></li>
+        <li><a title="图片标签，用于在页面插入图片">&lt;img/&gt;</a></li>
+        </ul>
+    <li><a title="双标签由“开始标签”和“结束标签”两部分构成">双标签</a></li>
+    <ul>
+    <li><a title="标题标签">&lt;h1&gt;&lt;/h1&gt;</a></li>
+    <li><a title="段落标签">&lt;p&gt;&lt;/p&gt;</a></li>
+    <li><a title="无序列表标签">&lt;ul&gt;&lt;/ul&gt;</a></li>
+    <li><a title="表格标签">&lt;table&gt;&lt;/table&gt;</a></li>
+    </ul>
+</ol>
+
+<a title="为HTML元素提供各种附加信息的就是HTML属性，它总是以“属性名=属性值”的形式出现，而且属性总是在HTML元素的开始标签中进行定义。">标签属性</a>
+<hr/>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121215624.png" alt="20200121215624"  title="标签属性" width="600" height="" /><figcaption><font color=green>标签属性</font></figcaption></center></figure>
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title></title>
+</head>
+<body>
+<!--设置p标签的align属性,属性值为center-->
+<p align="center">我是元素，html为p标签设置align属性，属性值为center修饰p标签内的元素</p>
+</body>
+</html>
+<hr/>
+
+<a title="从开始标签到结束标签的所有代码，就是HTML元素，如&lt;p&gt;HTML&lt;/p&gt;。
+位于起始标签和结束标签之间的文本就是HTML元素的内容。">元素</a>
+
+<h2>HTML 5文档头部标签</h2>
+<ol>
+    <li>&lt;head&gt;文档的头部标签</li>
+<a title="文档的头部描述了文档的各种属性和信息，包括文档的标题、在Web中的位置及和其他文档的关系等。绝大多数文档头部包含的数据都不会真正作为内容显示给读者。
+&lt;title&gt;定义文档的标题，它是&lt;head&gt;标签中唯一必需的元素。">&lt;head&gt;标签是文档的头部标签，它是所有头部元素的容器。<br/>&lt;head&gt;中的元素可以引用脚本、指示浏览器在哪里找到样式表、提供元信息等。</a>
+<p>
+    <li>&lt;title&gt;文档标题标签</li>
+    &lt;title&gt;标签定义文档的标题，在所有HTML文档中是必需的，只能出现在&lt;head&gt;中。<br/>
+    &lt;title&gt;元素的作用：
+    <ul>
+        <li>定义浏览器工具栏中的标题</li>
+        <li>提供页面被添加到收藏夹时的标题</li>
+        <li>显示在搜索引擎结果中的页面标题</li>
+    </ul>
+    </p>
+    <li><a title="&lt;link&gt;标签是引用外部文件标签，通常放置在一个网页的头部标签中，用于链接外部CSS文件。">&lt;link&gt;引用外部文件标签</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122105905.png" alt="20200122105905"  title="&lt;link&gt;引用外部文件标签" width="600" height="" /><figcaption><font color=green>&lt;link&gt;引用外部文件标签</font></figcaption></center></figure>
+
+    <li><a title="&lt;style&gt;标签是内嵌样式标签，用于为HTML文档定义样式信息，它位于&lt;head&gt;头部中。在&lt;style&gt;标签中，可以规定在浏览器中如何呈现HTML文档。">&lt;style&gt;内嵌样式标签</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122105631.png" alt="20200122105631"  title="&lt;style&gt;内嵌样式标签" width="300" height="" /><figcaption><font color=green>&lt;style&gt;内嵌样式标签</font></figcaption></center></figure>
+
+    <li><a title="在一个网页中，&lt;meta&gt;标签用来做网页的关键字、页面说明、作者信息、网页的定时跳转等声明。">&lt;meta&gt;标签</a></li>
+    <ol type="a">
+        <li><a title="keywords（关键字）用于告诉搜索引擎网页的关键字，代码如下：
+            &lt;meta name=&quot;keywords&quot;content=&quot;某人,论坛,学历,前端&quot;&gt;">Keywords设置页面关键字</a></li>
+        <li><a title="description（页面说明）用于告诉搜索引擎网站的主要内容，代码如下：
+            &lt;meta name=&quot;description&quot; content=&quot;WEB前端的一些面试技巧&quot;&gt;">Description设置页面说明</a></li>
+        <li><a title="Author（作者信息）用于介绍作者的一些信息，代码如下：
+            &lt;meta name=&quot;author&quot; content=&quot;某人，他的邮箱&quot;/&gt;">author设置作者信息</a></li>
+        <li><a title="网页在多少秒后自动从当前页面跳转到另外一个网页页面或网站，实现代码如下：
+            &lt;meta http-equiv=&quot;Refresh&quot; content=&quot; &quot;;URL=&quot; &quot;/&gt;
+      其中，content后跟值为当前页面在多少时间跳转，URL值为跳转到具体的网页网站。">设置网页的定时跳转</a></li>
+    </ol>
+</ol>
+<h2><a title="注释是在HTML代码中插入描述性的文本，用来解释该代码或提示其他信息。注释只出现在代码中，浏览器页面中不显示。在HTML中插入代码，对于日后的维护工作有很大的好处，也便于其他读者去理解，语法如下：
+    &lt;!--注释的内容--&gt;">页面注释标签</a></h2>
+
+<h2>标题标签、换行标签及不换行标签</h2>
+<ol type="1">
+    <li><a title="HTML中标题由&lt;h1&gt;～&lt;h6&gt;标签来定义">h标题标签</a></li>
+    <li><a title="">标题字对齐属性align</a></li>
+
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
+        .tg .tg-phtq{background-color:#D2E4FC;border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        </style>
+        <table class="tg">
+          <tr>
+            <th class="tg-0pky">属性值</th>
+            <th class="tg-0pky">说明</th>
+          </tr>
+          <tr>
+            <td class="tg-phtq">center</td>
+            <td class="tg-phtq">居中对齐</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">left</td>
+            <td class="tg-0pky">左对齐</td>
+          </tr>
+          <tr>
+            <td class="tg-phtq">right</td>
+            <td class="tg-phtq">右对齐</td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">justify</td>
+            <td class="tg-0pky">两端对齐</td>
+          </tr>
+        </table>
+
+    <li><a title="段落使用&lt;p&gt;&lt;/p&gt;标签，
+换行使用&lt;br/&gt;标签，
+不换行使用&lt;nobr&gt;&lt;/nobr&gt;标签。">段落标签、换行标签及不换行标签</a></li>
+</ol>
+
+<h2>其他标签</h2>
+<ol type="1">
+    <li>hr水平线标签</li>
+    <li><a title="在通常情况下，都是使用空格键来插入多个空格，而在编写代码中，通过空格键打出的空格，会被HTML自动忽略。
+HTML将这样的空格视为空白字符，并显示为单个空白间隔。
+在HTML 5中，经常使用& nbsp;来插入空格。">& nbsp;插入空格</a></li>
+    <li><a title="&quot;&&quot;开头、&quot;;&quot;结尾，中间加上特殊字符对应的编码">插入特殊字符</a></li>
+</ol>
+
+<h2>就业面试技巧与解析</h2>
+<a title="应聘者：HTML 5中新多媒体元素有以下4种。
+●　audio元素：Audio元素主要是定义播放声音文件或者音频流的标准。
+●　video元素：video元素主要是定义播放视频文件或者视频流的标准。
+●　&lt;source&gt;元素：&lt;source&gt;元素为媒体元素定义媒体资源，&lt;source&gt;元素允许用户规定两个视频/音频文件共浏览器，根据它对媒体类型或者编解码器的支持进行选择。
+●　embed元素：embed元素用来插入各种多媒体，其格式可以是MIDI、WAV、AIFF、AU、MP3等。">面试官：HTML 5中新多媒体元素有哪些？</a>
+<br/>
+<a title="应聘者：HTML 5中分组元素有如下3种：
+●　&lt;hgroup&gt;元素用于对网页或区段（section）的标题进行组合，&lt;hgroup&gt;元素通常会将h1～h6元素进行分组，比如一个内容区块的标题及其子标题算一组。
+●　&lt;figure&gt;标签用来表示网页上一块独立的内容，将其从网页上移除后不会对网页上的其他内容产生影响。
+●　&lt;figcaption&gt;元素的作用是为&lt;figure&gt;元素定义标题。">面试官：HTML 5中分组元素有哪些？</a>
+
+<h1 style="color:rgb(0, 132, 255); text-align: left;">第3章 CSS 3基础入门</h1>
+<p>
+&nbsp;&nbsp;CSS被称为层叠样式单，它是一种专门描述结构文档的表现方式的文档，主要用于网页风格设计，包括字体大小、颜色、背景以及元素的精确定位等。在传统的Web网页设计里，使用CSS能让单调的HTML网页更富表现力。<br/>
+&nbsp;&nbsp;CSS样式的使用，使“网页结构代码”和“网页格式风格代码”分离开，将站点上的所有网页都指向某个CSS文件，遇到要修改时，只需更改该CSS文件就可以了。不仅维护简单，还可以使HTML文档代码简练，缩短浏览器的加载时间。
+</p>
+<h2>CSS的基本语法</h2>
+<p>
+CSS的语法非常简单，CSS语法规则由两个主要的部分构成:
+<ol type="1">
+    <li><a title="选择器通常是用户需要改变样式的HTML元素，选择器直接与HTML代码对应">选择器</a></li>
+    <li><a title="声明（declaration）非常人性化，
+属性（property）是用户希望设置的样式属性（style attribute），绝大部分属性名都是有含义的英文单词或词组，
+每个属性对应一个值，属性值大部分也是直接用有意义的单词表示，
+例如颜色值可以取blue、red和yellow，预设的border样式有solid和dashed，属性和值之间用冒号分开。">一条或多条声明</a></li>
+</ol>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122122042.png" alt="20200122122042"  title="CSS语法结构" width="600" height="" /><figcaption><font color=green>CSS语法结构</font></figcaption></center></figure>
+</p>
+
+<p><a title="注意：虽然CSS的容错性非常高，但是在编写的过程中也要注意语法错误的检查，用户可以使用CSS Lint、Dreamweaver等工具来检查CSS语法格式。">CSS语法具有很高的容错性，即一条错误的语句并不会影响之后语句的解析</a>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122122343.png" alt="20200122122343"  title="一条错误的语句并不会影响之后语句的解析" width="600" height="" /><figcaption><font color=green>一条错误的语句并不会影响之后语句的解析</font></figcaption></center></figure>
+</p>
+
+<hr/>
+
+<h2>HTML网页应用CSS样式的方法</h2>
+<p>
+CSS可以控制HTML文档的显示，但在控制文档显示之前，需要在文档中引入CSS样式，HTML提供了4种引入方式，包括行内样式、内嵌样式、链接样式和导入样式。
+</p>
+<ol type="1">
+    <li><a title="行内样式是最为简单的CSS设置方式，需要给每一个标签都设置style属性。
+它和样式所定义的内容在同一代码行内，通常用于精确控制一个HTML元素的表现，代码如下：
+        &lt;p style=&quot;color: red; font-size: 20px; font-family: 微软雅黑;&quot;&gt;行内样式表&lt;/p&gt;
+这种样式表不经常用，CSS样式与HTML结构没有分离，导致代码冗余，并且不利于维护。">使用行内样式表</a></li>
+    <li><a title="内部CSS样式表一般是将CSS写在&lt;head&gt;&lt;/head&gt;标签中，并使用&lt;style&gt;&lt;/style&gt;标签进行声明，代码如下：
+    &lt;head&gt;
+        &lt;style&gt;
+            p&#123;
+                color:blue;                 /*设置p标签的字体颜色*/
+                font-size: 20px;        /*设置p标签的字体大小*/
+                font-family: 宋体;     /*设置p标签的字体类型*/
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+     &lt;body&gt;
+         &lt;p&gt;使用内部CSS样式表&lt;/p&gt;
+         &lt;p&gt;使用内部CSS样式表&lt;/p&gt;
+         &lt;p&gt;使用内部CSS样式表&lt;/p&gt;
+     &lt;/body&gt;">内部CSS样式</a></li>
+    <li><a title="引入外部样式表是使用频率最高、也是最为实用的方法。它将HTML页面本身与CSS样式风格分离为两个或者多个文件，实现了页面框架HTML代码与美工CSS代码的完全分离，使得前期制作和后期维护都十分方便。
+        引入外部样式表是指在外部定义CSS样式表并形成以“.css”为扩展名的文件，然后在页面中通过&lt;link&gt;引入页面中，代码如下：
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css路径&quot;/&gt;
+●　rel：指定引入样式表，其值为stylesheet。
+●　href：指定了CSS样式表的位置，此处表示当前路径下名称为style1.css文件。">引入外部样式表</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122165328.png" alt="20200122165328"  title="link引入外部样式表" width="300" height="" /><figcaption><font color=green>link引入外部样式表</font></figcaption></center></figure>
+    <li><a title="导入外部样式文件是指在内部样式表的&lt;style&gt;标记中，使用@import导入一个外部样式表，代码如下：
+&lt;head&gt;
+    &lt;style&gt;
+        @import &quot;style.css&quot;
+    &lt;/style&gt;
+&lt;/head&gt;
+        ">@import导入外部样式文件</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122170213.png" alt="20200122170213"  title="@import导入外部样式文件" width="600" height="" /><figcaption><font color=green>@import导入外部样式文件</font></figcaption></center></figure>
+</ol>
+<p ><a title="在开发CSS中遇到需要特别说明的地方，可以使用CSS注释进行注解说明，有利于其他程序员理解你开发的CSS代码。
+要注释CSS样式表，只需要在注释的内容前使用&quot;/*&quot;标记开始注释，在内容的结尾使用&quot;*/&quot;结束注释。代码如下：
+&lt;head&gt;
+&lt;style&gt;
+    p{
+        color:blue;                 /*设置p标签的字体颜色*/
+        font-size: 20px;        /*设置p标签的字体大小*/
+        font-family: 宋体;     /*设置p标签的字体类型*/
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+">注释CSS</a></p>
+
+<h2><a title="CSS三大特性：层叠性、继承性和优先性">CSS三大特性</a></h2>
+<ol type="1">
+    <li><a title="层叠性就是处理CSS冲突的能力。当同一个元素被两个选择器选中时，CSS会根据选择器的权重决定使用哪一个选择器。权重低的选择器效果会被权重高的选择器效果覆盖掉，权重相同时取后者。
+权重可以理解为一个选择器对于这个元素的重要性。id选择器权重为100，类选择器权重为10，标签选择器的权重为1">CSS层叠性</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122171440.png" alt="20200122171440"  title="CSS层叠性-选择器权重" width="500" height="" /><figcaption><font color=green>CSS层叠性-选择器权重</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122173315.png" alt="20200122173315"  title="CSS层叠性-选择器优先级" width="600" height="" /><figcaption><font color=green>CSS层叠性-选择器优先级</font></figcaption></center></figure>
+
+    <li><a title="继承性是子元素继承父元素样式的特性，在CSS中以text-、font-、line-开头的属性以及color属性都可以继承。
+有一些比较特殊的元素，如
+&lt;a&gt;标签的颜色不能继承，必须对&lt;a&gt;标签本身进行设置，
+&lt;h&gt;标签的字体大小不能继承，必须对&lt;h&gt;标签本身进行设置。">CSS继承性</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122183342.png" alt="20200122183342"  title="CSS继承性" width="600" height="" /><figcaption><font color=green>CSS继承性</font></figcaption></center></figure>
+    <li><a title="当不同的规则作用到同一个html元素上时，如果定义的属性有冲突，那么应该用谁的值？
+CSS有一套优先性的定义，顺序如下：
+!important>行内样式>ID选择器>类选择器>标签选择器>通配符>继承>浏览器默认属性值。">CSS优先性</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122183730.png" alt="20200122183730"  title="CSS优先性-!important>行内样式>ID选择器>类选择器>标签选择器>通配符>继承>浏览器默认属性值" width="600" height="" /><figcaption><font color=green>CSS优先性-!important>行内样式>ID选择器>类选择器>标签选择器>通配符>继承>浏览器默认属性值</font></figcaption></center></figure>
+</ol>
+
+

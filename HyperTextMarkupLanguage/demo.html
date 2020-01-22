@@ -1,65 +1,90 @@
-<!DOCTYPE html>
-<html lang="zh-Hans-CN" data-cast-api-enabled="true">
 
-<head>ninhao</head>
+<h2>HTML网页应用CSS样式的方法</h2>
+<p>
+CSS可以控制HTML文档的显示，但在控制文档显示之前，需要在文档中引入CSS样式，HTML提供了4种引入方式，包括行内样式、内嵌样式、链接样式和导入样式。
+</p>
+<ol type="1">
+    <li><a title="行内样式是最为简单的CSS设置方式，需要给每一个标签都设置style属性。
+它和样式所定义的内容在同一代码行内，通常用于精确控制一个HTML元素的表现，代码如下：
+        &lt;p style=&quot;color: red; font-size: 20px; font-family: 微软雅黑;&quot;&gt;行内样式表&lt;/p&gt;
+这种样式表不经常用，CSS样式与HTML结构没有分离，导致代码冗余，并且不利于维护。">使用行内样式表</a></li>
+    <li><a title="内部CSS样式表一般是将CSS写在&lt;head&gt;&lt;/head&gt;标签中，并使用&lt;style&gt;&lt;/style&gt;标签进行声明，代码如下：
+    &lt;head&gt;
+        &lt;style&gt;
+            p&#123;
+                color:blue;                 /*设置p标签的字体颜色*/
+                font-size: 20px;        /*设置p标签的字体大小*/
+                font-family: 宋体;     /*设置p标签的字体类型*/
+            &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+     &lt;body&gt;
+         &lt;p&gt;使用内部CSS样式表&lt;/p&gt;
+         &lt;p&gt;使用内部CSS样式表&lt;/p&gt;
+         &lt;p&gt;使用内部CSS样式表&lt;/p&gt;
+     &lt;/body&gt;">内部CSS样式</a></li>
+    <li><a title="引入外部样式表是使用频率最高、也是最为实用的方法。它将HTML页面本身与CSS样式风格分离为两个或者多个文件，实现了页面框架HTML代码与美工CSS代码的完全分离，使得前期制作和后期维护都十分方便。
+        引入外部样式表是指在外部定义CSS样式表并形成以“.css”为扩展名的文件，然后在页面中通过&lt;link&gt;引入页面中，代码如下：
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css路径&quot;/&gt;
+●　rel：指定引入样式表，其值为stylesheet。
+●　href：指定了CSS样式表的位置，此处表示当前路径下名称为style1.css文件。">引入外部样式表</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122165328.png" alt="20200122165328"  title="link引入外部样式表" width="300" height="" /><figcaption><font color=green>link引入外部样式表</font></figcaption></center></figure>
+    <li><a title="导入外部样式文件是指在内部样式表的&lt;style&gt;标记中，使用@import导入一个外部样式表，代码如下：
+&lt;head&gt;
+    &lt;style&gt;
+        @import &quot;style.css&quot;
+    &lt;/style&gt;
+&lt;/head&gt;
+        ">@import导入外部样式文件</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122170213.png" alt="20200122170213"  title="@import导入外部样式文件" width="600" height="" /><figcaption><font color=green>@import导入外部样式文件</font></figcaption></center></figure>
+</ol>
+<p ><a title="在开发CSS中遇到需要特别说明的地方，可以使用CSS注释进行注解说明，有利于其他程序员理解你开发的CSS代码。
+要注释CSS样式表，只需要在注释的内容前使用&quot;/*&quot;标记开始注释，在内容的结尾使用&quot;*/&quot;结束注释。代码如下：
+&lt;head&gt;
+&lt;style&gt;
+    p{
+        color:blue;                 /*设置p标签的字体颜色*/
+        font-size: 20px;        /*设置p标签的字体大小*/
+        font-family: 宋体;     /*设置p标签的字体类型*/
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+">注释CSS</a></p>
+
+<h2><a title="CSS三大特性：层叠性、继承性和优先性">CSS三大特性</a></h2>
+<ol type="1">
+    <li><a title="层叠性就是处理CSS冲突的能力。当同一个元素被两个选择器选中时，CSS会根据选择器的权重决定使用哪一个选择器。权重低的选择器效果会被权重高的选择器效果覆盖掉，权重相同时取后者。
+权重可以理解为一个选择器对于这个元素的重要性。id选择器权重为100，类选择器权重为10，标签选择器的权重为1">CSS层叠性</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122171440.png" alt="20200122171440"  title="CSS层叠性-选择器权重" width="500" height="" /><figcaption><font color=green>CSS层叠性-选择器权重</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122173315.png" alt="20200122173315"  title="CSS层叠性-选择器优先级" width="600" height="" /><figcaption><font color=green>CSS层叠性-选择器优先级</font></figcaption></center></figure>
+
+    <li><a title="继承性是子元素继承父元素样式的特性，在CSS中以text-、font-、line-开头的属性以及color属性都可以继承。
+有一些比较特殊的元素，如
+&lt;a&gt;标签的颜色不能继承，必须对&lt;a&gt;标签本身进行设置，
+&lt;h&gt;标签的字体大小不能继承，必须对&lt;h&gt;标签本身进行设置。">CSS继承性</a></li>
+
+    <li></li>
+</ol>
+
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <style>
+        div{
+            font-size: 20px;
+            text-shadow: 10px 10px 10px rgba(0, 0, 0, 0);
+            color: gold;
+        }
+    </style>
+</head>
 
 <body>
-    <h1>First title</h1>
-    <p>First paragraph</p>
-
-    <table border=10 bgcolor=red>
-        <tr border=10>
-        </tr>
-        <th>title1</th>
-        <th>title2</th>
-        <th>title3</th>
-        </tr>
-        <tr border=3>
-            <td>row1, column1</td>
-            <td>row1, column2</td>
-            <td>row1, column3</td>
-        </tr>
-        <tr border=3>
-            <td>row2, column1</td>
-            <td>row2, column2</td>
-            <td>row2, column3</td>
-        </tr>
-    </table border=3>
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/I31v-HQ9oGo" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    <ul>
-        <li>1234</li>
-        <li>dsss</li>
-        <li>dssdsd</li>
-        <li>woshinihao</li>
-    </ul>
-
-    <ol>
-        <li>first</li>
-        <li>second</li>
-        <li>third</li>
-    </ol>
-    <p>woshi baocun</p>
-
-    <b>shijian</b>
-    <h1>didian</h1>
-
-    <h3>renwu</h3>
-    <h1>nin kjkjkj</h1>
-
-
-
-<embed src="http://player.youku.com/player.php/sid/XMzI2NTc4NTMy/v.swf" 
-width="480" height="400" 
-type="application/x-shockwave-flash">
-</embed>
-
-<br />
-
-<a href="https://www.w3school.com.cn/example/html_examples.asp">HTML 实例</a>
-
+<div>
+    <p>p标签的继承性</p>
+    <a href="">a标签的继承性</a>
+    <h1>h标签的继承性</h1>
+</div>
 </body>
-
 </html>
