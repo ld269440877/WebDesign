@@ -445,6 +445,7 @@ CSS可以控制HTML文档的显示，但在控制文档显示之前，需要在�
     <li><a title="当不同的规则作用到同一个html元素上时，如果定义的属性有冲突，那么应该用谁的值？
 CSS有一套优先性的定义，顺序如下：
 !important>行内样式>ID选择器>类选择器>标签选择器>通配符>继承>浏览器默认属性值。">CSS优先性</a></li>
+
 <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122183730.png" alt="20200122183730"  title="CSS优先性-!important>行内样式>ID选择器>类选择器>标签选择器>通配符>继承>浏览器默认属性值" width="600" height="" /><figcaption><font color=green>CSS优先性-!important>行内样式>ID选择器>类选择器>标签选择器>通配符>继承>浏览器默认属性值</font></figcaption></center></figure>
 </ol>
 
@@ -456,7 +457,7 @@ CSS有一套优先性的定义，顺序如下：
     <li><a title="">动态增加立体效果</a></li>
 </ol>
 
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -467,11 +468,11 @@ CSS有一套优先性的定义，顺序如下：
 </body>
 </html>
 <script>
-    var r=Math,floor(Math.random()*256);
-    var g=Math(.floor(Math.random()*256);
-    var b=Math.floor(Math.random()*256);
-    var color='rgb(${r},${g},${b})';
-    var bd=docment.getElementById("body");
+    var r = Math.floor(Math.random()*256);
+    var g = Math.floor(Math.random()*256);
+    var b = Math.floor(Math.random()*256);
+    var color = 'rgb(${r},${g},${b})';
+    var bd = document.getElementById("body");
     bd.style.background=color;
 </script>
 
