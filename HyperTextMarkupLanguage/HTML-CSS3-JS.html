@@ -455,7 +455,6 @@ CSS有一套优先性的定义，顺序如下：
     <li><a title="随机改变页面的背景颜色很简单，这里我们使用&quot;rgb（a,b,c）&quot;属性来实现，
 只需要随机生成a、b、c的值就可以了，a、b、c取值在0～256">随机改变页面的背景色</a></li>
 
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -487,17 +486,16 @@ CSS有一套优先性的定义，顺序如下：
             height:50px;
             text-align:center;
             line-height:50px;
-            border-right:#222222 20px solid;
-            border-bottom:#222222 20px solid;
-            border-left:#222222 20px solid;
-            border-top:#222222 20px solid;
+            border-right:#222222 50px solid;
+            border-bottom:#222222 50px solid;
+            border-left:#222222 50px solid;
+            border-top:#222222 50px solid;
             background-color:#cccccc;
         }
     </style>
 </head>
 <body>
     <input type='button' value='动态增加立体效果' onelick="change()"/>
-    <hr/>
     <div id="box">立体效果</div>
 </body>
 </html>
@@ -507,6 +505,136 @@ CSS有一套优先性的定义，顺序如下：
         document.getElementById("box").className="show"; //给box添加show样式
     }
 </script>
+
 </ol>
+<hr/>
+<h2>实践案例—设计登录和注册界面</h2>
+<hr/>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>登录和注册页面设计</title>
+    <style>
+        .content{
+            background-color: #1cff89; //设置背景颜色
+            position: absolute; //设置绝对定位
+            width: 100%;  //设置宽度
+            height: 400px;  //设置高度
+        }
+        .main{
+            text-align:center;  //文本居中
+            padding: 50px 0px; //内边距
+            margin: 0 auto; //外边距
+        }
+        h2 {
+            font-family:"微软雅黑";  //字体类型
+            font-size: 40px; //字体大小
+            font-weight: bold;  //字体加粗
+        }
+        input {
+            border:1px solid white; //设置边框
+            display: block; //设置input块级元素
+            margin: 10px auto;
+            padding: 5px;
+            width: 230px;
+            border-radius: 15px;  //设置圆角边框
+            font-size: 18px;
+            font-weight: 300;  //设置字体加粗
+            text-align:center;
+        }
+        button {
+            background-color: #20a7ff;
+            border-radius: 10px;
+            border: 0;
+            height: 30px;
+            width: 80px;
+            padding: 5px;
+            color: white; //设置字体颜色
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="main">
+        <h2>You are welcome!</h2>
+        <form>
+            <input type="text" placeholder="用户名"/>
+            <input type="password" placeholder="密码"/>
+            <p>
+                <button type="submit">登&nbsp;&nbsp;录</button>
+                <button type="submit">注&nbsp;&nbsp;册</button>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<hr/>
 
+<h2>就业面试技巧与解析</h2>
+<p><a title="应聘者：link与@import在显示效果上还是有很大区别的，
+    link的加载会在页面显示之前全部加载完，
+    而@import是读取完文件之后再加载，所以，在网络速度很好或很快的情况下，会出现刚开始没有CSS定义，而后才加载CSS定义，@import加载页面时开始的瞬间会有闪烁（无样式表的页面），然后恢复正常（加载样式后的页面），
+link没有这个问题。所以推荐使用link引入外部样式。">面试官：在加载CSS文件时，link引入外部样式和@import导入外部样式有什么区别？</a></p>
+<p><a title="应聘者：CSS hack是根据不同的浏览器编写不同的CSS样式。
+    由于不同厂商的浏览器，例如IE、Firefox、Chrome等，或者是同一厂商的浏览器的不同版本，如IE 6和IE 7，对CSS的解析认识不完全一样，会导致生成的页面效果不一样，得不到我们所需要的页面效果。
+    这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中显示我们想要的页面效果。">面试官：CSS hack是什么？</a></p>
 
+<h1 style="color:rgb(0, 132, 255); text-align: left;">第4章 CSS 3样式选择器</h1>
+<p>选择器（selector）是CSS中很重要的概念，所有HTML语言中的标记都是通过不同的CSS选择器进行控制的。</p>
+<h2><a title="在CSS 3中，大致可以把CSS选择器分成5类，分别是
+    基本选择器
+    层次选择器
+        子选择器
+        兄弟选择器
+        相邻选择器
+        包含选择器
+        分组选择器
+    伪类选择器
+    属性选择器
+    伪元素选择器
+    ">选择器分类</a></h2>
+<p><a title="基础选择器是编写CSS样式经常用到的选择器，它包括
+    元素选择器
+    通配选择器
+    ID选择器
+    class选择器
+    群组选择器">基本选择器</a></p>
+<ol type="1">
+    <li><a title="标签选择器又称为标记选择器，在W3C标准中，又称为类型选择器（type selector）。CSS标签选择器用来声明html标签采用哪种CSS样式，也就是重新定义了html标签。因此，
+        每一个html标签的名称都可以作为相应的标签选择器的名称。">元素选择器</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122214739.png" alt="20200122214739"  title="标签选择器的结构" width="600" height="" /><figcaption><font color=green>标签选择器的结构</font></figcaption></center></figure>
+    <li><a title="通配选择器用一个&quot;*&quot;表示。单独使用时，这个选择器可以与文档中的任何元素匹配，就像一个通配符。如让页面上的所有文本都为红色，代码如下：
+        *{color:red;}
+        当然也可以选择某个元素下的所有元素。在与其他选择器结合使用时，通配选择器可以对特定元素的所有后代应用样式。如为div元素的所有后代添加一个红色背景，代码如下：
+      div *{background: red;}">通配选择器</a></li>
+    <li><a title="ID选择器允许以一种独立于文档元素的方式来指定样式，在某些方面，ID选择器类似于类选择器，不过也有一些重要差别。
+        ID选择器前面有一个#号
+        注意：id属性只能在每个HTML文档中出现一次。">ID选择器</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122215520.png" alt="20200122215520"  title="ID选择器结构示意图" width="600" height="" /><figcaption><font color=green>ID选择器结构示意图</font></figcaption></center></figure>
+    <li><a title="类选择器允许以一种独立于文档元素的方式来指定样式。该选择器可以单独使用，也可以与其他元素结合使用，常用语法格式如下：
+        .classValue {property:value}
+        class选择器前面有一个.号">class选择器</a></li>
+    <li><a title="群组选择器实际上是对CSS的一种简化写法，只不过把相同定义的不同选择器放在一起，用&quot;,&quot;分开，这样样式只需要编写一遍节，省了很多的代码。假果我们想要给&lt;p&gt;和&lt;div&gt;元素同时设置黄色背景，就可以使用群组选择器。
+        &lt;head&gt;
+            &lt;style&gt;
+                p, div {
+                    background-color: yellow; //群组选择器-设置p和div标签的背景颜色
+                }
+            &lt;/style&gt;
+        &lt;/head&gt;">群组选择器</a></li>
+</ol>
+<h2><a title="层次选择器是通过html的DOM元素间的层次关系获取元素，主要层次关系有后代、父子、相邻兄弟和通用兄弟。">层次选择器</a></h2>
+<ol type="1">
+    <li><a title="包含选择器又叫后代选择器，作用的是选择元素的后代元素，包括子元素、子元素的子元素等，以此类推。
+包含选择器与子元素选择器之间使用空格来表示关系。">包含选择器</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122221814.png" alt="20200122221814"  title="包含选择器与子元素选择器之间使用空格来表示关系x选择元素的所有后代元素" width="600" height="" /><figcaption><font color=green>包含选择器与子元素选择器之间使用空格来表示关系x选择元素的所有后代元素</font></figcaption></center></figure>
+
+    <li><a title="子选择器用来选择一个父元素直接的子元素，不包括子元素的子元素，它的符号为大于号&quot;>&quot;，请注意这个选择器与后代选择器的区别，子选择器（child selector）仅是指它的直接后代，或者可以理解为作用于子元素的第一个后代；
+而后代选择器是作用于所有子后代元素。后代选择器通过空格来进行选择。">子选择器</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200122222048.png" alt="20200122222048"  title="子选择器符号为大于号仅是指它的直接后代" width="600" height="" /><figcaption><font color=green>子选择器符号为大于号仅是指它的直接后代</font></figcaption></center></figure>
+    <li><a title="兄弟选择器用来设置某个选择器兄弟元素的样式。兄弟选择器有两种方式，
+        一种是选择元素后面一个兄弟元素，用“+”连接选择器；
+        另一种是选择元素后面同一类指定的兄弟元素，用“～”连接选择器。">CSS 3新增的兄弟选择器</a></li>
+        
+</ol>
