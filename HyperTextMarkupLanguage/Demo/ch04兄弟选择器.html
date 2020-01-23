@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <style>
+        #box1 h2+p {
+            /*"+"连接的兄弟连接器*/
+            color: red;
+            /*设置<p>标签的字体颜色*/
+        }
+
+        #box2 h2~p {
+            /*"~"连接的兄弟连接器*/
+            color: purple;
+            /*设置<p>标签的字体颜色*/
+        }
+
+        div {
+            float: left;
+            /*设置div为左浮动*/
+            border: 1px solid blue;
+            /*设置div的字体颜色*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <h2>"+"连接的选择器</h2>
+        <p>"+"连接的选择器</p>
+        <p>"+"连接的选择器</p>
+        <p>"+"连接的选择器</p>
+        <h2>"+"连接的选择器</h2>
+        <p>"+"连接的选择器</p>
+        <p>"+"连接的选择器</p>
+    </div>
+
+    <div id="box2">
+        <h2>"~"连接的选择器</h2>
+        <p>"~"连接的选择器</p>
+        <p>"~"连接的选择器</p>
+        <p>"~"连接的选择器</p>
+        <h2>"~"连接的选择器</h2>
+        <p>"~"连接的选择器</p>
+        <p>"~"连接的选择器</p>
+    </div>
+
+</body>
+
+</html>

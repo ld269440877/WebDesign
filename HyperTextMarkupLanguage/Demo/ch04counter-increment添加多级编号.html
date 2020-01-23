@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>添加多级编号</title>
+    <style>
+        h1{ /*为h2定义一个计数器order1*/
+            counter-increment: order1;
+            counter-reset: order2; /*重置
+            h3的计数器order3，保证每个h2下的h3都是从1递增*/
+            color:red;
+            }
+        h2{ /*为h2定义一个计数器order2*/
+            counter-increment: order2;
+            counter-reset: order3; /*重置
+            h3的计数器order3，保证每个h2下的h3都是从1递增*/
+            counter-reset: order3; 
+            color:red;
+            }
+        h3{ /*为h3定义一个计数器order3*/
+            counter-increment: order3;
+            color:yellow;
+        }
+        h1:before{ /*在h1前面添加order1计数器和一个点*/
+            content:counter(order1)" ";
+        }
+        h2:before{ /*在h2前面添加order2计数器和一个点*/
+            content:counter(order1)"."counter(order2)" ";
+        }
+        h3:before{
+            /*在h3前面添加order2、order3计数器并分别添加一个点和一个空格*/
+            content:counter(order1)"."counter(order2)"."counter(order3)" ";
+        }
+    </style>
+</head>
+<body>
+<h1>HTML-CSS3-JS</h1>
+<h2>HTML</h2>
+<h3>第一章内容</h3>
+<h3>第二章内容</h3>
+<h1>HTML-CSS3-JS</h1>
+<h2>CSS</h2>
+<h3>第一章内容</h3>
+<h3>第二章内容</h3>
+<h2>JavaScript</h2>
+<h3>第一章内容</h3>
+<h3>第二章内容</h3>
+</body>
+</html>

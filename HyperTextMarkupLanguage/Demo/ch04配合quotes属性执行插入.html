@@ -1,0 +1,29 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>配合quotes属性执行插入</title>
+    <style>
+        ul{list-style: none;} /*去掉ul的项目编号*/
+        li.part{
+             /*定义open-quote为“css课程：”  close-quote为“（基础）”*/
+            quotes:"CSS课程：""（基础）";
+        }
+        li.part:before{ /*在含有类属性为part的li前插入open-quote*/
+            content:open-quote;
+            color:red;
+        }
+        li.part:after{ /*在含有类属性为part的li后插入close-quote*/
+            content:close-quote;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li  class="part">第一章内容</li>
+    <li class="part">第二章内容</li>
+    <li>第三章内容</li>
+    <li>第四章内容</li>
+</ul>
+</body>
+</html>

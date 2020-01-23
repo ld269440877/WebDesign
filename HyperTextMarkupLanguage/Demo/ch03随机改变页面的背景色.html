@@ -1,0 +1,18 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Title</title>
+    </head>
+    <body id="body">
+    <input type="button" value="刷新页面，随机切换背景色"/>
+    </body>
+    </html>
+    <script>
+        var r =  Math.floor(Math.random( ) * 256);  //随机生成256以内的值，赋值给变量r
+        var g = Math.floor(Math.random( ) * 256);   //随机生成256以内的值，赋值给变量g
+        var b = Math.floor(Math.random( ) * 256);   //随机生成256以内的值，赋值给变量b
+        var color = "rgb(${r},${g},${b})";  //使用ES6语法拼接rgb格式颜色
+        var bd = document.getElementById("body");   //获取页面中的body元素
+        bd.style.background=color;  //设置body元素的背景为color
+    </script>

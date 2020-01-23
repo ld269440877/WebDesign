@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>配合counter-increment属性添加编号</title>
+    <style>
+        ul{list-style: none;} /*去掉ul的项目编号*/
+        li{
+            counter-increment: order; /*定义一个计数器order*/
+        }
+        li:before{ /*在li元素前插入计数器和一个点*/
+            content:counter(order)".";
+            color:#c3ff17 /*设置插入内容的颜色*/
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>第一章内容</li>
+    <li>第二章内容</li>
+    <li>第三章内容</li>
+    <li>第四章内容</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>结构性伪类选择器</title>
+    <style>
+        :root{
+            background:yellow; /*设置根元素的背景色*/
+            }
+        p:nth-child(2){ /*匹配父元素p的di2个子元素*/
+            background:red;/*背景色*/
+            color:white;/*设置字体颜色*/
+        }
+        p:nth-last-child(2){ /*匹配父元素p的倒数第2个子元素*/
+            background:white;/*设置背景色*/
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <p>结构性伪类元素</p>
+    <p>结构性伪类元素</p>
+    <p>结构性伪类元素</p>
+    <p>结构性伪类元素</p>
+</div>
+</body>
+</html>

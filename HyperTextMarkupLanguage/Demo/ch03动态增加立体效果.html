@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        .show{
+            width: 150px;
+            height:50px;
+            text-align:center;
+            line-height:50px;
+            border-right:#222222 50px solid;
+            border-bottom:#222222 50px solid;
+            border-left:#222222 50px solid;
+            border-top:#222222 50px solid;
+            background-color:#cccccc;
+        }
+    </style>
+
+</head>
+<body>
+    <input type='button' value='动态增加立体效果' onelick="change()"/>
+    <div id="box">立体效果</div>
+</body>
+</html>
+<script>
+//定义change函数
+    function change(){
+        document.getElementById("box").className="show"; //给box添加show样式
+    }
+</script>

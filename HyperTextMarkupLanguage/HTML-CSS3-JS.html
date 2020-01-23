@@ -1,7 +1,52 @@
-<h1 style="color:rgb(255, 0, 0); text-align: center; background-color: #FFFF00; ">第一篇 基础知识></h1>
-<h1 style="color:rgb(0, 132, 255); text-align: left;">第一章 HTML 5 基础入门</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>HTML-CSS3-JS</title>
+    <style>
+        p,a,ul,ol,li{
+
+        }
+        h1,h2,h3{
+    text-align:center;
+}
+        h1{ /*为h2定义一个计数器order1*/
+            counter-increment: order1;
+            counter-reset: order2; /*重置
+            h3的计数器order3，保证每个h2下的h3都是从1递增*/
+            color:red!important;
+            }
+        h2{ /*为h2定义一个计数器order2*/
+            counter-increment: order2;
+            counter-reset: order3; /*重置
+            h3的计数器order3，保证每个h2下的h3都是从1递增*/
+            counter-reset: order3; 
+            color:orange!important;
+            }
+        h3{ /*为h3定义一个计数器order3*/
+            counter-increment: order3;
+            color:green!important;
+        }
+        h1:before{ /*在h1前面添加order1计数器和一个点*/
+            content:counter(order1)" ";
+        }
+        h2:before{ /*在h2前面添加order2计数器和一个点*/
+            content:counter(order1)"."counter(order2)" ";
+        }
+        h3:before{
+            /*在h3前面添加order2、order3计数器并分别添加一个点和一个空格*/
+            content:counter(order1)"."counter(order2)"."counter(order3)" ";
+        }
+
+    </style>
+</head>
+<body>
+
+<p style="color:rgb(255, 0, 0); text-align: center; background-color: #FFFF00; font-size: 30px;">第一篇 基础知识></p>
+<h1>第一章 HTML 5 基础入门</h1>
 <p>
     <font color="red">HTML是标记语言</font>
+（HyperText Markup Language，超文本标记语言）用于描述、定义网页内容。
     ，它由W3C组织提供的一套标记标签组成。程序员使用这些标签进行叠加，可以开发出各种各样的网页。HTML使用标记标签来描述网页。一个网页除了由大量的标签组成，还有后续要学习的CSS样式和JavaScript脚本组合而成。
 </p>
 <p>
@@ -15,7 +60,7 @@
 </p>
 <hr>
 
-<h2 style="align: left; color:rgb(0, 132, 255) ">HTML 5的优势</h2>
+<h2>HTML 5的优势</h2>
 <ol>
 
     <li><a title="各大浏览器厂商对于HTML 5都表示出很高的热情">解决跨浏览器问题</a></li>
@@ -26,25 +71,8 @@
 </ol>
 HTML 5获取文本框的焦点<br>
 在HTML 5中，则只需要设置autofocus属性就可以代替JavaScript代码
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123152958.png" alt="20200123152958"  title="autofocus属性代替JavaScript代码" width="600" height="" /><figcaption><font color=green>autofocus属性代替JavaScript代码</font></figcaption></center></figure>
 <br>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-
-<body>
-    <form action="demo">
-        姓名: <input name="Name" type="text" value="Leung"><br>
-        成绩: &lt;input type="text" name="Grade" id="grade" autofocus&gt;<br>
-    </form>
-</body>
-
-</html>
-
 <p>HTML5 之前JavaScript来完成， html标签后添加script标签</p>
 <pre>
 <blockquote>
@@ -100,43 +128,26 @@ HTML 5获取文本框的焦点<br>
         网站交给客户之后，还要对客户进行指导，对网站进行维护。">网站建设完成，进行验收</a></li>
 </ol>
 
-<h2>　就业面试技巧与解析</h2>
 <a title="应聘者：依然需要使用HTML。因为很多人已经习惯使用HTML作为他们的设计语言，而且，已经有数以百万计的页面是采用HTML编写的，所以在将来依然需要HTML。">面试官：XHTML是一种为适应XML而重新改造的HTML，当XML越来越成为一种趋势，就出现了这样一个问题：如果用户有了XML，是否还需要HTML?</a>
 <br>
 <a title="应聘者：HTML文件的扩展名有“.html”和“.htm”。
 “.html”是当今网页文件的一种最基本的、也是使用最广泛的保存格式，是一种超文本标记语言，页面中没有嵌入任何服务器要执行的语句，是一种静态的页面格式，一般的浏览器都能够直接解析并显示。
 关于“.htm”，其实与“.html”并没有本质意义上的区别，只是为了满足DOS的8+3（文件名不能超过8个字符，扩展名不能超过3个字符）的文件名命名规范。因为一些老的系统（32位）不能识别4位文件扩展名，所以某些服务器要求.html的最后一个字母l省略。浏览器能自动识别和打开这些文件，编写这些网页网址的时候必须是对应的，也就是说index.html和index.htm是两个不同的文件，对应着不同的地址。">面试官：HTML文件的扩展名有哪些？</a>
-
-<h1 style="color:rgb(0, 132, 255); text-align: left;">第二章 HTML 5文档基本结构</h1>
+<hr/>
+<hr/>
+<h1 >第二章 HTML 5文档基本结构</h1>
 <p>HTML 5的文档结构包括标题、段落、列表、表格、绘制的图形以及各种嵌入对象。</p>
 <h2>HTML 5文档构成</h2>
 <p>HTML 5的文档结构包括头部（head）、主体（body）两大部分。头部描述浏览器所需的信息，主体包含所要说明的具体内容</p>
-<hr>
+
 <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121202804.png" title alt="20200121202804" width="300" height><figcaption><font color="green"></font></figcaption></center></figure>
-<!DOCTYPE html>
-<html>
-<!--头部-->
-
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<!--主体-->
-
-<body>
-    <p style="text-align: center; background: rgb(0, 133, 0);">HTML 5文档基本结构body</p>
-</body>
-
-</html>
-<hr>
 
 <ol>
     <li><a title="引用官方的DTD文件，在HTML 5之前的版本，如XHTML、HTML 4.0都有官方的DTD文件的引用。DTD是文档类型定义，它主要对标签的使用进行定义。基于HTML 5设计的“化繁为简”准则，HTML 5中不需要引用严格意义上的DTD的规范，只需引入下面代码即可：
         &lt;!DOCTYPE html&gt;">&lt;!DOCTYPE&gt;声明</a></li>
-    <li><a title="HTML文档的根元素，成对出现<html></html>，它代表文档的开始和结束。在HTML 5中该标签可以省略，但是为了符合Web标准和体现文档的完整性，建议不要省略该标签。">&lt;html&gt;>标签</a></li>
+    <li><a title="HTML文档的根元素，成对出现&lt;html&gt;&lt;/html&gt;，它代表文档的开始和结束。在HTML 5中该标签可以省略，但是为了符合Web标准和体现文档的完整性，建议不要省略该标签。">&lt;html&gt;>标签</a></li>
     <li><a title="HTML的头部、内部提供了许多标签，用于说明文档头部的相关信息。">&lt;head&gt;标签</a></li>
 
-<html>
     <style type="text/css">
         .tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;}
         .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
@@ -171,7 +182,7 @@ HTML 5获取文本框的焦点<br>
             <td class="tg-phtq">包含JavaScript脚本</td>
           </tr>
         </table>
-</html>
+
         <li><a title="&lt;body&gt;标签是HTML的主体部分，网页所要显示的内容都放在该标签内，语法如下面代码所示：
             &lt;body&gt;
             ...
@@ -179,20 +190,14 @@ HTML 5获取文本框的焦点<br>
 </ol>
 
 <h2><a title="HTML 5为了兼容互联网中不规则的代码，在语法上有一部分的变化">HTML 5的语法变化</a></h2>
+
 <ol>
     <li><a title="用户可以通过W3C提供的在线验证页面来测试上面的网页，验证网址为http://validator.w3.org/" href="http://validator.w3.org/">标签不再区分大小写</a></li>
     <li><a title="HTML 5显得比较宽容，它允许一部分HTML标签省略结束标签，甚至允许同时省略开始和结束标签
-        虽然<html>标签没有结束标签，<body>开始标签和结束标签都没有，但这个页面是合法的。">元素可以省略结束标签</a></li>
-<hr/>
+        虽然&lt;html&gt;标签没有结束标签，&lt;body&gt;开始标签和结束标签都没有，但这个页面是合法的。">元素可以省略结束标签</a></li>
+
 <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121211315.png" alt="20200121211315"  title="元素可以省略结束标签" width="600" height="" /><figcaption><font color=green>元素可以省略结束标签</font></figcaption></center></figure>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>元素可以省略结束标签</title>
-    </head>
-    <p style="text-align: center; background: rgb(0, 133, 0);">元素可以省略结束标签</p>
-    <hr/>
+
     <li><a title="在HTML中有一些元素的属性，当只写属性名称而不指定属性值时，表示属性值为true，如果设置该属性值为false，则不使用该属性即可，代码如下：
         &lt;input type=&quot;text&quot; readonly=&quot;true&quot;&gt;
         &lt;input type=&quot;text&quot; readonly&gt;">支持boolean值的属</a></li>
@@ -202,17 +207,12 @@ HTML 5获取文本框的焦点<br>
         &lt;input type=checkbox&gt;
         &lt;/body&gt;
         注意：如果某个属性值的属性值包含空格等，容易引起浏览器混淆的属性值，那么建议读者使用引号把它的属性值引起来。">允许属性值不使用引号</a></li>
-<hr/>
+
 <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121213158.png" alt="20200121213158"  title="" width="200" height="" /><figcaption><font color=green></font></figcaption></center></figure>
-        <body>
-        <input type=text>
-        <br/>
-        <input type=checkbox>
-        </body>
-<hr/>
 </ol>
 
 <h2>HTML 5标签、元素及属性</h2>
+
 <p>HTML元素就是通过使用HTML标签进行定义的。</p>
 <a title="&lt;和&gt;包起来的对象，都是HTML标签。
 HTML中的文档和HTML元素是通过HTML标签进行标记的。
@@ -236,25 +236,14 @@ HTML中的文档和HTML元素是通过HTML标签进行标记的。
 </ol>
 
 <a title="为HTML元素提供各种附加信息的就是HTML属性，它总是以“属性名=属性值”的形式出现，而且属性总是在HTML元素的开始标签中进行定义。">标签属性</a>
-<hr/>
+
 <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200121215624.png" alt="20200121215624"  title="标签属性" width="600" height="" /><figcaption><font color=green>标签属性</font></figcaption></center></figure>
-<!DOCTYPE html>
-<html>
-<head>
-   <meta charset="UTF-8">
-   <title></title>
-</head>
-<body>
-<!--设置p标签的align属性,属性值为center-->
-<p align="center">我是元素，html为p标签设置align属性，属性值为center修饰p标签内的元素</p>
-</body>
-</html>
-<hr/>
 
 <a title="从开始标签到结束标签的所有代码，就是HTML元素，如&lt;p&gt;HTML&lt;/p&gt;。
 位于起始标签和结束标签之间的文本就是HTML元素的内容。">元素</a>
-
+<hr/>
 <h2>HTML 5文档头部标签</h2>
+
 <ol>
     <li>&lt;head&gt;文档的头部标签</li>
 <a title="文档的头部描述了文档的各种属性和信息，包括文档的标题、在Web中的位置及和其他文档的关系等。绝大多数文档头部包含的数据都不会真正作为内容显示给读者。
@@ -288,10 +277,12 @@ HTML中的文档和HTML元素是通过HTML标签进行标记的。
       其中，content后跟值为当前页面在多少时间跳转，URL值为跳转到具体的网页网站。">设置网页的定时跳转</a></li>
     </ol>
 </ol>
+
 <h2><a title="注释是在HTML代码中插入描述性的文本，用来解释该代码或提示其他信息。注释只出现在代码中，浏览器页面中不显示。在HTML中插入代码，对于日后的维护工作有很大的好处，也便于其他读者去理解，语法如下：
     &lt;!--注释的内容--&gt;">页面注释标签</a></h2>
 
 <h2>标题标签、换行标签及不换行标签</h2>
+
 <ol type="1">
     <li><a title="HTML中标题由&lt;h1&gt;～&lt;h6&gt;标签来定义">h标题标签</a></li>
     <li><a title="">标题字对齐属性align</a></li>
@@ -331,7 +322,9 @@ HTML中的文档和HTML元素是通过HTML标签进行标记的。
 不换行使用&lt;nobr&gt;&lt;/nobr&gt;标签。">段落标签、换行标签及不换行标签</a></li>
 </ol>
 
+
 <h2>其他标签</h2>
+
 <ol type="1">
     <li>hr水平线标签</li>
     <li><a title="在通常情况下，都是使用空格键来插入多个空格，而在编写代码中，通过空格键打出的空格，会被HTML自动忽略。
@@ -340,7 +333,6 @@ HTML将这样的空格视为空白字符，并显示为单个空白间隔。
     <li><a title="&quot;&&quot;开头、&quot;;&quot;结尾，中间加上特殊字符对应的编码">插入特殊字符</a></li>
 </ol>
 
-<h2>就业面试技巧与解析</h2>
 <a title="应聘者：HTML 5中新多媒体元素有以下4种。
 ●　audio元素：Audio元素主要是定义播放声音文件或者音频流的标准。
 ●　video元素：video元素主要是定义播放视频文件或者视频流的标准。
@@ -352,7 +344,9 @@ HTML将这样的空格视为空白字符，并显示为单个空白间隔。
 ●　&lt;figure&gt;标签用来表示网页上一块独立的内容，将其从网页上移除后不会对网页上的其他内容产生影响。
 ●　&lt;figcaption&gt;元素的作用是为&lt;figure&gt;元素定义标题。">面试官：HTML 5中分组元素有哪些？</a>
 
-<h1 style="color:rgb(0, 132, 255); text-align: left;">第3章 CSS 3基础入门</h1>
+
+<h1>第3章 CSS 3基础入门</h1>
+
 <p>
 &nbsp;&nbsp;CSS被称为层叠样式单，它是一种专门描述结构文档的表现方式的文档，主要用于网页风格设计，包括字体大小、颜色、背景以及元素的精确定位等。在传统的Web网页设计里，使用CSS能让单调的HTML网页更富表现力。<br/>
 &nbsp;&nbsp;CSS样式的使用，使“网页结构代码”和“网页格式风格代码”分离开，将站点上的所有网页都指向某个CSS文件，遇到要修改时，只需更改该CSS文件就可以了。不仅维护简单，还可以使HTML文档代码简练，缩短浏览器的加载时间。
@@ -377,7 +371,9 @@ CSS的语法非常简单，CSS语法规则由两个主要的部分构成:
 
 <hr/>
 
+
 <h2>HTML网页应用CSS样式的方法</h2>
+
 <p>
 CSS可以控制HTML文档的显示，但在控制文档显示之前，需要在文档中引入CSS样式，HTML提供了4种引入方式，包括行内样式、内嵌样式、链接样式和导入样式。
 </p>
@@ -430,6 +426,7 @@ CSS可以控制HTML文档的显示，但在控制文档显示之前，需要在�
 ">注释CSS</a></p>
 
 <h2><a title="CSS三大特性：层叠性、继承性和优先性">CSS三大特性</a></h2>
+
 <ol type="1">
     <li><a title="层叠性就是处理CSS冲突的能力。当同一个元素被两个选择器选中时，CSS会根据选择器的权重决定使用哪一个选择器。权重低的选择器效果会被权重高的选择器效果覆盖掉，权重相同时取后者。
 权重可以理解为一个选择器对于这个元素的重要性。id选择器权重为100，类选择器权重为10，标签选择器的权重为1">CSS层叠性</a></li>
@@ -455,123 +452,14 @@ CSS有一套优先性的定义，顺序如下：
     <li><a title="随机改变页面的背景颜色很简单，这里我们使用&quot;rgb（a,b,c）&quot;属性来实现，
 只需要随机生成a、b、c的值就可以了，a、b、c取值在0～256">随机改变页面的背景色</a></li>
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Title</title>
-</head>
-<body id="body">
-<input type="button" value="刷新页面，随机切换背景色"/>
-</body>
-</html>
-<script>
-    var r =  Math.floor(Math.random( ) * 256);  //随机生成256以内的值，赋值给变量r
-    var g = Math.floor(Math.random( ) * 256);   //随机生成256以内的值，赋值给变量g
-    var b = Math.floor(Math.random( ) * 256);   //随机生成256以内的值，赋值给变量b
-    var color = "rgb(${r},${g},${b})";  //使用ES6语法拼接rgb格式颜色
-    var bd = document.getElementById("body");   //获取页面中的body元素
-    bd.style.background=color;  //设置body元素的背景为color
-</script>
 
     <li><a title="在CSS中，通过简单的色差来实现简单的立体效果。
 如下面的案例，分别设置div四边边框的颜色，产生了一个色差，呈现出立体的效果。同时还添加了一个按钮，来动态控制立体效果。当单击按钮时，div呈现立体效果。">动态增加立体效果</a></li>
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Title</title>
-    <style>
-        .show{
-            width: 150px;
-            height:50px;
-            text-align:center;
-            line-height:50px;
-            border-right:#222222 50px solid;
-            border-bottom:#222222 50px solid;
-            border-left:#222222 50px solid;
-            border-top:#222222 50px solid;
-            background-color:#cccccc;
-        }
-    </style>
-</head>
-<body>
-    <input type='button' value='动态增加立体效果' onelick="change()"/>
-    <div id="box">立体效果</div>
-</body>
-</html>
-<script>
-//定义change函数
-    function change(){
-        document.getElementById("box").className="show"; //给box添加show样式
-    }
-</script>
-
 </ol>
-<hr/>
-<h2>实践案例—设计登录和注册界面</h2>
-<hr/>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>登录和注册页面设计</title>
-    <style>
-        .content{
-            background-color: #1cff89; //设置背景颜色
-            position: absolute; //设置绝对定位
-            width: 100%;  //设置宽度
-            height: 400px;  //设置高度
-        }
-        .main{
-            text-align:center;  //文本居中
-            padding: 50px 0px; //内边距
-            margin: 0 auto; //外边距
-        }
-        h2 {
-            font-family:"微软雅黑";  //字体类型
-            font-size: 40px; //字体大小
-            font-weight: bold;  //字体加粗
-        }
-        input {
-            border:1px solid white; //设置边框
-            display: block; //设置input块级元素
-            margin: 10px auto;
-            padding: 5px;
-            width: 230px;
-            border-radius: 15px;  //设置圆角边框
-            font-size: 18px;
-            font-weight: 300;  //设置字体加粗
-            text-align:center;
-        }
-        button {
-            background-color: #20a7ff;
-            border-radius: 10px;
-            border: 0;
-            height: 30px;
-            width: 80px;
-            padding: 5px;
-            color: white; //设置字体颜色
-        }
-    </style>
-</head>
-<body>
-<div class="content">
-    <div class="main">
-        <h2>You are welcome!</h2>
-        <form>
-            <input type="text" placeholder="用户名"/>
-            <input type="password" placeholder="密码"/>
-            <p>
-                <button type="submit">登&nbsp;&nbsp;录</button>
-                <button type="submit">注&nbsp;&nbsp;册</button>
-            </p>
-        </form>
-    </div>
-</div>
-</body>
-</html>
-<hr/>
 
-<h2>就业面试技巧与解析</h2>
+<h2>实践案例—设计登录和注册界面</h2>
+
 <p><a title="应聘者：link与@import在显示效果上还是有很大区别的，
     link的加载会在页面显示之前全部加载完，
     而@import是读取完文件之后再加载，所以，在网络速度很好或很快的情况下，会出现刚开始没有CSS定义，而后才加载CSS定义，@import加载页面时开始的瞬间会有闪烁（无样式表的页面），然后恢复正常（加载样式后的页面），
@@ -580,7 +468,7 @@ link没有这个问题。所以推荐使用link引入外部样式。">面试官�
     由于不同厂商的浏览器，例如IE、Firefox、Chrome等，或者是同一厂商的浏览器的不同版本，如IE 6和IE 7，对CSS的解析认识不完全一样，会导致生成的页面效果不一样，得不到我们所需要的页面效果。
     这个时候我们就需要针对不同的浏览器去写不同的CSS，让它能够同时兼容不同的浏览器，能在不同的浏览器中显示我们想要的页面效果。">面试官：CSS hack是什么？</a></p>
 
-<h1 style="color:rgb(0, 132, 255); text-align: left;">第4章 CSS 3样式选择器</h1>
+<h1>第4章 CSS 3样式选择器</h1>
 <p>选择器（selector）是CSS中很重要的概念，所有HTML语言中的标记都是通过不同的CSS选择器进行控制的。</p>
 <h2><a title="在CSS 3中，大致可以把CSS选择器分成5类，分别是
     基本选择器
@@ -594,12 +482,12 @@ link没有这个问题。所以推荐使用link引入外部样式。">面试官�
     属性选择器
     伪元素选择器
     ">选择器分类</a></h2>
-<p><a title="基础选择器是编写CSS样式经常用到的选择器，它包括
+<h2><a title="基础选择器是编写CSS样式经常用到的选择器，它包括
     元素选择器
     通配选择器
     ID选择器
     class选择器
-    群组选择器">基本选择器</a></p>
+    群组选择器">基本选择器</a></h2>
 <ol type="1">
     <li><a title="标签选择器又称为标记选择器，在W3C标准中，又称为类型选择器（type selector）。CSS标签选择器用来声明html标签采用哪种CSS样式，也就是重新定义了html标签。因此，
         每一个html标签的名称都可以作为相应的标签选择器的名称。">元素选择器</a></li>
@@ -636,5 +524,299 @@ link没有这个问题。所以推荐使用link引入外部样式。">面试官�
     <li><a title="兄弟选择器用来设置某个选择器兄弟元素的样式。兄弟选择器有两种方式，
         一种是选择元素后面一个兄弟元素，用“+”连接选择器；
         另一种是选择元素后面同一类指定的兄弟元素，用“～”连接选择器。">CSS 3新增的兄弟选择器</a></li>
-        
 </ol>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123092244.png" alt="20200123092244"  title="兄弟选择器" width="600" height="" /><figcaption><font color=green>兄弟选择器</font></figcaption></center></figure>
+
+<h2><a title="伪类选择器并不是针对真正的元素使用的选择器，只针对CSS中的伪元素起作用。">动态伪类选择器</a></h2>
+<ol type="1">
+<li><a title="内容相关的属性与CSS其他属性一样，同样需要定义在CSS样式的大括号内。
+    content属性是CSS支持的内容相关属性中最重要的一个，该属性的值可以是字符串、url、attr、open-quote等格式，该属性用于向指定元素之前或之后插入指定内容。">内容相关的属性</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123094521.png" alt="20200123094521"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+
+<li><a title="content属性值除了可以添加字符串外，还可以添加图片，代码如下
+    content: url(&quot;src&quot;)
+src指定图片的路径">插入图像</a></li>
+<li><a title="只想为一部分元素添加内容，这时需先把要添加内容的元素找到，如只想给前两个元素添加内容，只需找到前两个元素的选择器，再在其后面添加伪类选择器，这样就可以设置其内容了。">只插入部分元素</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123095216.png" alt="20200123095216"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+<li><a title="quotes属性可以定义open-quote和close-quote，然后就可以在content属性中应用它们了。">配合quotes属性执行插入</a></li>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123103145.png" alt="20200123103145"  title="配合quotes属性执行插入" width="600" height="" /><figcaption><font color=green>配合quotes属性执行插入</font></figcaption></center></figure>
+
+
+<li><a title="counter-increment属性用于定义计数器，如要给多条内容添加编号，就可以通过该属性来设置。
+定义计数器很简单，只需给需要添加编号的元素定义一个计数器，然后结合content属性在该元素前面添加这个计数器，就可以实现编号了。">配合counter-increment属性添加编号</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123102334.png" alt="20200123102334"  title="配合counter-increment属性添加编号" width="600" height="" /><figcaption><font color=green>配合counter-increment属性添加编号</font></figcaption></center></figure>
+
+
+<li><a title="counter(name,list-style-type)用法来实现使用自定义编号，name是计数器的名字，list-style-type指定自定义编号的样式">使用自定义编号</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123103538.png" alt="20200123103538"  title="自定义编号部分取值" width="600" height="" /><figcaption><font color=green>自定义编号部分取值</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123103722.png" alt="20200123103722"  title="使用自定义编号" width="600" height="" /><figcaption><font color=green>使用自定义编号</font></figcaption></center></figure>
+<li><a title="书的目录一样，可以有多级的编号">添加多级编号</a></li>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123110300.png" alt="20200123110300"  title="counter-increment添加多级编号" width="600" height="" /><figcaption><font color=green>counter-increment 添加多级编号</font></figcaption></center></figure>
+
+</ol>
+
+<h2><a title="伪类选择器主要用于对选择器进行限制，对已有选择器匹配到的元素进行过滤。">CSS 3新增的伪类选择器</a></h2>
+<ol type="1">
+    <li><a title="结构性伪类选择器是指运用文档结构树来实现元素过滤，
+简单来说，就是利用文档结构之间的相互关系来匹配制定的元素，用来减少文档内对class属性以及ID属性的定义，从而可以使整个文档更加简练。">结构性伪类选择器</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123113220.png" alt="20200123113220"  title="结构性伪类选择器" width="600" height="" /><figcaption><font color=green>结构性伪类选择器</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123114851.png" alt="20200123114851"  title="结构性伪类选择器" width="600" height="" /><figcaption><font color=green>结构性伪类选择器</font></figcaption></center></figure>
+
+    <li><a title="UI元素状态伪类选择器就是指定的样式只有当元素处于某种状态时，样式才起作用，在默认状态下不起作用。
+        常见的有:hover、:active、:focus、:enable、:disable、:read-only、:read-write、:checked、:default、:indeterminate、:selection等。">UI元素状态伪类选择器</a></li>
+        <p><a title=":hover表示鼠标指针悬浮时的样式，:active表示按下鼠标左键且不松开时的样式，:focus表示鼠标指针获得焦点或者进行输入时的样式。它们编写的顺序不要写反，否则不会显示效果，正确顺序为:hover、:focus、:active。">:hover、:active、:focus</a></p>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123133547.png" alt="20200123133547"  title="UI元素状态伪类选择器:hover-focus-active" width="600" height="" /><figcaption><font color=green>UI元素状态伪类选择器:hover-focus-active</font></figcaption></center></figure>
+
+
+    <li><a title=":checked是用来指定当表单中的radio单选按钮、checkbox复选框处于选中状态时的样式。
+:selection伪类选择器用来指定当元素处于选中状态时的样式。">:checked、:selection</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123140228.png" alt="20200123140228"  title="UI元素状态伪类选择器:checked-selection" width="600" height="" /><figcaption><font color=green>UI元素状态伪类选择器:checked-selection</font></figcaption></center></figure>
+
+<li><a title="目标伪类选择器:target是CSS 3新增伪类选择器之一，用来匹配文档中被相关URL指向的目标元素。
+目标伪类选择器是动态选择器，只有存在URL指向该匹配元素时，样式效果才会生效。
+URL中的标志通常会包含一个#，后面带有一个标志符名称，如#box,:target就是匹配ID为&quot;box&quot;的目标元素。
+如一个页面中有一个&lt;a>标签，它的href是&lt;a href=&quot;#box&quot;>内容&lt;/a&gt; ，同一个页面中也会有以box为id的元素，&lt;div id=&quot;box &quot;&gt;标题&lt;/div&gt;。
+那么&lt;a&gt;标签的href属性会链接到#box元素，也就是box:target选择符所选的目标元素，当a链接到这个元素的时候，它所指定的样式就是目标元素的样式。">目标（:target）伪类选择器</a>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123141838.png" alt="20200123141838"  title="目标（:target）伪类选择器" width="600" height="" /><figcaption><font color=green>目标（:target）伪类选择器</font></figcaption></center></figure>
+
+
+<li><a title="否定伪类选择器用于过滤掉含有某个选择器的元素，如p:not(#box),就是过滤掉id为#box的p元素。">否定（:not）伪类选择器</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123142225.png" alt="20200123142225"  title="否定（:not）伪类选择器" width="600" height="" /><figcaption><font color=green>否定（:not）伪类选择器</font></figcaption></center></figure>
+</ol>
+
+<h2><a title="属性选择器可以为拥有指定属性的HTML元素设置样式。
+CSS 3属性选择器，用户可以只指定元素的某个属性，或者用户还可以同时指定元素的某个属性和其对应的属性值。">属性选择器</a></h2>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123142654.png" alt="20200123142654"  title="属性选择器的种类" width="600" height="" /><figcaption><font color=green>属性选择器的种类</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123143522.png" alt="20200123143522"  title="属性选择器应用" width="600" height="" /><figcaption><font color=green>属性选择器应用</font></figcaption></center></figure>
+
+<p><a title="应聘者：块级元素（block）总是独占一行，表现为另起一行开始，而且其后的元素也必须另起一行显示；宽度（width）、高度（height）、内边距（padding）和外边距（margin）都可控制。
+    行内元素和相邻的行内元素在同一行显示；宽度（width）、高度（height）、内边距的padding-top/ padding-bottom和外边距的margin-top/margin-bottom都不可改变，但是内边距的padding-left/ padding-right和外边距的margin-left/margin-right等属性可以设置。
+    浏览器还有默认的行内元素，它们拥有内在尺寸，可设置高宽，但不会自动换行，如<input>、<img>、<button>等元素。">面试官：在CSS中，行内元素和块级元素的具体区别是什么？行内元素的padding和margin可设置吗？</a></p>
+<p><a title="应聘者：经常使用的CSS选择器分别如下：
+    （1）标签选择器：又称为标记选择器，在W3C标准中，又称为类型选择器（type selector）。
+    （2）类选择器：允许以一种独立于文档元素的方式来指定样式。可以单独使用，也可以与其他元素结合使用。
+    （3）ID选择器：允许以一种独立于文档元素的方式来指定样式，在某些方面，ID选择器类似于类选择器，不过也有一些重要差别。
+    （4）属性选择器：可以根据元素的属性及属性值来选择元素。">面试官：选择器用的好坏，决定对页面控制的好坏，请问你平时经常使用哪些选择器。</a></p>
+<h1><a title="常见的网站是使用文字或者图片来展示内容的，其中文字是传递信息的主要手段。">第5章 使用并美化网页文本</a></h1>
+<h2><a title="在HTML 5中，可以使用CSS 3字体属性来定义文字的大小、字体、粗细等表现。
+常见的字体属性包括字体、字号、字体颜色、字体风格等。">设置网页文本字体</a></h2>
+<ol>
+    <li><a title="font-weight属性用于定义字体的粗细程度。font-weight属性有13个有效值，分别是bold、bolder、lighter、normal、100～900。
+如果没有设置该属性，则使用其默认值normal。属性值设置为100～900，值越大，加粗的程度就越大。">设置字体粗细属性font-weight:bold</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123170156.png" alt="20200123170156"  title="设置字体粗细属性" width="600" height="" /><figcaption><font color=green>设置字体粗细属性</font></figcaption></center></figure>
+    <li><a title="font-style属性用于设置字体的风格，即字体的显示样式。
+font-style属性值有4个
+    1. normal 默认值
+    2. oblique 倾斜的字体样式
+    3. italic 斜体的字体样式
+    4. inherit 规定应该从父元素继承字体样式">设置字体风格属性font-style:italic</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123170640.png" alt="20200123170640"  title="设置字体风格属性" width="600" height="" /><figcaption><font color=green>设置字体风格属性</font></figcaption></center></figure>
+    <li><a title="font-size属性用于设置字体的大小。可以给font-size属性指定具体的像素值，如&quot;font-size：20px&quot;，
+        还可以通过一些参数来设置字体的大小
+        1. larger 相对于父元素中字体的尺寸进行相对增大，使用em单位计算
+        2. smaller  相对于父元素中字体的尺寸进行相对减小，使用em单位计算
+        3. length 百分比或者浮点数和单位标识符组成的长度值，不可为负值，百分比取值是其父对象中字体的尺寸">设置字体大小属性font-size</a></li>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123171220.png" alt="20200123171220"  title="设置字体大小属性" width="600" height="" /><figcaption><font color=green>设置字体大小属性</font></figcaption></center></figure>
+
+    <li><a title="font-family属性用于指定文字的字体类型，如隶书、宋体、黑体、楷体等。">设置字体类型属性font-family</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123172043.png" alt="20200123172043"  title="设置字体类型属性" width="600" height="" /><figcaption><font color=green>设置字体类型属性</font></figcaption></center></figure>
+    <li><a title="line-height属性用于设置行间距，即行高。它的取值可以是
+        百分比数值,百分比取值是基于字体的高度尺寸
+        浮点数
+        单位标识符组成的长度值，允许为负值 ">设置文本行高属性line-height:15px</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123180034.png" alt="20200123180034"  title="设置文本行高属性" width="600" height="" /><figcaption><font color=green>设置文本行高属性</font></figcaption></center></figure>
+    <li><a title="在网页设计中，对字体需要设置多种属性值时，多个属性值分别书写相对比较麻烦，可以使用font属性解决这一问题。
+        font属性中的属性值的排列顺序是font-style、font-variant、font-weight、font-size和font-family，各属性的属性值之间使用空格隔开。
+        Family属性要定义多个属性值时，需要用逗号把每个属性值隔开。
+其中font-style、font-variant和font-weight这三个属性的顺序可以自由调换，甚至可以不写，font-size和font-family属性必须固定顺序出现，而且必须都出现在font属性中。">设置字体复合属性font</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123181110.png" alt="20200123181110"  title="设置字体复合属性" width="600" height="" /><figcaption><font color=green>设置字体复合属性</font></figcaption></center></figure>
+    <li><a title="对于网页中的文本颜色，使用color属性来设置，color属性的取值
+    1. color_name 规定颜色值为颜色名称的颜色（如blue、red、yellow）
+    2. hex_number 规定颜色值为十六进制的颜色（如#123456）
+    3. rgb_number规定颜色值为rgb代码的颜色（如rgb（255,255,255））
+    4. inherit 规定从父元素继承颜色">定义网页文本颜色属性color
+</a></li>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123181939.png" alt="20200123181939"  title="定义网页文本颜色属性" width="600" height="" /><figcaption><font color=green>定义网页文本颜色属性</font></figcaption></center></figure>
+</ol>
+
+<h2>设置网页文本的缩进和间距</h2>
+<ol>
+    <li><a title="text-indent:2em（首行缩进2字符）属性用于设置文本的首行缩进，它的取值可以是
+        百分比数值
+        浮点数
+        单位标识符组成的长度值，允许为负值。">设置首行缩进属性text-indent:2em</a></li>
+    <li><a title="设置letter-spacing（字符间距）属性，
+        对于汉语而言，是字与字之间的间距；
+        对于英文而言，是字母与字母之间的间距。取值可以是正值或者负值。">设置字符间距属性letter-spacing: 5px</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123183020.png" alt="20200123183020"  title="设置字符间距属性" width="600" height="" /><figcaption><font color=green>设置字符间距属性</font></figcaption></center></figure>
+
+    <li><a title="word-spacing（单词间距）属性用于指定某个区域或者段落中单词与单词之间的间隔。它的取值可以是正值或负值。">设置单词间距属性word-spacing: 5px</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123183222.png" alt="20200123183222"  title="设置单词间距属性" width="600" height="" /><figcaption><font color=green>设置单词间距属性</font></figcaption></center></figure>
+</ol>
+<h2><a title="网页文本的对齐方式有两种，分别是水平对齐方式和垂直对齐方式">设置网页文本的对齐方式</a></h2>
+<ol>
+    <li><a title="text-align属性用于设置文本的对齐方式，它的取值
+        1. center 文本居中对齐
+        2. left 文本向左对齐
+        3. right 文本向右对齐
+        4. justify 文本两端对齐
+        5. inherit 继承父元素的对齐方式">控制文本的水平对齐方式text-align:inherit</a></li>
+    <li><a title="vertical-align属性用于定义垂直对齐方式，该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐，允许指定负长度值和百分比值。这个属性一般设置单元格框中的单元格内容的对齐方式，它的取值
+        1. baseline 默认。元素放置在父元素的基线上
+        2. sub 垂直对齐文本的下标
+        3. super 垂直对齐文本的上标
+        4. top 把元素的顶端与行中最高元素的顶端对齐
+        5. text-top 把元素的顶端与父元素字体的顶端对齐
+        6. middle 把此元素放置在父元素的中部
+        7. bottom 把元素的顶端与行中最低的元素的顶端对齐
+        8. % 使用line-height属性的百分比值来排列此元素。允许使用负值
+        9. inherit 继承父元素的vertical-align属性">控制文本的垂直对齐方式vertical-align: super</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123185039.png" alt="20200123185039"  title="控制文本的垂直对齐方式vertical-align: super" width="600" height="" /><figcaption><font color=green>控制文本的垂直对齐方式vertical-align: super</font></figcaption></center></figure>
+</ol>
+<h2>CSS 3新增的服务器字体</h2>
+<ol>
+    <li><a title="使用服务器字体，首先要先定义服务器字体，定义服务器字体使用@font-face来定义
+        @font-face
+        {
+            font-family:name; /*设置服务器字体的名称*/
+            src:url(url) format(font-format); /*设置字体路径和字体格式*/
+        }
+        font-family属性用于指定服务器字体的名称，这个名称可以随意定义，它用于在需要的位置去引用。
+        src属性中通过url来指定字体的路径，format用于指定字体的格式，到目前为止，服务器字体还只支持TrueType格式和OpenType格式。
+可以通过以下步骤来实现对服务器字体的使用。
+    （1）下载需要使用的服务器字体的文件。
+    （2）使用@font-face把它定义为服务器的字体。
+    （3）通过@font-family属性指定使用服务器字体。">使用服务器字体</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123191045.png" alt="20200123191045"  title="使用服务器字体@font-face" width="600" height="" /><figcaption><font color=green>使用服务器字体@font-face</font></figcaption></center></figure>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123191414.png" alt="20200123191414"  title="使用服务器字体@font-face" width="600" height="" /><figcaption><font color=green>使用服务器字体@font-face</font></figcaption></center></figure>
+    <li><a title="使用服务器字体有一个缺点，浏览网页时需要从远程服务器下载字体文件，影响网页的加载速度。
+        只有当客户端没有这种字体时，才考虑使用服务器字体作为替代方案。
+        在使用@font-face定义服务器字体时，src属性除了可以使用url来指定服务器文字的路径之外，也可以使用local指定客户端字体名称。">优先使用客户端字体</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123191922.png" alt="20200123191922"  title="优先使用客户端字体" width="600" height="" /><figcaption><font color=green>优先使用客户端字体</font></figcaption></center></figure>
+</ol>
+<h2>设置简单的文字效果 文本阴影text-shadow</h2>
+
+
+<p><a title="应聘者：盒子的阴影使用box-shadow属性来实现，
+            文字的阴影使用text-shadow来实现。">面试官：我们使用哪个属性来设置阴影？</a></p>
+<p><a title="应聘者：rgba()和opacity都能实现透明效果，但最大的不同是
+    opacity作用于元素及元素内所有子元素的透明度，
+    而rgba()只作用于元素本身的透明度。设置rgba透明的元素的子元素不会继承透明效果。">面试官：rgba()和opacity设置透明度效果有什么区别？</a></p>
+
+<h1>第6章 使用并美化网页图像</h1>
+<h2><a title="常见的网站是使用文字或者图片来展示内容的，其中
+    文字是传递信息的主要手段。
+一个网页少不了一些优美的图片，
+    图片能直观、形象地让人明白网页所要表达的意思">插入网页图像</a></h2>
+
+<ol type="1">
+    <li><a title="网页中使用的图片格式有GIF、JPG、PNG、BMP、TIFF等，其中
+        应用最广泛的是GIF和PNG两种格式。">插入网页图像</a></li>
+    <li><a title="在网页中插入图像使用&lt;img&gt;标签，常使用的一些&lt;img&gt;标签
+        属性            属性值              说明
+        alt               text                  定义图片的替代文本
+        src              url                    图片的路径
+        height        pixels、百分比    定义图片的高度
+        width         pixels、百分比    定义图片的宽度
+        &lt;figure&gt;&lt;center&gt;&lt;img src=&quot;url&quot; alt=&quot;20200123192316&quot;  title=&quot; width=&quot;600&quot; height=&quot; /&gt;&lt;figcaption&gt;&lt;font color=green&gt;&lt;/font&gt;&lt;/figcaption&gt;&lt;/center&gt;&lt;/figure&gt;">插入图像标签</a></li>
+    <li><a title="路径是定位图像文件的位置，有两种方式，
+        以当前文档为参照点表示文件的位置，是相对路径；
+        以根目录为参照点表示文件的位置，是绝对路径。">设置图像路径及文件</a></li>
+    <li><a title="在HTML文档中，图片一般是以原图尺寸来显示的，
+        可以通过width（宽度）和height（高度）属性来设置图片的尺寸。
+        图片的尺寸可以选择数值或者百分比，
+        数值是绝对尺寸，百分比是相对尺寸。">设置图像的宽度和高度</a></li>
+    <li><a title="图像文字的提示效果使用alt和title属性来完成，
+        当图像没有下载完成时，才会显示alt属性所设置的提示文字；
+        当把鼠标指针移动到图片上时，显示title属性设置的提示信息。">设置图像的提示文字</a></li>
+</ol>
+<h2><a title="当然也可以使用CSS样式来美化图片。">设置网页图像样式</a></h2>
+<ol>
+    <li><a title="border属性用于设置图片边框，代码如下：
+        border: width color style
+  width指定边框的宽度，color指定边框的颜色，style指定边框的样式。">设置图像边框</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123214235.png" alt="20200123214235"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+    <li><a title="在CSS中，使用opacity属性设置图片的不透明度，代码如下：
+        opacity: value | inherit;
+  value取值在0～1，0表示完全透明，1表示完全不透明。
+  inherit表示应该继承父元素opacity的属性值。">设置图像不透明度opacity</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123214540.png" alt="20200123214540"  title="设置图像不透明度opacity" width="600" height="" /><figcaption><font color=green>设置图像不透明度opacity</font></figcaption></center></figure>
+    <li><a title="border-radius用来设置图像的圆角，代码如下：
+        border-radius: 1-4 length|% / 1-4 length|%;
+  border-radius可以设置4个值，设置一个值时，表示4个角设置相同的圆角。">设置圆角图像border-radius</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123214855.png" alt="20200123214855"  title="设置圆角图像border-radius" width="600" height="" /><figcaption><font color=green>设置圆角图像border-radius</font></figcaption></center></figure>
+  <li><a title="box-shadow属性用于设置阴影图像，代码如下：
+    box、text-shadow：X,Y，blur，color；
+X、Y分别表示阴影在水平方向和垂直方向上的位移，blur表示模糊的半径，最后一个表阴影的颜色。">设置阴影图像box-shadow</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123215200.png" alt="20200123215200"  title="设置阴影图像box-shadow" width="600" height="" /><figcaption><font color=green>设置阴影图像box-shadow</font></figcaption></center></figure>
+    <li><a title="设置图像与文字的对齐方式，一般是设置图片与文字垂直方向上的对齐方式，使用vertical-align属性来设置,它的属性值：
+        1. baseline 默认。元素放置在父元素的基线上
+        2. sub 垂直对齐文本的下标
+        3. super 垂直对齐文本的上标
+        4. top 把元素的顶端与行中最高元素的顶端对齐
+        5. text-top 把元素的顶端与父元素字体的顶端对齐
+        6. middle 把此元素放置在父元素的中部
+        7. bottom 把元素的顶端与行中最低的元素的顶端对齐">设置图像与文字的对齐方式vertical-align</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123220005.png" alt="20200123220005"  title="设置图像与文字的对齐方式vertical-align" width="600" height="" /><figcaption><font color=green>设置图像与文字的对齐方式vertical-align</font></figcaption></center></figure>
+    <li><a title="一个普通的网页最常见的就是图文混排，下面以文字环绕效果为例进行介绍。
+        在CSS 3中使用float来实现文字环绕效果。">图文混排float</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123220355.png" alt="20200123220355"  title="图文混排float" width="600" height="" /><figcaption><font color=green>图文混排float</font></figcaption></center></figure>
+</ol>
+<h2>设置网页背景颜色和背景图</h2>
+<ol>
+    <li><a title="background-color属性用于设置背景颜色，它接受任何有效的颜色值，代码如下：
+        background-color：color;">设置背景颜色background-color</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123220708.png" alt="20200123220708"  title="设置背景颜色background-color" width="600" height="" /><figcaption><font color=green>设置背景颜色background-color</font></figcaption></center></figure>
+    <li><a title="background-image属性用于设置背景图，代码如下：
+        background-image: url(&quot;src&quot;);
+  src表示背景图的路径。">设置背景图</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123221017.png" alt="20200123221017"  title="background-image" width="600" height="" /><figcaption><font color=green>background-image</font></figcaption></center></figure>
+  <li><a title="background-repeat用于设置背景图是否平铺，它的属性值
+    repeat          背景图水平方向和垂直方向都平铺
+    no-repeat       背景图不平铺
+    repeat-x            背景图水平方向上平铺
+    repeat-y            背景图垂直方向上平铺">设置背景图平铺background-repeat</a>"</li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123221552.png" alt="20200123221552"  title="设置背景图平铺background-repeat" width="600" height="" /><figcaption><font color=green>设置背景图平铺background-repeat</font></figcaption></center></figure>
+    <li><a title="CSS 3可以让背景产生渐变效果，渐变属性有两种，即线性渐变（linear-gradient）和径向渐变（radial-gradient）。
+        线性渐变语法如下：
+              linear-gradient（方向,颜色1,位置1,颜色2,位置2...）
+        关于渐变，虽然浏览器已经支持，但webkit内核的浏览器还没有去掉前缀-webkit-，语法和新标准也不太一样，要在Chrome、Safari、Firefox中实现渐变效果，需要加上前缀-webkit-。IE9+需要加前缀-ms-。
+        对于线性渐变的方向，只要设置起始位置，例如top表示由上至下，right表示由右到左。bottom表示由下到上，left表示由左到右，top right表示由右上到左下，也可以用角度表示30°表示由左下到右上，-30°表示由左上到右下。">设置渐变背景-webkit-linear-gradient</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123222743.png" alt="20200123222743"  title="设置渐变背景-webkit-linear-gradient" width="600" height="" /><figcaption><font color=green>设置渐变背景-webkit-linear-gradient</font></figcaption></center></figure>
+</ol>
+<h2><a title="用表格来设计一个瀑布流布局，实现的原理很简单，只是根据图片合并对应的表格，表格设计完成后，给表格插入背景图片，
+    使用CSS 3新属性&quot;background-size: cover;&quot;
+    使图片布满表格即可。">独特的瀑布流效果background-size: cover</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200123223254.png" alt="20200123223254"  title="独特的瀑布流效果background-size: cover" width="600" height="" /><figcaption><font color=green>独特的瀑布流效果background-size: cover</font></figcaption></center></figure>
+<p><a title="应聘者：
+    ●　alt的属性用于图片不显示时，用文字代替的内容。
+    ●　title为元素提供信息">面试官：标签上title与alt属性的区别是什么？</a></p>
+    <p><a title="应聘者：line-height和height都能撑开一个高度，
+        如果一个标签没有定义height属性，那么其最终表现的高度是由line-height决定的，而不是容器内的文字内容。
+        把line-height值设置为height一样大小的值，可以实现单行文字的垂直居中。">面试官：你对line-height是如何理解的？</a></p>
+        
+<p style="color:rgb(255, 0, 0); text-align: center; background-color: #FFFF00; font-size: 30px;">第2篇 核心应用></p>
+
+
+
+
+<p>
+    参考：
+    <ol>
+        <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">Web 开发技术 | MDN</a></li>
+        <li><a title=""></a></li>
+        <li></li>
+    </ol>
+    
+    </p>
+</body>
+</html>

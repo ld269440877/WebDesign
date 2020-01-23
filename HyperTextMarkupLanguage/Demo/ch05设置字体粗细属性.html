@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>设置字体的粗细</title>
+    <style>
+        p:first-of-type{ /*获取第一个p元素*/
+            font-weight: 900; /*设置字体加粗*/
+        }
+        p:nth-of-type(2){ /*获取第二个p元素*/
+            font-weight: bold; /*设置字体加粗*/
+        }
+        p:nth-of-type(3){ /*获取第三个p元素*/
+            font-weight: lighter; /*设置细字体*/
+        }
+        p:nth-last-of-type(1){ /*获取最后一个个p元素*/
+            font-weight: 100; /*设置细字体*/
+        }
+    </style>
+</head>
+<body>
+    <p>设置字体的粗细</p>
+    <p>设置字体的粗细</p>
+    <p>设置字体的粗细</p>
+    <p>设置字体的粗细</p>
+</body>
+</html>
