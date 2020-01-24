@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>鼠标跟随的链接样</title>
+    <style>
+        a{
+            display:block; /*把超链接a转变为块级元素*/
+            width:200px; /*设置超链接的宽度*/
+            height:50px; /*设置超链接的高度*/
+            color:white; /*设置超链接的字体颜色*/
+            text-align: center; /*设置超链接的文本水平居中*/
+            line-height:50px; /*设置行高*/
+            font-size:20px; /*设置超链接的字体大小*/
+            text-decoration:none; /*去掉超链接的下划线*/
+            font-weight: bold; /*设置字体加粗*/
+            border-radius: 10px; /*设置圆角边框*/
+            letter-spacing:8px; /*设置字符边距*/
+            border:1px solid red; /*设置变宽*/
+        }
+        a:link{
+            background:#000000; /*设置a对象在未被访问前的样式*/
+        }
+        a:visited{
+            background:#0000FF;  /*设置a对象在其链接地址已经被访问时的样式*/
+        }
+        a:hover{
+            background:#ff7f24;  /*设置a对象在鼠标指针悬浮时的样式*/
+        }
+        a:active{
+            background:#00FF00;  /*设置a对象在被用户单击未松开时的样式*/
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com">开始</a>
+</body>
+</html>

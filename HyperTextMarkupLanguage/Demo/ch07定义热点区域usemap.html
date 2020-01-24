@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>定义热点区域usemap</title>
+    <style>
+        img{
+            border: 6px solid blue;
+        }
+    area{
+        border: 10px solid red;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 插入图片并设置usemap属性-->
+    <img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124110441.png" alt="定义热点区域" title="定义热点区域"
+        usemap="#Map">
+    <!-- 创建map标签，添加name属性，属性值等于图片usemap属性去掉“#”的属性值 -->
+    <map name="Map" />
+    <!-- 设置图片的矩形热点区域 -->
+    <area shape="rect" coords="20, 20, 150, 150"
+        href="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124110441.png" alt="矩形" title="矩形" >
+    <!-- 设置图片的圆形热点区域 -->
+    <area shape="circle" coords="150, 150, 150"
+        href="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124110441.png" alt="圆形" title="圆形">
+
+</body>
+
+</html>

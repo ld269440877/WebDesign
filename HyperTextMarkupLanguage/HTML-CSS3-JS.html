@@ -806,6 +806,228 @@ X、Y分别表示阴影在水平方向和垂直方向上的位移，blur表示�
         
 <p style="color:rgb(255, 0, 0); text-align: center; background-color: #FFFF00; font-size: 30px;">第2篇 核心应用></p>
 
+<h1>第7章 使用并美化网页超链接</h1>
+<h2><a title="超链接是指从一个网页指向一个目标的连接关系，这个目标可以是另一个网页，也可以是相同网页上的不同位置，还可以是一个图片、一个电子邮件地址、一个文件，甚至是一个应用程序。
+    而在一个网页中用来作为超链接的对象，可以是一段文本或者是一个图片。
+    当浏览者单击链接的文字或图片后，链接目标将显示在浏览器上，并且根据目标的类型来打开或运行。">超链接基础</a></h2>
+<h2><a title="超链接的路径分相对路径和绝对路径，与插入图片的路径类似">超链接路径</a></h2>
+<h2><a title="">定义超链接和热点区域</a></h2>
+<ol type="1">
+    <li><a title="超链接标签是&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;，在超链接中可以设置文字、图片等。
+        href属性设置的是该链接所要链接的网址或者文件路径，代码如下：
+        &lt;a href=&quot;http://www.baidu.com&quot;&gt;
+        &lt;a href=&quot;index.html&quot;&gt;">定义超链接</a></li>
+    <li><a title="默认情况下，当单击超链接时，目标页面会在当前窗口中显示，替换当前页面的内容。
+如果要在单击某个链接以后，打开一个新的浏览器窗口，在这个新窗口中显示目标页面，就需要使用&lt;a&gt;标签的target属性。
+target属性有4个属性值，分别为_blank、_self、_top和_parent。由于HTML 5不支持框架，所以_top和_parent这两个取值不常用。
+        _blank定义在新窗口中显示超链接页面，&lt;a href=&quot;index.html&quot; target=&quot;_blank&quot;&gt;新窗口中打开</a>
+        _self定义在自身窗口中显示超链接页面。">链接的目标窗口</a></li>
+    <li><a title="超链接除了可以指向.html文件外，还可以指向其他类型的文件，如图片文件、声音文件、视频文件、word、FTP服务器、其他文件、电子邮件等。">定义不同目标的超链接</a></li>
+    <li><a title="热点区域其实就是将一张图片分成许多份，当浏览者访问点击不同的区域后，会超链接到不同的目标页面。
+        在HTML 5中可以为图片创建3种类型的热点区域：矩形、圆形和多边形。
+    创建热点区域使用&lt;map&gt;标签和&lt;area&gt;来实现。
+        &lt;map&gt;标签只有一个name属性，其作用是为区域命名，其值必须与&lt;img&gt;标签的usemap属性值相同。
+        &lt;area&gt;标签有3个属性值，分别为shape、coords和href。">定义热点区域</a></li>
+</ol>
+<h2><a title="锚点（anchor）其实就是超链接的一种，是一种特殊的超链接。它可以分两种情况，
+    一种是链接到本页面，
+    另一种是链接到其他页面。">定义锚点超链接</a></h2>
+<ol>
+    <li><a title="建立锚超链接很简单，只需要给超链接目标添加id或者name属性，超链接的href属性设置成&quot;#&quot;加上id或者name属性的值就可以了，代码如下：
+        &lt;a href=&quot;#MaoDianID&quot;&gt;&lt;/a&gt;
+        &lt;div id=&quot;MaoDian&quot;&gt;&lt;/div&gt;">建立锚点超链接</a></li>
+    <li><a title="链接同一个页面中锚点，就是从页面中的某个位置链接到本页面中想要滚动到的地方，如看电子书时，通过点击目录，可以到达想要看的章节内容。">超链接同一页面中的锚点</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124130156.png" alt="20200124130156"  title="超链接同一页面中的锚点" width="600" height="" /><figcaption><font color=green>超链接同一页面中的锚点</font></figcaption></center></figure>
+    <li><a title="链接到其他页面中的锚点其实很简单，只需要在锚点的前面加上该页面的名字即可。">超链接到其他页面中的锚点outside</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124131040.png" alt="20200124131040"  title="超链接到其他页面中的锚点outside" width="600" height="" /><figcaption><font color=green>超链接到其他页面中的锚点outside</font></figcaption></center></figure>
+</ol>
+<h2>使用CSS样式美化超链接</h2>
+<ol>
+    <li><a title="本案例是将超链接设计成按钮的样式">定义按钮式超链接样式</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124131519.png" alt="20200124131519"  title="超链接设计成按钮的样式-style中超链接a转换为块级元素" width="600" height="" /><figcaption><font color=green>超链接设计成按钮的样式-style中超链接a转换为块级元素</font></figcaption></center></figure>
+    <li><a title="对于链接样式，把超链接的外观设计成立体的，给人一种忍不住想点击的感觉。
+        本案例是通过设计边框的不同颜色来实现的。">定义立体超链接样式</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124132124.png" alt="20200124132124"  title="定义立体超链接样式" width="600" height="" /><figcaption><font color=green>定义立体超链接样式</font></figcaption></center></figure>
+    <li><a title="在浏览一些网页时，有时会出现不一样颜色字体的文字，这些文字都可以超链接。
+            本案例在诗歌中的一些关键词上加了超链接，并美化了超链接的样式。">定义文章中悬浮时的超链接样式</a></li>
+            <center><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124132621.png" alt="20200124132621"  title="定义文章中悬浮时的超链接样式" width="600" height="" /><figcaption><font color=green>定义文章中悬浮时的超链接样式</font></figcaption></center></center>
+    <li><a title="在浏览页面时，有时当把鼠标指针悬浮到超链接上面时，会发现换了一张背景图片，和精灵图很像。
+        本案例是给超链接设置一张大的背景，通过background-position来定位图片位置。">定义图像交换超链接样式</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124133149.png" alt="20200124133149"  title="定义图像交换超链接样式" width="600" height="" /><figcaption><font color=green>定义图像交换超链接样式</font></figcaption></center></figure>
+</ol>
+<h2><a title="本节使用超链接的CSS 3伪类来设计超链接在不同阶段显示的效果。
+    本案例是通过超链接自身所带的CSS 3伪类来设计的，包括link、visied、hover、active等，一定要按这个顺序来设置，否则有些效果会不显示。">鼠标指针跟随的超链接样式</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124135524.png" alt="20200124135524"  title="鼠标指针跟随的超链接样式" width="600" height="" /><figcaption><font color=green>鼠标指针跟随的超链接样式</font></figcaption></center></figure>
+<p><a title="应聘者：display: none与visibility: hidden主要有两个区别。
+（1）display: none会把元素完全从渲染树中移除，不占据任何空间；visibility: hidden不会把元素从渲染树移除，元素继续占据空间，只是内容不可见。
+（2）display: none是非继承属性，子孙节点的消失是由于元素从渲染树中移除造成的，通过修改子孙节点属性无法显示。visibility: hidden是继承属性，子孙节点的消失是由于继承了visibility: hidden属性，通过设置visibility: visible可以让子孙节点显式。">面试官：display: none与visibility: hidden的区别是什么？</a></p>
+<p><a title="应聘者：target属性指定所链接的页面在浏览器窗口中的打开方式。
+    它的属性值有4种：
+    ●　_blank：在新浏览器窗口中打开链接文件。
+    ●　_parent：将链接的文件载入含有该链接框架的父框架集或父窗口中。如果含有该链接的框架不是嵌套的，则在浏览器全屏窗口中载入链接的文件，就像_self参数一样。
+    ●　_self：在同一框架或窗口中打开所链接的文档，此参数为默认值，通常不用指定。
+    ●　_top：在当前的整个浏览器窗口中打开所链接的文档，因而会删除所有框架。">面试官：说说超链接target属性的取值和作用。</a></p>
+<h1>第8章 使用并美化网页列表</h1>
+<h2><a title="列表（List）是用来将相关资料以条目的形式有序或者无序排列而形成的表。
+    常用的列表有无序列表、有序列表和定义列表3种。">列表标签</a></h2>
+<ol>
+    <li><a title="无序列表&lt;ul&gt;是网页中最常用的列表之一，使用&lt;li&gt;标签罗列每个项目，每个项目前面默认的自带黑色实心圆。在CSS 3中可以通过list-style-type属性来定义无序列表前面的符号，无序列表中list-style-type属性值
+        disc        实心圆
+        circle      空心圆
+        square    实心方块
+        none        不适用任何标记">无序列表ul</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124165638.png" alt="20200124165638"  title="无序列表中list-style-type属性值" width="600" height="" /><figcaption><font color=green>无序列表中list-style-type属性值</font></figcaption></center></figure>
+    <li><a title="有序列表标记&lt;ol&gt;可以创建具有顺序的列表，如每条信息前面加上1、2、3等，如果要改变有序列表前面的符号，同样需要使用list-style-type属性，只是属性值不同而已。
+        decimal                 阿拉伯数字带圆点
+        lower-roman        小写罗马数字
+        upper-roman         大写罗马数字
+        lower-alpha             小写英文字母
+        upper-alpha             大写英文字母
+        none                        不使用项目符号">有序列表ol</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124172350.png" alt="20200124172350"  title="有序列表ol" width="600" height="" /><figcaption><font color=green>有序列表ol</font></figcaption></center></figure>
+    <li><a title="自定义列表不仅仅是一列项目，而是项目及其注释的组合。
+        自定义列表以&lt;dl&gt;标签开始，
+        每个自定义列表项以&lt;dt&gt;开始，
+        每个自定义列表项的定义以&lt;dd&gt;开始。">自定义列表dl-dt-dd</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124173512.png" alt="20200124173512"  title="自定义列表dl-dt-dd" width="600" height="" /><figcaption><font color=green>自定义列表dl-dt-dd</font></figcaption></center></figure>
+</ol>
+
+<h2>列表的常见应用</h2>
+<ol>
+    <li><a title="列表默认状态就是纵向排列的，所以实现纵向菜单很简单，这里只需要使用定位属性，把列表定位到相应的位置便可以实现纵向菜单布局。">使用列表实现纵向菜单</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124174108.png" alt="20200124174108"  title="使用列表实现纵向菜单" width="600" height="" /><figcaption><font color=green>使用列表实现纵向菜单</font></figcaption></center></figure>
+    <li><a title="用列表实现新闻列表是普遍存在的，因为用列表实现起来很方便，不需要大的布局改动便可以实现。">使用列表实现新闻列表</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124174329.png" alt="20200124174329"  title="使用列表实现新闻列表" width="600" height="" /><figcaption><font color=green>使用列表实现新闻列表</font></figcaption></center></figure>
+    <li><a title="使用list-style-image属性，可以将列表前面的项目符号替换为任意的图片。代码如下：
+        list-style-image: url(a);
+        其中a表示图片的路径。">使用列表实现图片的排列</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124174643.png" alt="20200124174643"  title="使用列表实现图片的排列" width="600" height="" /><figcaption><font color=green></font>使用列表实现图片的排列</figcaption></center></figure>
+</ol>
+<h2>设计CSS 3样式美化列表</h2>
+<ol>
+    <li><a title="把一个&lt;span&gt;标签设计成一个项目符号，添加到每个li元素中。具体思路：
+        ●　在每个li元素中添加一个&lt;span&gt;标签，去掉列表的默认符号。
+        ●　分别给li和span添加相对定位和绝对定位。
+        ●　设置span的CSS样式，调整位置。">自定义项目符号</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124175241.png" alt="20200124175241"  title="自定义项目符号" width="600" height="" /><figcaption><font color=green>自定义项目符号</font></figcaption></center></figure>
+    <li><a title="使用list-style-type: none;清除列表自带的项目符号，然后给每个li设置背景图片，并调整图片大小，设置图片不平铺。">使用背景图片设计项目符号</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124175530.png" alt="20200124175530"  title="使用背景图片设计项目符号" width="600" height="" /><figcaption><font color=green>使用背景图片设计项目符号</font></figcaption></center></figure>
+</ol>
+<h2><a title="排行榜一般由标题和排名项目组成，在下面的案例中，使用其中一个列表项来设计标题，使用剩下的列表来设计排名项。">设计排行榜</a></h2>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124180152.png" alt="20200124180152"  title="设计排行榜" width="600" height="" /><figcaption><font color=green>设计排行榜</font></figcaption></center></figure>
+
+<p><a title="应聘者：CSS Sprites是精灵图，将一个页面涉及的所有图片制作成一张大图，然后利用CSS的background-image、background- repeat和background-position组合进行背景定位。
+    利用CSS Sprites能很好地减少网页的http请求，从而大大提高页面的性能。">面试官：CSS Sprites有什么作用？</a></p>
+<p><a title="应聘者：当今流行的浏览器中，有些是以自己的方式去理解CSS规范，这就会遇到有的浏览器对CSS的解释与设计师的CSS定义初衷相冲突，使得网页在某些浏览器下不能正确按照设计师的想法显示。所以使用css reset来重置浏览器默认的样式，然后再统一定义，这样页面就可以实现相同的显示效果了。">面试官：在项目开发中，使用css reset有什么HTML中表格不但可以展示数据信息，还可以用于页面布局。">第9章 使用并美化表格</a></h1>
+
+<h2><a title="简单的HTML表格由table元素以及一个或多个&lt;tr&gt;、&lt;th&gt;或&lt;td&gt;元素组成。&lt;tr&gt;元素定义表格的行，&lt;th&gt;元素定义表格的头，&lt;td&gt;元素定义表格单元格。更复杂的HTML表格可能包括caption、col、colgroup、thead、tfoot及tbody等元素。">表格的基本结构</a></h2>
+<ol>
+    <li><a title="&lt;table&gt;标签用于定义表格，
+        &lt;table&gt;是表格的开始，
+        &lt;table&gt;是表格的结束。">&lt;table&gt;标签table的属性
+    </a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124181153.png" alt="20200124181153"  title="标签table的属性" width="600" height="" /><figcaption><font color=green>标签table的属性</font></figcaption></center></figure>
+    <li><a title="&lt;tr&gt;标签定义HTML表格中的行。
+        tr元素包含一个或多个th或td元素。">&lt;tr&gt;标签的属性</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124181643.png" alt="20200124181643"  title="&lt;tr&gt;标签的属性" width="600" height="" /><figcaption><font color=green>&lt;tr&gt;标签的属性</font></figcaption></center></figure>
+    <li><a title="&lt;td&gt;标签定义HTML表格中的标准单元格，&lt;th&gt;标签定义表格内的表头单元格。th元素内部的文本通常会呈现为居中的粗体文本，而td元素内的文本通常是左对齐的普通文本。">&lt;td&gt;和&lt;th&gt;标签的属性</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124183400.png" alt="20200124183400"  title="&lt;td&gt;和&lt;th&gt;标签的属性" width="600" height="" /><figcaption><font color=green>&lt;td&gt;和&lt;th&gt;标签的属性</font></figcaption></center></figure>
+</ol>
+<h2><a title="表格由行与列构成，中间有若干个单元格。在过去，表格可用来设计网页的布局，现在更多是容纳文本数据。">创建网页表格</a></h2>
+<ol>
+    <li>创建普通表格</li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124191049.png" alt="20200124191049"  title="创建普通表格" width="600" height="" /><figcaption><font color=green>创建普通表格</font></figcaption></center></figure>
+    <li><a title="th标签用于定义表格内的表头单元格，字体呈加粗居中的效果。">创建包含表头的表格</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124193652.png" alt="20200124193652"  title="创建包含表头的表格" width="600" height="" /><figcaption><font color=green>创建包含表头的表格</font></figcaption></center></figure>
+    <li><a title="在&lt;table&gt;中，&lt;caption&gt;标签用于定义表格的标题。">创建包含标题的表格caption</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124193919.png" alt="20200124193919"  title="创建包含标题的表格caption" width="600" height="" /><figcaption><font color=green>创建包含标题的表格caption</font></figcaption></center></figure>
+    <li><a title="border属性可以定义表格的边框类型，设置边框的属性为0时，可以创建没有边框的表格。">创建没有边框的表格border</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124194208.png" alt="20200124194208"  title="创建没有边框的表格border" width="600" height="" /><figcaption><font color=green>创建没有边框的表格border</font></figcaption></center></figure>
+    <li><a title="colspan和rowspan属性来创建跨行跨列的表格。">创建含有跨行、列单元格的表格</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124194642.png" alt="20200124194642"  title="创建含有跨行、列单元格的表格" width="600" height="" /><figcaption><font color=green>创建含有跨行、列单元格的表格</font></figcaption></center></figure>
+    <li><a title="">创建含有内嵌标签元素的表格</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124195457.png" alt="20200124195457"  title="创建含有内嵌标签元素的表格" width="600" height="" /><figcaption><font color=green>创建含有内嵌标签元素的表格</font></figcaption></center></figure>
+</ol>
+<h2><a title="通过设置border属性值的大小来改变表格边框的宽度。">改变表格边框的宽度</a></h2>
+<ol>
+    <li>表格的边框宽度border和颜色bordercolor</li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124195941.png" alt="20200124195941"  title="表格的边框宽度border和颜色bordercolor" width="600" height="" /><figcaption><font color=green>表格的边框宽度border和颜色bordercolor</font></figcaption></center></figure>
+    <li><a title="在table中通过设置cellspacing属性来改变&lt;td&gt;之间的距离。">设置&lt;td&gt;之间的间距cellspacing</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124200459.png" alt="20200124200459"  title="设置&lt;td&gt;之间的间距cellspacing" width="600" height="" /><figcaption><font color=green>设置&lt;td&gt;之间的间距cellspacing</font></figcaption></center></figure>
+    <li>设置表格内文字与&lt;td&gt;的间距cellpadding</li>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124200801.png" alt="20200124200801"  title="设置表格内文字与&lt;td&gt;的间距cellpadding" width="600" height="" /><figcaption><font color=green>设置表格内文字与&lt;td&gt;的间距cellpadding</font></figcaption></center></figure>
+</ol>
+<h2>表格背景</h2>
+<ol>
+    <li><a title="table中通过设置bgcolor属性来设置表格的背景颜色">设置表格背景颜色bgcolor</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124201633.png" alt="20200124201633"  title="设置表格背景颜色bgcolor" width="600" height="" /><figcaption><font color=green>设置表格背景颜色bgcolor</font></figcaption></center></figure>
+    <li><a title="background属性用来设置表格的背景图">设置表格背景图background</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124201837.png" alt="20200124201837"  title="设置表格背景图background" width="600" height="" /><figcaption><font color=green>设置表格背景图background</font></figcaption></center></figure>
+</ol>
+<h2>表格的行属性</h2>
+<ol>
+    <li>设置表格的行tr高height</li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124202107.png" alt="20200124202107"  title="设置表格的行tr高height" width="600" height="" /><figcaption><font color=green>设置表格的行tr高height</font></figcaption></center></figure>
+    <li><a title="bordercolor属性来设置table标签的边框颜色，
+        tr标签与它一样，也是通过设置bordercolor属性来设置tr的边框颜色。">设置边框颜色bordercolor</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124202428.png" alt="20200124202428"  title="设置边框颜色bordercolor" width="600" height="" /><figcaption><font color=green>设置边框颜色bordercolor</font></figcaption></center></figure>
+    <li><a title="与&lt;table&gt;一样，行的背景色也是使用bgcolor属性来设置">设置行背景颜色bgcolor</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124202704.png" alt="20200124202704"  title="设置行背景颜色bgcolor" width="600" height="" /><figcaption><font color=green>设置行背景颜色bgcolor</font></figcaption></center></figure>
+    <li><a title="align属性用于设置行文字的水平对齐方式">设置行文字的水平对齐方式align</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124203005.png" alt="20200124203005"  title="设置行文字的水平对齐方式align" width="600" height="" /><figcaption><font color=green>设置行文字的水平对齐方式align</font></figcaption></center></figure>
+    <li><a title="valign属性用于设置行文字的垂直对齐方式">设置行文字的垂直对齐方式valign</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124203242.png" alt="20200124203242"  title="设置行文字的垂直对齐方式valign" width="600" height="" /><figcaption><font color=green>设置行文字的垂直对齐方式valign</font></figcaption></center></figure>
+</ol>
+<h2>单元格属性</h2>
+<ol>
+    <li><a title="对于&lt;td&gt;标签中width和height的设置一定要注意，具体如下：
+        ●　width：某一个&lt;td&gt;标签的width和它所处的一列中的每个&lt;td&gt;的width都相关，取其中最大的width作为这一列中每个&lt;td&gt;的width。
+        ●　height：某一个&lt;td&gt;标签的height和它所处的一整行的每个&lt;td&gt;的height都有关，取其中最大的height作为这一列中每个&lt;td&gt;的height。
+        这是设置单元格大小width、height中最容易混淆的，一定要从全局把握&lt;td&gt;的width、height。">设置单元格的宽度和高度</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124204049.png" alt="20200124204049"  title="设置单元格的宽度和高度" width="600" height="" /><figcaption><font color=green>设置单元格的宽度和高度</font></figcaption></center></figure>
+    <li><a title="单元格的对齐方式是使用align和valign属性来设置">设置单元格的对齐方式align和valign</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124204312.png" alt="20200124204312"  title="设置单元格的对齐方式align和valign" width="600" height="" /><figcaption><font color=green>设置单元格的对齐方式align和valign</font></figcaption></center></figure>
+    <li><a title="单元格背景色的设置与&lt;table&gt;、&lt;tr&gt;的设置一样，使用bgcolor属性来设置。">设置单元格的背景色bgcolor</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124204557.png" alt="20200124204557"  title="设置单元格的背景色bgcolor" width="600" height="" /><figcaption><font color=green>设置单元格的背景色bgcolor</font></figcaption></center></figure>
+    <li><a title="单元格边框颜色的设置与&lt;table&gt;一样，也是使用bordercolor属性来设置。">设置单元格的边框颜色bordercolor</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124204821.png" alt="20200124204821"  title="设置单元格的边框颜色bordercolor" width="600" height="" /><figcaption><font color=green>设置单元格的边框颜色bordercolor</font></figcaption></center></figure>
+    <li><a title="bordercolorlight属性用于定义亮边框，bordercolordark属性用于定义暗边框。亮边框和暗边框并不是字面意思，一般是针对表格的（包括表格中的行和单元格），表格的边框默认都有4个边框，其中亮边框属性设置的一般是左边框、上边框，暗边框属性设置的是下边框、右边框。要说明的是，必须在IE浏览器浏览。代码如下：
+        &lt;td bordercolorlight=&qut;亮边框的颜色&qut;&gt;</td>
+      &lt;td bordercolordark=&qut;暗边框的颜色&qut;&gt;</td>">设置单元格的亮边框bordercolorlight和暗边框bordercolordark</a></li>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124205212.png" alt="20200124205212"  title="设置单元格的亮边框bordercolorlight和暗边框bordercolordark" width="600" height="" /><figcaption><font color=green>设置单元格的亮边框bordercolorlight和暗边框bordercolordark</font></figcaption></center></figure>
+    <li><a title="设置单元格背景图和&lt;table&gt;一样，使用background属性来设置即可。">设置单元格的背景图background</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124205418.png" alt="20200124205418"  title="设置单元格的背景图background" width="600" height="" /><figcaption><font color=green>设置单元格的背景图background</font></figcaption></center></figure>
+</ol>
+<h2>使用CSS样式美化表格</h2>
+<ol>
+<li><a title="我们在给表格设置border=&quot;1&quot;和cellspacing=&quot;0&quot;后，在页面中显示的效果是边框的宽度为2px，这样会显得页面不是很美观。
+    可以使用border-collapse属性并设置属性值为collapse，来实现细线表格">设置细线表格border-collapse</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124205929.png" alt="20200124205929"  title="设置细线表格border-collapse" width="600" height="" /><figcaption><font color=green>设置细线表格border-collapse</font></figcaption></center></figure>
+    <li><a title="">设置表格标题的样式</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124210243.png" alt="20200124210243"  title="设置表格标题的样式" width="600" height="" /><figcaption><font color=green>设置表格标题的样式</font></figcaption></center></figure>
+</ol>
+<p><a title="在HTML中，常用表格显示数据。表格的每一行交替使用两种颜色，使得表格数据更易观察。
+CSS 3的nth-child()选择器，可以用来设计隔行换色的表格。
+:nth-child(n)选择器匹配属于其父元素的第n个子元素，不论元素的类型，n可以是数字、关键词或公式。
+在下面案例中，使用nth-child(2n)来选择表格的偶数行，用nth-child(2n+1)选择表格的基数行。">设置隔行换色表格</a></p>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124210724.png" alt="20200124210724"  title="设置隔行换色表格" width="600" height="" /><figcaption><font color=green>设置隔行换色表格</font></figcaption></center></figure>
+<p><a title="table其实越来越不被大家使用，现在大都采用DIV来设计网页。但有时做一些页面的效果的时候，使用表格设置效果很好。">设置日历表</a></p>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124211041.png" alt="20200124211041"  title="设置日历表" width="600" height="" /><figcaption><font color=green>设置日历表</font></figcaption></center></figure>
+
+<p><a title="应聘者：由于HTML中的table标签浏览速度较慢，所以，使用嵌套表格的方法来布局网页框架会使网页浏览的速度变慢。
+    因为table中的内容是自适应的，为了自适应，它要计算嵌套最深的节点以满足自适应，所以有可能会出现一断时间空白然后才显示，这是不使用table布局的最主要的原因之一。">面试官：为什么现在开发很少使用table布局？</a></p>
+<p><a title="应聘者：我常用IE、Chrome、Firefox、Safari和Opera等浏览器。
+    ●　IE浏览器内核：Trident内核，也是俗称的IE内核。
+    ●　Chrome浏览器内核：Chrome内核，以前是Webkit内核，现在是Blink内核。
+    ●　Firefox浏览器内核：Gecko内核，俗称Firefox内核。
+    ●　Safari浏览器内核：Webkit内核。
+    ●　Opera浏览器内核：最初是自己的Presto内核，后来是Webkit内核，现在是Blink内核。">面试官：你常用哪几种浏览器测试网页？它们是什么内核（Layout Engine）的?</a></p>
+
+<h1><a title="在网页中，表单的作用是比较重的，主要用于获取浏览着的相关信息，如登录和注册信息。">第10章 使用并美化表单</a></h1>
+<h2>表单的基本结构</h2>
+
+
 
 
 
@@ -814,7 +1036,6 @@ X、Y分别表示阴影在水平方向和垂直方向上的位移，blur表示�
     <ol>
         <li><a href="https://developer.mozilla.org/zh-CN/docs/Web">Web 开发技术 | MDN</a></li>
         <li><a title=""></a></li>
-        <li></li>
     </ol>
     
     </p>
