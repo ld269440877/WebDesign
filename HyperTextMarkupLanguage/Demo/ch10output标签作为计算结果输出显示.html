@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>output标签作为计算结果输出显示</title>
+</head>
+<form>
+<!-- output 事件在用户输入时触发 -->
+<form oninput="a.value=parseInt(x.value)+parseInt(y.value)">
+    <input type="number" id="x"> + <input type="number" id="y" value="50">=<output name="a" for="xy"></output>
+</form>
+</body>
+</html>

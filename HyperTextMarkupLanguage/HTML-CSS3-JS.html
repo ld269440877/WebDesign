@@ -918,8 +918,9 @@ target属性有4个属性值，分别为_blank、_self、_top和_parent。由于
 
 <p><a title="应聘者：CSS Sprites是精灵图，将一个页面涉及的所有图片制作成一张大图，然后利用CSS的background-image、background- repeat和background-position组合进行背景定位。
     利用CSS Sprites能很好地减少网页的http请求，从而大大提高页面的性能。">面试官：CSS Sprites有什么作用？</a></p>
-<p><a title="应聘者：当今流行的浏览器中，有些是以自己的方式去理解CSS规范，这就会遇到有的浏览器对CSS的解释与设计师的CSS定义初衷相冲突，使得网页在某些浏览器下不能正确按照设计师的想法显示。所以使用css reset来重置浏览器默认的样式，然后再统一定义，这样页面就可以实现相同的显示效果了。">面试官：在项目开发中，使用css reset有什么HTML中表格不但可以展示数据信息，还可以用于页面布局。">第9章 使用并美化表格</a></h1>
+<p><a title="应聘者：当今流行的浏览器中，有些是以自己的方式去理解CSS规范，这就会遇到有的浏览器对CSS的解释与设计师的CSS定义初衷相冲突，使得网页在某些浏览器下不能正确按照设计师的想法显示。所以使用css reset来重置浏览器默认的样式，然后再统一定义，这样页面就可以实现相同的显示效果了。">面试官：在项目开发中，使用css reset有什么HTML中表格不但可以展示数据信息，还可以用于页面布局。">
 
+<h1>第9章 使用并美化表格</h1>
 <h2><a title="简单的HTML表格由table元素以及一个或多个&lt;tr&gt;、&lt;th&gt;或&lt;td&gt;元素组成。&lt;tr&gt;元素定义表格的行，&lt;th&gt;元素定义表格的头，&lt;td&gt;元素定义表格单元格。更复杂的HTML表格可能包括caption、col、colgroup、thead、tfoot及tbody等元素。">表格的基本结构</a></h2>
 <ol>
     <li><a title="&lt;table&gt;标签用于定义表格，
@@ -1025,7 +1026,169 @@ CSS 3的nth-child()选择器，可以用来设计隔行换色的表格。
     ●　Opera浏览器内核：最初是自己的Presto内核，后来是Webkit内核，现在是Blink内核。">面试官：你常用哪几种浏览器测试网页？它们是什么内核（Layout Engine）的?</a></p>
 
 <h1><a title="在网页中，表单的作用是比较重的，主要用于获取浏览着的相关信息，如登录和注册信息。">第10章 使用并美化表单</a></h1>
-<h2>表单的基本结构</h2>
+<h2><a title="一个表单有3个基本组成部分：
+    （1）表单标签：<form>标签包含所有的表单对象，并定义了提交表单数据的各种属性。
+    （2）表单域：包含了文本框、密码框、隐藏域、多行文本框、复选框、单选按钮、下拉列表框和文件上传框等，作用是用来采集信息或者选择数据。
+    （3）表单按钮：如提交按钮、注册按钮和重置按钮等，用于将数据传送到服务器。还可以用表单按钮来控制其他定义了处理脚本的处理工作。">表单的基本结构</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126094442.png" alt="20200126094442"  title="表单form的基本结构" width="600" height="" /><figcaption><font color=green>表单form的基本结构</font></figcaption></center></figure>
+<h2>表单及表单控件</h2>
+<ol>
+    <li><a title="&lt;form&gt;标签用来定义表单，在表单中可以插入相应的表单元素。
+    在表单的form标签中可以设置表单的基本属性，包括表单的名称、处理程序和传送方式等。
+        一般情况下，表单的处理程序action属性和传送方法method属性是必不可少的参数。
+        action属性用于指定表单数据提交到哪个地址进行处理，name属性用于给表单命名。">表单form标签</a></li>
+    <li><a title="&lt;input&gt;标签是表单控件元素中功能最丰富的，主要用于搜集用户信息。
+        根据不同的type属性值，输入字段拥有很多种形式。
+输入字段可以是
+    文本字段
+    复选框
+    掩码后的文本控件
+    单选按钮
+    按钮等，
+如下面的一些不同type属性值的input标签。
+    ●　单行文本框：&lt;input type=&quot;text&quot;&gt;。
+    ●　密码输入框：&lt;input type=&quot;password&quot;&gt;。
+    ●　隐藏域：&lt;input type=&quot;hidden&quot;&gt;。
+    ●　单选按钮：&lt;input type=&quot;radio&quot;&gt;。
+    ●　复选框：&lt;input type=&quot;checkbox&quot;&gt;。">表单input标签</a></li>
+    <li><a title="&lt;label&gt;标签为input元素定义标注。label元素不会向用户呈现任何特殊效果，它为鼠标用户改进了可用性。
+        如果在label元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上
+    &lt;label&gt;标签的for属性应当与相关元素的id属性相同，如下面代码所示。
+当单击用户名或者是注册时，对应的文本框获得焦点">使用label定义标签</a></li>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126100826.png" alt="20200126100826"  title="单击用户名或者是注册时，对应的文本框获得焦点" width="600" height="" /><figcaption><font color=green>单击用户名或者是注册时，对应的文本框获得焦点</font></figcaption></center></figure>
+    <li><a title="button元素用于定义按钮，在button元素内部可以放置内容，如文本或图像，这是该元素与使用input元素创建的按钮之间的不同之处。
+        &lt;button&gt;控件与&lt;input type=&quot;button&quot;&gt;相比，提供了更为强大的功能和更丰富的内容。
+        &lt;button&gt;与&lt;/button&gt;标签之间的所有内容都是按钮的内容，其中包括任何可接受的正文内容，如文本或多媒体内容。
+            例如，可以在按钮中包括一个图像和相关的文本，用它们在按钮中创建一个吸引人的图像。
+            button按钮的属性
+            name                    定义按钮的名称
+            type                      定义按钮类型，只能是button、reset、或者submit中的一个
+            value                     定义按钮的初始值
+            disabled                定义是否禁用此按钮">使用button定义按钮</a></li>
+    <li><a title="&lt;select&gt;用于创建单选或多选菜单，其是一种表单控件，可用于在表单中接受用户的输入。
+        &lt;option&gt;标签用于定义列表中的可用选项。value属性规定在表单被提交时被发送到服务器的值。
+        &lt;option&gt;与&lt;option/&gt;之间的值是浏览器显示在下拉列表中的内容，而value属性中的值是表单被提交时被发送到服务器的值，如果没有指定value属性，选项的值将设置为&lt;option&gt;标签中的内容。">使用&lt;select&gt;和&lt;option&gt;标签</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126102301.png" alt="20200126102301"  title="使用select和option标签" width="600" height="" /><figcaption><font color=green>使用select和option标签</font></figcaption></center></figure>
+    <li><a title="&lt;fieldset&gt;标签可以将表单内的相关元素分组，并会在相关表单元素周围绘制边框。
+&lt;legend&gt;标签用于对&lt;fieldset&gt;标签定义标题。
+    &lt;fieldset&gt;的新属性
+        disabled                  disabled                  定义该组中的相关表单元素被禁用
+        form                        form_id         定义fieldset所属的一个或多个表单
+        name                        string          定义fieldset的名称">使用&lt;fieldset&gt;和&lt;legend&gt;标签</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126103723.png" alt="20200126103723"  title="使用fieldset和legend标签" width="600" height="" /><figcaption><font color=green>使用fieldset和legend标签</font></figcaption></center></figure>
+    <li><a title="&lt;textarea&gt;标签用于定义多行文本域，文本区域中可容纳大量的文本，
+        可以通过cols和rows属性来规定&lt;textarea&gt;的尺寸大小，也可以在CSS中使用height和width属性定义它的尺寸。">使用HTML 5增强的textarea标签</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126104032.png" alt="20200126104032"  title="使用HTML 5增强的textarea标签" width="600" height="" /><figcaption><font color=green>使用HTML 5增强的textarea标签</font></figcaption></center></figure>
+</ol>
+<h2>HTML 5新增的表单元素</h2>
+<ol>
+    <li><a title="HTML 5拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。新增的表单输入类型如下。
+        ●　email：email类型用于应该包含E-mail地址的输入域。
+        ●　url：url类型用于应该包含URL地址的输入域。在提交表单时，会自动验证url域的值。
+        ●　number：number类型用于应该包含数值的输入域。
+        ●　range：range类型用于应该包含一定范围内数字值的输入域。
+        ●　date pickers：日期选择器。
+        ●　search：search类型用于搜索域，例如站点搜索或Google搜索。
+        ●　color: color类型用于生成一个颜色选择器。">input元素</a></li>
+    <li><a title="&lt;output&gt;标签作为计算结果输出显示，如执行脚本的输出。
+        for         element_id          描述计算中使用的元素与计算结果之间的关系
+        form      form_id               定义输入字段所属的一个或多个表单
+        name     name                   定义对象的唯一名称+表单提交时使用">output元素</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126171759.png" alt="20200126171759"  title="output标签作为计算结果输出显示" width="600" height="" /><figcaption><font color=green>output标签作为计算结果输出显示</font></figcaption></center></figure>
+    <li><a title="&lt;meter&gt;标签用于定义度量衡，常用于静态比例的显示，如：磁盘用量、查询结果的相关性等。&lt;meter&gt;标签不应用在进度条中，如果需要标记进度条，请使用&lt;progress&gt;标签。IE浏览器不支持该属性，&lt;meter&gt;标签包含的属性">meter元素</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126172101.png" alt="20200126172101"  title="meter标签的属性" width="600" height="" /><figcaption><font color=green>meter标签的属性</font></figcaption></center></figure>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126172334.png" alt="20200126172334"  title="meter标签的属性" width="600" height="" /><figcaption><font color=green>meter标签的属性</font></figcaption></center></figure>
+    <li><a title="&lt;progress&gt;标签用于定义运行中的任务进度、进程，可以使用progress元素来显示JavaScript中耗费时间的函数进程。如下载文件到本地的进度值。IE 9或者更早版本的IE浏览器不支持&lt;progress&gt;标签，&lt;progress&gt;标签包含的属性
+        属性            属性值                  说明
+        max         number          定义需要完成的值
+        value       number          定义进程的当前值">progress元素</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126173010.png" alt="20200126173010"  title="progress元素" width="600" height="" /><figcaption><font color=green>progress元素</font></figcaption></center></figure>
+    <li><a title="keygen元素的作用是提供一种验证用户的可靠方法。当提交表单时，会生成两个键，一个是私钥，一个公钥。私钥存储于客户端，公钥则被发送到服务器。公钥可用于之后验证用户的客户端证书。
+        keygen元素的使用方法代码如下：
+              &lt;form action=&quot;/example/HTML 5/demo_form.asp&quot; method=&quot;get&quot;&gt;
+              用户名：&lt;input type=&quot;text&quot; name=&quot;usr_name&quot; /&gt;
+              加密：&lt;keygen name=&quot;security&quot; /&gt;
+              &lt;input type=&quot;submit&quot; /&gt;
+              &lt;/form&gt;">keygen元素</a></li>
+</ol>
+<h2>HTML 5新增的表单属性</h2>
+<ol>
+<li><a title="如一个页面中有一个填写信息的表单，用于注册和登录，程序需要这两个按钮提交给不同的处理逻辑。在HTML 5之前，需要使用JavaScript来实现，当用户单击不同按钮时，通过使用JavaScript控制修改&lt;form&gt;元素的action属性，来达到上述要求。
+    使用HTML 5中的formaction属性可以很简单地处理这个问题，对于&lt;input type=&quot;submit&quot;&gt;、&lt;button type=&quot;submit&quot;&gt;&lt;/button&gt;和&lt;input type=&quot;image&quot;&gt;元素，都可以指定formaction属性，该属性即可让表单提交到不同的URL，代码如下：
+          &lt;form method=&quot;get&quot;&gt;
+             登录: &lt;input type=&quot;text&quot; name=&quot;fname&quot; /&gt;&lt;br /&gt;
+             注册: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&gt;
+             &lt;input type=&quot;submit&quot; value=&quot;登录&quot; formaction=&quot;login&quot;/&gt;&lt;br /&gt;
+             &lt;input type=&quot;submit&quot; value=&quot;注册&quot; formaction=&quot;regist&quot;/&gt;
+          &lt;/form&gt;">formaction属性</a></li>
+    <li><a title="formmethod属性可以动态的设置表单以post或者get方式提交，覆盖form元素的原有method属性，代码如下：
+        &lt;form action=&quot;abc&quot;  method=&quot;get&quot;&gt;
+           登录: &lt;input type=&quot;text&quot; name=&quot;fname&quot; /&gt;&lt;br /&gt;
+           注册: &lt;input type=&quot;text&quot; name=&quot;lname&quot; /&gt;&lt;br /&gt;
+           &lt;input type=&quot;submit&quot; value=&quot;登录&quot; formmethod=&quot;get&quot;/&gt;&lt;br /&gt;
+           &lt;input type=&quot;submit&quot; value=&quot;注册&quot; formmethod=&quot;post&quot;/&gt;
+        &lt;/form&gt;
+  当单击登录时，会采用get方式提交请求，单击注册时，将以post方式提交请求。">formmethod属性</a></li>
+  <li><a title="autofocus属性用于页面加载完成时，某个表单自动获得焦点。由于页面中只能有一个表单元素可以获得焦点，所以整个页面最多只能设置一个autofocus属性。目前大部分主流浏览器已经支持该属性。
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Title&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+     &lt;p&gt;页面加载完成时, input 元素自动获取焦点&lt;/p&gt;
+     &lt;input type=&quot;text&quot; autofocus=&quot;autofocus&quot;&gt;
+     &lt;/body&gt;
+     &lt;/html&gt;">autofocus属性</a></li>
+     <li><a title="placeholder属性用于设置文本框或者文本域中未输入内容时的显示内容，当用户获得该文本框的焦点或输入时，该属性的值就会消失。
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+           &lt;meta charset=&quot;UTF-8&quot;&gt;
+           &lt;title&gt;Title&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;form action=&quot;abc&quot;  method=&quot;get&quot;&gt;
+           &lt;input type=&quot;text&quot; name=&quot;fname&quot; placeholder=&quot;用户名&quot;/&gt;&lt;br /&gt;
+           &lt;input type=&quot;text&quot; name=&quot;lname&quot; placeholder=&quot;密码&quot;/&gt;&lt;br /&gt;
+           &lt;input type=&quot;submit&quot; value=&quot;注册&quot; /&gt;
+        &lt;/form&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;">placeholder属性</a></li>
+    <li><a title="list属性需要结合&lt;datalist&gt;标签一起使用，形成一个下拉菜单的效果，list的属性值指定&lt;datalist&gt;标签的id值。">list属性</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126180836.png" alt="20200126180836"  title="list属性" width="600" height="" /><figcaption><font color=green>list属性</font></figcaption></center></figure>
+    <li><a title="autocomplete属性定义表单是否应该启用自动完成功能。自动完成功能是当用户在字段开始输入值时，浏览器基于之前输入过的值，应该显示出在字段中填写的选项。">autocomplete属性</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126181358.png" alt="20200126181358"  title="autocomplete属性" width="600" height="" /><figcaption><font color=green>autocomplete属性</font></figcaption></center></figure>
+</ol>
+<h2><a title="在以前，客户端校验通常使用JavaScript来完成，自HTML 5出现以后，HTML 5为表单增加了一些输入校验属性，只需要简单设置这些校验属性即可完成客户端的校验。">HTML 5新增的客户端校验</a></h2>
+<p><a title="HTML 5新增了表单的校验属性，如required、pattern等。
+    ●　required：定义表单不能为空。属性值是required或者省略。
+    ●　pattern：定义表单满足相应的正则表达式。">使用校验属性执行校验</a></p>
+<ol>
+    <li><a title="required属性用于定义表单不能为空，属性值是required或者省略。
+        ">required属性</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126190507.png" alt="20200126190507"  title="required属性" width="600" height="" /><figcaption><font color=green>required属性</font></figcaption></center></figure>
+    <li><a title="pattern属性定义表单满足相应的正则表达式。">pattern属性</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126190712.png" alt="20200126190712"  title="pattern属性" width="600" height="" /><figcaption><font color=green>pattern属性</font></figcaption></center></figure>
+    <li><a title="在HTML 5中，可以使用setCustomValidity()方法自定义错误提示信息，在提交表单时，就会看到弹出的提示框中包含自定义的错误信息。">自定义错误提示setCustomValidity</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126191038.png" alt="20200126191038"  title="自定义错误提示setCustomValidity" width="600" height="" /><figcaption><font color=green>自定义错误提示setCustomValidity</font></figcaption></center></figure>
+    <li><a title="如果需要关闭HTML 5对表单提供的校验功能，有以下两种方法来实现。
+        （1）在<form>元素中添加novalidate属性，禁用整个表单的验证功能，代码如下：
+            <form action=&quot;#&quot; novalidate>
+      （2）给提交按钮添加formnovalidate属性，代码如下：
+            <input type=&quot;submit&quot; value=&quot;提交&quot; formnovalidate>">关闭校验</a></li>
+</ol>
+
+<h2>设计美化搜索页面</h2>
+<ol>
+    <li><a title="">搜索页面</a></li>
+</ol>
+
+
+
+
 
 
 

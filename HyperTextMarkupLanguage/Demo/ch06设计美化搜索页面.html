@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>设计美化搜索页面</title>
+    <style>
+        body{
+            background-image:url("https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200124110441.png");
+            background-size: cover;/*设置背景图片铺满整个容器*/
+        }
+        /*设置右上角的导航条*/
+        ul{
+            list-style:none;
+            position:absolute;
+            right:0;
+            top:15px;
+        }
+        ul li{
+            float:left;
+            margin-right:15px;
+        }
+        ul li a{
+            color: white;
+        }
+        .title{
+            width:400px;
+            margin: auto;
+        }
+        .title div{
+            float: left;
+            border: 1px solid red;
+            background:purple;
+            font-size:30px;
+            padding:20px 15px;
+            margin-left:30px;
+            border-radius:50%;
+        }
+        .box{
+            width:800px;
+            margin:200px auto;
+        }
+        /*设置表单样式*/
+        .search1{
+            width:500px;
+            height:40px;
+            line-height:36px;
+            background:rgba(255,255,255,0.5);
+            border: 1px solid;
+            font-size: 16px;
+            color:blue;
+            margin-left:80px;
+        }
+        search2{
+            width:104px;
+            height:45px;
+            font-size:16px;
+            background:#38f;
+            color:#FFF;
+            line-height: 40px;
+            border: none;
+        }
+        .search2:hover{background: #369922;}
+    </style>
+</head>
+<body>
+<ul>
+    <li><a href="">首页</a></li>
+    <li><a href="">视频</a></li>
+    <li><a href="">音乐</a></li>
+    <li><a href="">图片</a></li>
+    <li><a href="">动漫</a></li>
+    <li><a href="">登录</a></li>
+    <li><a href="">注册</a></li>
+</ul>
+<div class="title">
+    <div><a href="https://www.baidu.com/">百度</a></div>
+    <div><a href="https://www.bing.com/?mkt=zh-CN" >必应</a></div>
+    <div><a href="https://www.google.com/?hl=zh_CN">谷歌</a></div>
+</div>
+<div class="box">
+    <input type="text" class="search1"/><input type="button" value="搜搜搜" class="search2">
+</div>
+</body>
+</html>
