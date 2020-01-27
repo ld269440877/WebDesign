@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>使用box-orient属性设置盒子元素水平并列显示</title>
+    <style>
+        div{
+            height: 100px;
+            text-align: center;
+            font-size: 50px;
+            color: white;
+            line-height: 100px;
+            width: 600px;
+        }
+        .div1{background:#00F5FF}
+        .div2{background:#00FF7F}
+        .div3{background:#FF69B4}
+        body{
+            display: box; /*标准声明，盒子显示*/
+            display: -webkit-box; /*兼容谷歌 -webkit-box*/
+            box-orient: vertical; /*定义元素为盒子显示*/
+            -webkit-box-orient: vertical; /*兼容谷歌-webkit-box引擎浏览器*/
+        }
+    </style>
+</head>
+
+<body>
+<div class="div1">上</div>
+<div class="div2">中</div>
+<div class="div3">下</div>
+</body>
+</html>

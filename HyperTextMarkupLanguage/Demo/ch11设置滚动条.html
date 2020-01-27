@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>设置滚动条</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150;
+            border: 1px solid red;
+            font-size:12px;
+            float:left; /*设置左浮动*/
+            margin: 15px;
+        }
+        .box1{overflow: auto;} /*用overflow: auto属性设置滚动条*/
+        .box2{overflow: auto;} 
+        .box3{overflow: scroll;} /*用overflow: scroll属性设置滚动条*/
+        .box4{overflow: scroll;}
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <p>overflow: auto; 内容没有超出对象，不会显示滚动条</p>
+        <p>overflow: auto; 内容没有超出对象，不会显示滚动条</p>
+    </div>
+    <div class="box2">
+        <p>overflow: auto;内容超出对象！显示滚动条1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</p>
+        <p>overflow: auto;内容超出对象！显示滚动条</p>
+        <p>overflow: auto;内容超出对象！显示滚动条</p>
+        <p>overflow: auto;内容超出对象！显示滚动条</p>
+        <p>overflow: auto;内容超出对象！显示滚动条</p>
+    </div>
+    <div class="box3">
+        <p>overflow: scroll; 内容没有超出对象,也会一直显示滚动条</p>
+        <p>overflow: scroll; 内容没有超出对象,也会一直显示滚动条</p>
+    </div>
+    <div class="box4">
+        <p>overflow: scroll; 内容超出对象！也会一直显示滚动条</p>
+        <p>overflow: scroll; 内容超出对象！也会一直显示滚动条</p>
+        <p>overflow: scroll; 内容超出对象！也会一直显示滚动条</p>
+        <p>overflow: scroll; 内容超出对象！也会一直显示滚动条</p>
+        <p>overflow: scroll; 内容超出对象！也会一直显示滚动条</p>
+    </div>
+</body>
+</html>

@@ -4,8 +4,9 @@
     <meta charset="utf-8"/>
     <title>HTML-CSS3-JS</title>
     <style>
-        p,a,ul,ol,li{
-
+        .box-center{
+            /* position:absolute; */
+            margin-left:100px;
         }
         h1,h2,h3{
     text-align:center;
@@ -41,7 +42,7 @@
     </style>
 </head>
 <body>
-
+<div class="box-center">
 <p style="color:rgb(255, 0, 0); text-align: center; background-color: #FFFF00; font-size: 30px;">第一篇 基础知识></p>
 <h1>第一章 HTML 5 基础入门</h1>
 <p>
@@ -1182,14 +1183,255 @@ CSS 3的nth-child()选择器，可以用来设计隔行换色的表格。
 </ol>
 
 <h2>设计美化搜索页面</h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200126200256.png" alt="20200126200256"  title="设计美化搜索页面" width="600" height="" /><figcaption><font color=green>设计美化搜索页面</font></figcaption></center></figure>
+<p><a title="应聘者：HTML 5表单的输入类型有：
+    ●　url类型：url属性用于说明网站网址。
+    ●　tel类型：tel类型的input元素被设计为用来输入电话号码的专用文本框。
+    ●　color类型：color类型的input元素用来选取颜色，它提供了一个颜色选取器。
+    ●　email类型：email属性用于让浏览者输入E-mail地址。
+    ●　range类型：range属性是显示一个滚动的控件，与number属性一样，用户可以使用max、min和step属性控制控件的范围。
+    ●　search类型：search类型的input元素是一种专门用来输入搜索关键词的文本框。
+    ●　number类型：number属性提供了一个输入数字的输入类型。
+    ●　datepickers类型：datepickers类型指日期类型，HTML中提供了多个可供选取日期和时间的新输入类型，用于验证输入的日期与时间。">面试官：请问HTML 5表单的输入类型有哪些。</a></p>
+<p><a title="应聘者：HTML 5新增的表单元素有：
+        ●　&lt;datalist&gt;：&lt;datalist&gt;元素规定了&lt;input&gt;元素可能的选项列表。
+        ●　&lt;keygen&gt;：&lt;keygen&gt;元素的作用是提供一种验证用户的可靠方法，当提交表单时，会生成两个键，一个是私钥，另一个是公钥。私钥存储于客户端，公钥则被发送到服务器，公钥可用于之后验证用户的客户端证书。
+        ●　&lt;output&gt;：&lt;output&gt;元素用于不同类型的输出，例如计算或脚本输出。">面试官：请问HTML 5新增了哪些表单元素。</a></p>
+
+<h1>Web标准与网页布局</h1>
+<h2>Web标准与CSS布局</h2>
 <ol>
-    <li><a title="">搜索页面</a></li>
+    <li><a title="Web标准是由W3C和其他标准化组织制定的一套规范集合，目的在于创建统一的用于Web表现层的技术标准，以便通过不同的浏览器或终端设备向最终用户展示信息内容。Web标准由一系列规范组成，目前的Web标准主要由3大部分组成：结构、表现、行为。
+        1. 结构
+        结构用于对网页中用到的信息进行分类与整理。在结构中用到的技术主要包括HTML、XML和XHTML。
+        2. 表现
+        表现用于对信息进行版式、颜色、大小等形式的控制。在表现中用到的技术主要是CSS层叠样式表。
+        3. 行为
+        行为是指文档内部的模型定义及交互行为的编写，用于编写交互式的文档。在行为中用到的技术主要包括DOM和ECMAScript。
+        DOM文档对象模型：DOM是浏览器与内容结构之间沟通的接口，使浏览者可以访问页面上的标准组件。
+        ECMAScript脚本语言：ECMAScript是标准脚本语言，用于实现具体界面上对象的交互操作。">什么是Web标准</a></li>
+        <li><a title="掌握基于CSS的网页布局方式，是实现Web标准的基础。在制作网页时采用CSS技术，可以有效地对页面的布局、字体、颜色、背景和其他效果实现更加精确地控制。只要对相应的代码做一些简单的修改，就可以改变网页的外观和格式。采用CSS布局有以下优点：
+            ●　可以轻松地控制页面的布局。
+            ●　可以轻松地控制页面的布局。
+            ●　大大缩减页面代码，提高页面浏览速度，缩减带宽成本。
+            ●　结构清晰，容易被搜索引擎搜索到。
+            ●　缩短改版时间，只要简单地修改几个CSS文件就可以重新设计一个有成百上千页面的站点。
+            ●　CSS非常容易编写，可以像写HTML代码一样轻松地编写CSS。
+            ●　提高易用性，使用CSS可以结构化HTML，如p标记只用来控制段落，h标记只用来控制标题，table标记只用来表现格式化的数据等。
+            ●　表现和内容相分离，将设计部分分离出来，放在一个独立的样式文件中。
+            ●　几乎在所有的浏览器上都可以使用。
+            ●　以前一些必须通过图片转换实现的功能，现在只要用CSS就可以轻松实现，从而可以更快地加载页面。">CSS布局的优势</a></li>
 </ol>
 
+<h2>网页排版</h2>
+<ol>
+    <li><a title="在网页设计中，除了我们强调的配色方案、字体、UI元素之外，还有一个重要的点，那就是设计布局的四大原则。
+        1. 对齐
+        对齐：任何东西都不能在页面上随意安放，每个元素都应当与页面上的另一个元素有某种视觉联系，这样能建立一种清晰、精巧而且清爽的外观。
+        2. 对比
+        对比：对比的基本思想是，要避免页面上的元素太过相似。如果元素（字体、颜色、大小、线宽、形状、空间等）不相同，那就干脆让它们截然不同。要让页面引人注目，对比一般是最重要的一个因素。
+        3. 亲密性
+        亲密性：彼此相关的项应当靠近，归组在一起。如果多个项相互之间存在很近的亲密性，它们就会成为一个视觉单元，而不是多个孤立的元素。这有助于组织信息，减少混乱，为读者提供清晰的结构。
+        4. 重复
+        重复：让设计中的视觉要素在整个作品中重复出现。可以重复颜色、形状、材质、空间关系、线宽、字体、大小和图片等。这样一来，既能增加条理性，还可以加强统一性。">网页排版基本原则</a></li>
+    <li><a title="在版式设计当中，主要有以下几种排版形式：中轴型、分割型、倾斜型、满版型、对称型。这几种形式会常出现在网页设计当中。
+        1. 中轴型
+        中轴型的网页设计，是将图形做水平或垂直方向的排列，文案以上下或左右配置。水平排列的版面会给人稳定、安静、和平与含蓄之感。垂直排列的版面给人强烈的动感。垂直排列这种排版方式比较常见。
+        2. 分割型
+        分割型主要可以分成上下分割和左右分割。相比较，左右分割型的网站会比较常见。
+        3. 倾斜型
+        倾斜型的网站比较少见，这样的网站偏个性化一些，多在一些设计公司或是运动品牌的网站中出现。
+        4. 满版型
+        满版型的网站近几年越来越多见，通常是版面以图像充满整版，主要以图像为诉求，视觉传达直观而强烈。文字的配置压置在上下、左右或中部的图像上。满版型给人以大方、舒展的感觉。
+        5. 对称型
+        对称的版式给人稳定、庄重、理性的感觉。对称有绝对对称和相对对称，一般多采用相对对称，以避免过于严谨。对称一般以左右对称居多。
+        每种版式设计并非以一种表现形态出现，在分析一个网站的时候不要以单一的视角去分析，因为一个网站的设计可能同时存在好几种版式形式。不同的排版可以给人不同的视觉感受，好的排版会给整个网站“锦上添花”。版式也没有绝对的好坏，只有适合和不适合。">标准网页版式基本形式</a></li>
+</ol>
+<h2><a title="在HTML中改变布局有两种方式，一种是float，另一种是position定位，本节来讲一下position定位。
+    position是CSS中非常重要的一个属性，通过position属性，我们可以让元素相对于其正常位置、父元素或者浏览器窗口进行偏移。position属性有4个属性值：static、relative、absolute和fixed，下面详细介绍position属性。">CSS定位</a></h2>
+<ol>
+    <li><a title="position: static;用于对元素静态定位。
+        在HTML中，所有元素默认为静态定位，如果没有指定元素的position属性值，也就是默认情况下，元素是静态定位。只要是支持position属性的html对象都是默认为static。
+static是position属性的默认值，它表示块保留在原本应该在的位置，不会重新定位，它的位置不能使用left、right、top、bottom 4个属性来设置。">静态定位</a></li>
+    <li><a title="position: absolute;用于对元素绝对定位。
+        如果绝对定位的父元素设置了除static之外的定位，例如position: relative;或position: absolute;及position: fixed;，那么它就会相对于它的父元素来定位，如果它没有已定位的父元素，那么它的位置相对于html元素。相对位置可以使用left、right、top、bottom 4个属性来设置。
+注意：绝对定位元素可层叠，层叠顺序可通过z-index属性控制，z-index值为无单位的整数，大的在上面，可以有负值。">绝对定位</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127105743.png" alt="20200127105743"  title="绝对定位" width="600" height="" /><figcaption><font color=green>绝对定位</font></figcaption></center></figure>
+    <li><a title="position: relative;用于对元素相对定位。
+        相对定位元素的定位是相对它自身正常的位置来实现的。相对定位的元素，它原本所占有的空间不会改变。相对位置可以使用left、right、top、bottom 4个属性来设置。">相对定位</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127110249.png" alt="20200127110249"  title="相对定位" width="600" height="" /><figcaption><font color=green>相对定位</font></figcaption></center></figure>
+    <li><a title="position:fixed;用于对元素固定定位。
+        固定定位是相对于浏览器窗口进行定位，它的位置不会随着浏览器的滚动而改变。相对位置可以使用left、right、top、bottom 4个属性来设置。">固定定位</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127110804.png" alt="20200127110804"  title="固定定位" width="600" height="" /><figcaption><font color=green>固定定位</font></figcaption></center></figure>
+</ol>
+<h2>浮动布局及浮动嵌套</h2>
+<ol>
+    <li><a title="浮动布局是我们在布局中经常用到的一种技术，利用它进行布局很方便，通过让元素浮动，可以使元素在水平上左右移动。">浮动布局</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127114147.png" alt="20200127114147"  title="浮动布局" width="600" height="" /><figcaption><font color=green>浮动布局</font></figcaption></center></figure>
+    <li><a title="当一个div1里面嵌套有一个div2，当div2设置了浮动，那么div1是无法被撑开的，也就是说div2在这里相当于浮在了页面上方，跟div1不在同一个层面，导致了div2无法把div1给撑开，这是一个老生常谈的问题，也是困扰很多刚接触DIV+CSS的读者的一个问题。
+        可以通过添加一个空div，设置clear:both，便可以让div1获取到高度了。">浮动嵌套</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127115929.png" alt="20200127115929"  title="浮动嵌套" width="600" height="" /><figcaption><font color=green>浮动嵌套</font></figcaption></center></figure>
+    <li><a title="浮动会使当前元素产生向上浮的效果，同时会影响到前后标签、父元素的位置及width、height等属性，可以说浮动问题是每个前端设计师必会的技能之一。
+        在前面一节中，通过在浮动元素的后面添加一个div，设置它的样式为clear:both，来解决因子元素浮动撑不开父元素的问题，这就是一种清除浮动的方法。
+        下面再来介绍一种方法，通过给父元素添加overflow:hidden或者overflow:auto;。">清除浮动</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127122921.png" alt="20200127122921"  title="清除浮动 " width="600" height="" /><figcaption><font color=green>清除浮动 </font></figcaption></center></figure>
+</ol>
+<h2><a title="实现两列布局很简单，也有很多种方法，本案例介绍其中一种——左侧固定大小，右侧自适应。将左侧div浮动，右侧设置div的margin-left属性合适的值，便可以实现这种两列布局。">两列布局</a></h2>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127173722.png" alt="20200127173722"  title="两列布局" width="600" height="" /><figcaption><font color=green>两列布局</font></figcaption></center></figure>
+<h2><a title="三列布局，有经典的双飞燕和圣杯布局，本案例通过圣杯布局来讲解。
+    ●　在代码中center部分首先要放在container的最前部分，然后是left,right。
+    ●　将三者都float:left，再加上一个position:relative（因为相对定位后面会用到）。
+    ●　center部分width:100%占满。
+    ●　此时center占满了，所以要把left拉到最左边，使用margin-left:-100%。
+    ●　此时left拉回来了，但会覆盖center内容的左端，要把center内容拉出来，所以在外围container加上padding:0 200px。
+    ●　center内容拉回来了，但left也跟着过来了，所以要还原，就对left使用相对定位left:-200px。同理，right也要相对定位还原right:-200px。
+按照上面讲解的步骤，圣杯布局已经实现了。具体代码请看下面的案例。">三列布局</a></h2>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127193122.png" alt="20200127193122"  title="三列布局" width="600" height="" /><figcaption><font color=green>三列布局</font></figcaption></center></figure>
+<p><a title="应聘者：rem用来实现自适应布局，是现在移动开发比较流行的布局之一。
+    rem是根据HTML根元素的font-size大小来变化的，正是基于这个原因，可以在每一个设备下根据设备的宽度设置对应的HTML字号，从而实现自适应布局。目前有两种方式来调整HTML根元素的font-size大小，
+    一种是根据JavaScript来调整HTML的字号，
+    另一种则是通过媒体查询来调整字号。">面试官：请谈谈你对rem的理解。</a></p>
+<p><a title="应聘者：
+    ●　保持视觉的一致性。以往表格嵌套的制作方法会使得页面与页面或者区域与区域之间的显示效果有偏差。而使用DIV+CSS的制作方法，将所有页面或所有区域统一用CSS文件控制，就避免了不同区域或不同页面体现出的效果偏差。
+    ●　浏览者和浏览器更具亲和力。由于CSS富含丰富的样式，使页面更具灵活性，它可以根据不同的浏览器，而达到显示效果的统一和不变形。
+    ●　使页面载入得更快。页面体积变小，浏览速度变快，由于将大部分页面代码写在了CSS当中，使得页面体积容量变得更小。相对于表格嵌套的方式，DIV+CSS将页面独立成更多的区域，在打开页面的时候，逐层加载。而不像表格嵌套那样，将整个页面圈在一个大表格里，使得加载速度很慢。
+    ●　修改设计时更有效率。由于使用了DIV+CSS制作方法，使内容和结构分离，在修改页面的时候更加省时。根据区域内容标记，到CSS里找到相应的ID，使得修改页面的时候更加方便，也不会破坏页面其他部分的布局样式，在团队开发中更容易分工合作而减少相互关联性。
+    ●　符合W3C标准，保证网站不会因为将来网络应用的升级而被淘汰。">面试官：DIV+CSS布局有什么优势？</a></p>
+<h1>CSS 3盒子模型与页面布局</h1>
+<h2><a title="在HTML中每个元素都包含在一个矩形框内，这个矩形框就是盒子模型。盒子模型由margin（外边界）、border（边框）、padding（内边界）和content（内容）组成">认识盒子模型</a></h2>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/716a66186997d9201f6e229145ee0b8.jpg" alt="716a66186997d9201f6e229145ee0b8"  title="认识盒子模型" width="600" height="" /><figcaption><font color=green>认识盒子模型</font></figcaption></center></figure>
+
+<ol>
+    <li><a title="border属性是盒子的边框属性，它由border-width（边框的宽度）、border-style（边框的线形）和border-color（边框的颜色）组成，语法格式如下：
+        border：border-width  border-style  border-color
+        border:     3px                     solid             red;">盒子的边框属性border</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127194522.png" alt="20200127194522"  title="盒子的边框属性border" width="600" height="" /><figcaption><font color=green>盒子的边框属性border</font></figcaption></center></figure>
+    <li><a title="padding属性是盒子的内边距，可以用来定义内容与边框之间的距离。语法格式如下：
+        padding：length；
+padding属性可以是一个具体的长度值，也可以是一个相对于上级元素的百分比值，但不可以使用负值。">盒子的内边距属性padding</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127194811.png" alt="20200127194811"  title="padding属性" width="600" height="" /><figcaption><font color=green>盒子的内边距padding属性</font></figcaption></center></figure>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127194952.png" alt="20200127194952"  title="盒子的内边距padding" width="600" height="" /><figcaption><font color=green>盒子的内边距padding</font></figcaption></center></figure>
+    <li><a title="margin属性用于设置页面中元素与元素之间的距离。margin属性的语法如下：
+        margin：auto | length
+  auto表示根据内容自动调整，length表示长度值或者是百分比值。
+  margin属性包含4个子属性，分别用于控制元素四周的边距">盒子的外边距属性margin</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127195206.png" alt="20200127195206"  title="盒子的外边距属性margin" width="600" height="" /><figcaption><font color=green>盒子的外边距属性margin</font></figcaption></center></figure>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127195348.png" alt="20200127195348"  title="盒子的外边距属性margin" width="600" height="" /><figcaption><font color=green>盒子的外边距属性margin</font></figcaption></center></figure>
+  <li><a title="为了正确设置元素在所有浏览器中的宽度和高度，用户需要知道盒模型是如何工作的。下面介绍计算盒模型高度与宽度的方法。
+    根据上面的计算，可以得出计算盒子模型高度与宽度的方法。
+元素的总宽度计算公式如下：
+        总元素的宽度=宽度+左填充+右填充+左边框+右边框+左边距+右边距
+元素的总高度计算公式如下：
+        总元素的高度=高度+顶部填充+底部填充+上边框+下边框+上边距+下边距">盒子的宽和高</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127195746.png" alt="20200127195746"  title="盒子的宽和高" width="600" height="" /><figcaption><font color=green>盒子的宽和高</font></figcaption></center></figure>
+</ol>
+
+<h2><a title="CSS 3中新增加了为盒子添加阴影的属性box-shadow，通过该属性可以轻松实现网页中元素的阴影效果。
+    box-shadow属性可以为元素添加阴影。该属性有6个参数值：阴影类型、水平偏移长度、垂直偏移长度、模糊距离、阴影大小和阴影颜色，其中水平偏移长度和垂直偏移长度是必须的，其他的参数可以有选择地省略。语法如下：
+      box-shadow:X Y blur spread color inset;">添加盒阴影</a></h2>
+<ol>
+    <li><a title="">使用box-shadow属性为盒子添加阴影</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127200152.png" alt="20200127200152"  title="box-shadow属性值及说明" width="600" height="" /><figcaption><font color=green>box-shadow属性值及说明</font></figcaption></center></figure>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127201748.png" alt="20200127201748"  title="为盒子添加阴影" width="600" height="" /><figcaption><font color=green>为盒子添加阴影</font></figcaption></center></figure>
+    <li><a title="对表格及单元格添加阴影，也是通过box-shadow属性来添加。">为表格及单元格添加阴影</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127202412.png" alt="20200127202412"  title="为表格及单元格添加阴影" width="600" height="" /><figcaption><font color=green>为表格及单元格添加阴影</font></figcaption></center></figure>
+</ol>
+<h2>布局的相关属性</h2>
+<ol>
+    <li><a title="在HTML中使用br标签来实现简单的换行，br标签插入的位置就是换行的开始位置，可以作用于标签或者是文本内容。
+        在CSS中可以使用“浮动”和clear属性来实现换行。">实现换行</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127202810.png" alt="20200127202810"  title="实现换行" width="600" height="" /><figcaption><font color=green>实现换行</font></figcaption></center></figure>
+    <li><a title="在HTML中可以使用overflow:auto;和overflow:scroll;这两个属性给需要设置滚动条的元素添加，它们两者的区别是：overflow:auto;属性对于内容超出对象的尺寸时才会显示滚动条，而overflow:scroll;属性，无论内容是否超出对象的尺寸，滚动条都是一直存在的。">设置滚动条</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127204837.png" alt="20200127204837"  title="设置滚动条" width="600" height="" /><figcaption><font color=green>设置滚动条</font></figcaption></center></figure>
+    <li><a title="为有滚动条的元素添加“overflow:hidden；”属性来控制滚动条的滚动方式，它有两个子属性
+        属性                                    说明
+        overflow-x: hidden              禁止横向滚动
+        overflow-y: hidden              禁止垂直滚动">控制滚动方式</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127205323.png" alt="20200127205323"  title="控制滚动方式" width="600" height="" /><figcaption><font color=green>控制滚动方式</font></figcaption></center></figure>
+    <li><a title="在CSS中，clip属性用于对绝对定位的元素进行裁剪，clip可以通过rect()在元素中指定一个矩形区域，区域内的内容可以显示，矩形外的隐藏。假如使用rect(a b c d)对元素进行裁剪，每个值所对应元素的边框如图所示">控制裁剪clip</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127205601.png" alt="20200127205601"  title="控制裁剪clip" width="600" height="" /><figcaption><font color=green>控制裁剪clip</font></figcaption></center></figure>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127205749.png" alt="20200127205749"  title="控制裁剪clip" width="600" height="" /><figcaption><font color=green>控制裁剪clip</font></figcaption></center></figure>
+</ol>
+<h2><a title="CSS 3新增的columns属性，用于定义多列布局。多列布局是网页中块状布局模式的有力扩展，能够让开发者轻松地使文本呈多列显示。">设置多列显示样式</a></h2>
+<ol>
+    <li><a title="column-width属性用于定义多列布局中每列，语法如下：
+        column-width:length;
+  length属性值用于指定列的宽度，不可以为负值。">设置列宽</a></li>
+  <li><a title="column-count属性，用于定义多列布局的列数，而不需要通过列宽度自动调整列数，语法如下面的代码所示：
+    column-count:number;
+    number属性值用于指定多列的列数，取值为大于0的整数。">设置列数</a></li>
+    <li><a title="column-gap属性用于设置列与列之间的距离，从而更好地去控制多列布局的内容和版式。语法如下面的代码所示：
+        column-gap:length;
+  length属性值用于定义列与列之间的距离，取值不可以为负值。">设置列间距</a></li>
+  <li><a title="column-rule属性用于设置列的分割线，语法如下面的代码所示：
+    column-rule:width style color;
+width属性值设置分割线的宽度，style属性值设置分割线的样式，color设置分割线的颜色。">设置列分割线</a></li>
+    <li><a title="column-span属性用于设置元素跨列显示，代码如下：
+        column-span:all;
+  all属性值表示元素横跨所有列。">设置跨列显示column</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127210715.png" alt="20200127210715"  title="设置跨列显示column" width="600" height="" /><figcaption><font color=green>设置跨列显示column</font></figcaption></center></figure>
+</ol>
+<h2><a title="CSS 3引入了新的盒模型处理机制——弹性盒模型。
+    引入弹性盒布局模型的目的是实现盒元素内部的多种布局，包括排列方向、排列顺序、空间分配和对其方式等。
+    现在大多的主流浏览器还不支持弹性盒布局，基于webkit内核的浏览器，需要加上前缀-webkit-，基于gecko内核的浏览器，需要加上前缀-moz-。CSS 3为弹性盒布局">使用弹性盒布局</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127211029.png" alt="20200127211029"  title="CSS 3新增盒子模型属性" width="600" height="" /><figcaption><font color=green>CSS 3新增盒子模型属性</font></figcaption></center></figure>
+<ol>
+    <li><a title="flex布局，可以简便、完整、响应式地实现各种页面布局。
+        flex是Flexible Box的缩写，意为“弹性布局”，用来为盒模型提供最大的灵活性。任何一个容器都可以指定为flex布局，设为flex布局以后，子元素的float、clear和vertical-align属性将失效。">使用flex类型的盒模型</a></li>
+    <li><a title="box-orient属性用于定义盒子元素内部的流动布局方向，包括横排（horizontal）和竖排（vertical）两种。
+        语法格式如下所示：
+              box-orient: horizontal | vertical | inline-axis | block-axis | inherit
+              在弹性盒子里，元素默认是水平排列，在元素中添加box-orient:vertical属性类别，这时元素会垂直排列。">定义盒内元素的排列方向</a></li>
+              <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127211336.png" alt="20200127211336"  title="box-orient属性值" width="600" height="" /><figcaption><font color=green>box-orient属性值</font></figcaption></center></figure>
+              <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127212707.png" alt="20200127212707"  title="使用box-orient属性设置盒子元素水平并列显示" width="600" height="" /><figcaption><font color=green>使用box-orient属性设置盒子元素水平并列显示</font></figcaption></center></figure>
+    <li><a title="在默认情况下，项目都排在一条线（又称“轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
+        flex-wrap属性用于指定弹性盒子的子元素换行方式，语法如下：
+              flex-wrap: nowrap|wrap|wrap-reverse">控制换行</a></li>
+              <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127212902.png" alt="20200127212902"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure> 
+              <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127223322.png" alt="20200127223322"  title="使用flex-wrap属性设置盒子元素水平并列显示2" width="600" height="" /><figcaption><font color=green>使用flex-wrap属性设置盒子元素水平并列显示2</font></figcaption></center></figure>
+    <li><a title="在盒布局下，box-direction可以设置盒元素内部的排列顺序为正向或者反向。语法格式如下：
+        box-direction:normal | reverse | inherit">定义元素显示顺序</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127223532.png" alt="20200127223532"  title="box-direction属性值" width="600" height="" /><figcaption><font color=green>box-direction属性值</font></figcaption></center></figure>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127223706.png" alt="20200127223706"  title="定义元素显示顺序" width="600" height="" /><figcaption><font color=green>定义元素显示顺序</font></figcaption></center></figure>
+    <li><a title="box-flex定义了子元素的空间弹性，能够灵活地控制子元素在盒子中的显示空间。显示空间包括子元素的宽度和高度，也可以说是子元素在盒子中所占的面积。当弹性盒元素尺寸缩小或变大时，子元素也会随着缩小或变大；弹性盒元素多出的空余空间，子元素会扩大来填补空余空间。
+        语法格式如下：
+              box-flex:&lt;number&gt;
+        &lt;number&gt;属性值是一个整数或者小数，不可以为负数，默认值为0。当盒子中包含多个定义了box-flex属性的子元素时，浏览器将会把这些子元素的box-flex属性值相加，然后根据它们各自的值占总值的比例来分配盒子剩余的空间。
+        box-flex属性只有在盒子拥有确定的空间大小时才能够正确运用，所以弹性盒子需有具体的width和height属性值。
+        
+        注意：box-flex只是动态分配父元素的剩余空间，而不是父元素的空间。如定义子元素的缩放案例，父元素.box的宽度为800px，如果你认为div1、div2和div3的宽度分别为200px、 400px、 200px，那就错了，因为box-flex只是分配父元素的剩余空间，div1、div2和div3c所分到的应该是父元素内容以外所剩余下来的宽度。">定义子元素的缩放</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127224323.png" alt="20200127224323"  title="定义子元素的缩放" width="600" height="" /><figcaption><font color=green>定义子元素的缩放</font></figcaption></center></figure>
+    <li><a title="box-pack属性和box-align属性，分别用于定义弹性盒元素内子元素的水平方向和垂直方向上的富余空间管理方式，对弹性盒元素内部的文字、图形以及子元素都是有效的。
+        box-pack属性可以用于设置子容器在水平轴上的空间分配方式。
+        语法格式如下：
+              box-pack:start|end|center|justify
+              
+        box-align属性用于管理子容器在竖轴上的空间分配方式。
+        语法格式如下：
+            box-align: start|end|center|baseline|stretch
+元素垂直居中显示，是老生常谈的问题，但都不是很让人满意，需要大量代码，使用CSS 3新增的box-pack、box-align属性，可以很轻松地解决此问题。">定义对齐方式</a></li>
+              <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127224615.png" alt="20200127224615"  title="box-pack属性可以用于设置子容器在水平轴上的空间分配方式" width="600" height="" /><figcaption><font color=green>box-pack属性可以用于设置子容器在水平轴上的空间分配方式</font></figcaption></center></figure>
+<br/>
+              <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127224808.png" alt="20200127224808"  title="box-align属性用于管理子容器在竖轴上的空间分配方式" width="600" height="" /><figcaption><font color=green>box-align属性用于管理子容器在竖轴上的空间分配方式</font></figcaption></center></figure>
+              <br/>
+              <center><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127225106.png" alt="20200127225106"  title="使用box-pack、box-align属性设置盒子垂直居中" width="600" height="" /><figcaption><font color=green>使用box-pack、box-align属性设置盒子垂直居中</font></figcaption></center></center>
+    <li><a title="box-lines属性用来避免空间溢出的问题。
+        语法格式如下：
+              box-lines:single|multiple
+        其中，参数值single表示子元素都单行或单列显示，multiple表示子元素可以多行或多列显示。">空间溢出管理</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200127225644.png" alt="20200127225644"  title="使用box-lines属性进行空间溢出管理" width="600" height="" /><figcaption><font color=green>使用box-lines属性进行空间溢出管理</font></figcaption></center></figure>
+        <br/>
+<p ><font color=red>从上面的文档可以发现，设置box-lines属性没起作用。因为现在所有主流浏览器都不支持，所以不要运用该属性。</font></p>
+</ol>
+<h2><a title="画册是图文并茂的一种理想表达，相对于单一的文字或图册，画册有很大的优势。因为画册够醒目，让人一目了然。下面就来实现一个简单的画册布局。">画册式网页布局</a></h2>
 
 
+<h2><a title="展览式网页布局，就是一张优美的图片，配上一些精美的文字组成的。本案例来实现一个简单的水果展览式布局效果。">展览式网页布局</a></h2>
 
+<p><a title="应聘者：响应式与自适应的原理是相似的，都是检测设备，根据不同的设备采用不同的CSS，而且CSS都是采用的百分比的，而不是固定的宽度，不同点是响应式的模板在不同的设备上看上去是不一样的，会随着设备的改变而改变展示的样式，而自适应不会，所有的设备看起来都是一套的模板，不过是长度或者图片变大或变小，不会根据设备采用不同的展示样式。">面试官：请问，响应式布局与自适应布局什么区别？</a></p>
+<p><a title="应聘者：盒子模型有两种，分别是IE盒子模型和W3C盒子模型。W3C盒子模型被大家称为标准盒子模型，它由内容（content）、填充（padding）、边框（border）和边界（margin）四个部分组成。两者的区别是，IE盒子模型的content部分把border和padding计算进去了。">面试官：请谈谈你对盒子模型的理解。</a></p>
 
+<h1>第13章使用网页动画效果</h1>
 
 
 
@@ -1201,6 +1443,7 @@ CSS 3的nth-child()选择器，可以用来设计隔行换色的表格。
         <li><a title=""></a></li>
     </ol>
     
-    </p>
+    </p<a title=""></a>></p>
+</div>
 </body>
 </html>
