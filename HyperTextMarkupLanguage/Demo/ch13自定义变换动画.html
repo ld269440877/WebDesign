@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>自定义变换动画</title>
+    <style>
+        #box{
+            border: 1px solid blue;
+            width: 600px;
+            height: 200px;
+            cursor: pointer; /*设置鼠标指针的显示类型*/
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: white;
+            margin: 15px 15px;
+            float: left;
+            text-align: center;
+            line-height:  100px;
+        }
+        #box:hover div:first-of-type{
+            transform:rotate(45deg);/*定义2D旋转动画*/
+            -webkit-transform:rotate(45deg);
+            border-radius: 50%;
+        }
+        #box:hover div:nth-of-type(2){
+            transform:translate(0px, 30px);/*定义2D移动动画*/
+            -webkit-transform:translate(0px, 30px);
+            border-radius: 50%;
+        }
+        #box:hover div:nth-of-type(3){
+            transform: scale(0.7, 1.2);/*定义2D缩放动画*/
+            -webkit-transform: scale(0.7, 1.2);
+            border-radius: 50%;
+        }
+        #box:hover div:last-of-type{
+            transform: skew(30deg, 15deg);/*定义2D倾斜动画*/
+            -webkit-transform: skew(30deg, 15deg);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+<nav id="box">
+    <div>旋转</div>
+    <div>移动</div>
+    <div>缩放</div>
+    <div>倾斜</div>
+</nav>
+</body>
+</html>

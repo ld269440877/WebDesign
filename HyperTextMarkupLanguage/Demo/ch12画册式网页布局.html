@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>画册式网页布局</title>
+    <style>
+        .main{
+            border: 3px solid yellow;
+            width: 480px;
+            overflow:auto; /*清除子元素的浮动*/
+            color: white;
+            margin: 10 auto;
+            padding: 10px;
+            /*背景颜色渐变*/
+            background: -webkit-linear-gradient(bottom right, red, blue); /*谷歌浏览器*/
+            background: linear-gradient(to bottom right, red, blue); /*标准的语法*/
+        }
+        .box{
+            float: left;
+            margin-left: 10px;
+            border: 5px solid orange;
+        }
+        .box1{
+            width: 200px;
+            text-indent: 2em;  /*设置首行缩进2字符*/
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <h1 align="center">魔鬼城 </h1>
+    <div class="box">
+        <div class="box1">
+            <p>魔鬼城又称乌尔禾风城。位于新疆维吾尔自治区准噶尔盆地西北边缘的佳木河下游乌尔禾矿区，西南距克拉玛依市100公里。
+                </p>
+        </div>
+        <div><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200128121014.png" alt=""></div>
+        <div class="box1"><p>有一处独特的风蚀地貌，形状怪异、当地人蒙古人将此城称为“苏鲁木哈克”。维吾尔人称为“沙依坦克尔西”，意为魔鬼城。其实，这里是典型的雅丹地貌区域，“雅丹”是维吾尔语“陡壁的小丘”之意，雅丹地貌以新疆塔里木盆地罗布泊附近的雅丹地区最为典型而得名，是在干旱、大风环境下形成的一种风蚀地貌类型。
+            </p></div>
+    </div>
+    <div class="box">
+        <div class="box1"><p>魔鬼城呈西北、东西走向，长宽约在5公里以上，方圆约10平方公里，地面海拔350米左右。据考察，大约一亿多年前的白垩纪时，</p></div>
+        <img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200128121059.png" alt="">
+        <div class="box1"><p>这里是一个巨大的淡水湖泊，湖岸生长着茂盛的植物，水中栖息繁衍着乌尔禾剑龙、蛇颈龙、恐龙、准噶尔翼龙和其它远古动物，这里是一片水族欢聚的“天堂”，后来经过两次大的地壳变动，湖泊变成了间夹着砂岩和泥板岩的陆地瀚海，地质学上称它为“戈壁台地”。2018年4月13日，入围“神奇西北100景”。</p></div>
+    </div>
+</div>
+</body>
+</html>
+

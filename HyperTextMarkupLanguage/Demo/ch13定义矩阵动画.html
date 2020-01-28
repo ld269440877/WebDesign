@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>定义矩阵动画</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background:red;
+            font-size: 30px;
+            color: white;
+            margin: 15px 15px;
+            float: left;
+            text-align: center;
+            line-height:100px;
+        }
+        .box1:hover{
+            transform: matrix(0.886,0.5, -0.5, 0.866, 0, 0); /*定义矩阵2D旋转动画*/
+            -webkit-transform: matrix(0.886,0.5, -0.5, 0.866, 0, 0);
+            /*相当于        transform: rotate(30deg);
+                                 -webkit-transform: rotate(30deg);*/
+        }
+        .box2{
+            transform: matrix(1,0, 0, 1, 0, 30); /*定义矩阵2D移动动画*/
+            -webkit-transform: matrix(1,0, 0, 1, 0, 30);
+            /*相当于        transform: translate(0px, 30px);
+                                 -webkit-transform: translate(0px, 30px);*/
+        }
+        .box3{
+            transform: matrix(1.2,0, 0, 1.2, 0, 0); /*定义矩阵2D缩放动画*/
+            -webkit-transform: matrix(1.2,0, 0, 1.2, 0, 0);
+            /*相当于        transform: scale(1.2);
+                                 -webkit-transform: scale(1.2);*/
+        }
+        .box4{
+            transform: matrix(1,0.557, 1, 1, 0, 0); /*定义矩阵2D倾斜动画*/
+            -webkit-transform: matrix(1,0.557, 1, 1, 0, 0);
+            /*相当于        transform: skew(30deg, 20deg);
+                                 -webkit-transform: skew(30deg, 20deg);*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">旋转</div>
+    <div class="box2">移动</div>
+    <div class="box3">缩放</div>
+    <div class="box4">倾斜</div>
+</body>
+</html>
