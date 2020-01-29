@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <title>设计翻转广告</title>
+    <style type="text/css">
+    #box ul{
+        width: 960px;
+        margin: 30px auto;
+        padding: 10px 0;
+        list-style: none;
+    }
+    #box ul li{
+        margin-right: 30px;
+        width: 300px;
+        height: 300px;
+        float: left;
+    }
+    #box ul li:last-child{
+        margin-right: 0;
+    }
+    #box ul li a{
+        position: relative;
+        display:block;
+        width: 100%;
+        height: 100%;
+        perspective: 800px; /*设置透视距离*/
+        -webkit-perspective: 800px;
+    }
+    #box ul li a div{
+        position: absolute;
+        left: 0;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        transform-style: preserve-3d; /*指定嵌套元素在3D空间中呈现*/
+        -webkit-transform-style: preserve-3d;
+        transition: 0.8 ease-in-out; /*设置过度动画的属性*/
+        -webkit-transition: 0.8 ease-in-out;
+        backface-visibility: hidden; /*动画元素背后设置为hidden*/
+        -webkit-backface-visibility: hidden;
+    }
+    #box ul li a div:first-child{
+        transform: rotateY(0); /*绕Y轴旋转*/
+        -webkit-transform: rotateY(0);
+        z-index: 10;
+    }
+    #box ul li a:hover div:first-child{
+        transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+    }
+    #box ul li a div:last-child{
+        background: #9932cc;
+        transform:rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        z-index: 1;
+    }
+    #box ul li a:hover div:last-child{
+        transform:rotateY(0);
+        -webkit-transform: rotateY(0);
+    }
+    #box ul li a div h2{
+        margin: 0 auto 15px;
+        padding: 15px 0;
+        width: 200px;
+        font-size: 24px;
+        text-align: center;
+        border-bottom: 1px white dashed;
+    }
+    #box ul li a div p{
+        padding: 0 15px;
+        font-size: 20px;
+        text-indent: 2em; /*设置首行缩进2字符*/
+    }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li> 
+            <a href="#">
+                <div><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129222031.png" alt="20200129222031"  title="" width="600" height="400" /></div>
+                <div>
+                    <h2>玫瑰花茶</h2>
+                    <p>玫瑰花茶为中国再加工茶类中花茶的一种，是由茶叶和玫瑰鲜花窨制而成。玫瑰花茶所采用的茶坯有红茶、绿茶，鲜花除玫瑰外，蔷薇、桂花和现代月季也具有甜美、浓郁的花香，也可用来窨制花茶。
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li> 
+            <a href="#">
+                <div><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129222416.png" alt="20200129222416"  title="" width="600" height="400" /></div>
+                <div>
+                    <h2>茉莉花茶</h2>
+                    <p>茉莉花茶（Jasmine Tea），又叫茉莉香片，属于花茶，茶胚为绿茶，成品将茉莉花去除，亦属于绿茶的一种，已有1000多年历史。世界茉莉花茶发源地为福建福州 [1-2]  ，其茶香与茉莉花香交互融合，有“窨得茉莉无上味，列作人间第一香”的美誉，茉莉花茶是花茶的大宗产品，产区辽阔，产量高，品种丰富。
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li> 
+            <a href="#">
+                <div><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129223835.png" alt="20200129223835"  title="" width="600" height="400" /></div>
+                <div>
+                    <h2>菊花茶</h2>
+                    <p>菊花茶，是一种以菊花为原料制成的花草茶。菊花茶经过鲜花采摘、阴干、生晒蒸晒、烘培等工序制作而成。据古籍记载，菊花味甘苦，性耐寒，有散风清热、清肝明目和解毒消炎等作用。
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li> 
+            <a href="#">
+                <div><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129224053.png" alt="20200129224053"  title="" width="600" height="400" /></div>
+                <div>
+                    <h2>玉兰花茶</h2>
+                    <p>玉兰花茶，指的是采用优质五指山春绿茶与优质白玉兰鲜花为原料，精心调制而成，香韵独特、滋味醇厚、回甜，是健康养生茶饮料。性味辛温，能祛风通窍，历代用治头痛、鼻渊、鼻塞不通、齿痈。</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

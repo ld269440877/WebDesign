@@ -4,11 +4,15 @@
     <meta charset="utf-8"/>
     <title>设计3D旋转的盒子</title>
     <style>
+        body{
+            background-image: url("https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129220239.png");
+        }
         .stage{
             perspective:1600px; /*设置透视距离*/
             position: relative;
-            left: 200px;
-            top: 100px;
+            left: 450px;
+            top: 30px;
+            
         }
         #box{
             width: 400px;
@@ -36,7 +40,7 @@
         .b2{
             background:rgba(127, 255, 0, 0.6);
             /*以X轴顺时针旋转90deg，“.b2”的上边为旋转中心*/
-            transform:rotateX(90deg);
+            transform:rotateX(105deg);
             transform-origin:top;
         }
         .b3{
@@ -102,11 +106,11 @@
 <body>
 <div class="stage">
     <div id="box">
-        <div class="kind b1"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154041.png" alt="20200129154041"  title="" width="400" height="400" /></div>
-        <div class="kind b2"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154239.png" alt="20200129154239"  title="" width="400" height="400" /></div>
-        <div class="kind b3"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154431.png" alt="20200129154431"  title="" width="400" height="400" /></div>
+        <div class="kind b1"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129210457.png" alt="20200129210457"  title="" width="400" height="400" /></div>
+        <div class="kind b2"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129210329.png" alt="20200129210329"  title="" width="400" height="400" /></div>
+        <div class="kind b3"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129210843.png" alt="20200129210843"  title="" width="400" height="400" /></div>
         <div class="kind b4"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154528.png" alt="20200129154528"  title="" width="400" height="400" /></div>
-        <div class="kind b5"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154950.png" alt="20200129154950"  title="" width="400" height="400" /></div>
+        <div class="kind b5"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129205911.png" alt="20200129205911"  title="" width="400" height="400" /></div>
         <div class="kind b6"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129155400.png" alt="20200129155400"  title="" width="400" height="400" /></div>
     </div>
 </div>
