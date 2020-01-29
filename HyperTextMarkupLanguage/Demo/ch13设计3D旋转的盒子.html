@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>设计3D旋转的盒子</title>
+    <style>
+        .stage{
+            perspective:1600px; /*设置透视距离*/
+            position: relative;
+            left: 200px;
+            top: 100px;
+        }
+        #box{
+            width: 400px;
+            height: 400px;
+            transform-style: preserve-3d; /*设置展示的空间为3D*/
+            animation: rotate-box 10s; /*设置帧动画名为rotate-box的帧动画旋转*/
+        }
+        .kind{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+        .b1{
+            background:rgba(0, 255, 255, 0.6);
+            /*以X轴逆时针旋转90deg，“.b1”的底边为旋转中心*/
+            transform:rotateX(-90deg);
+            transform-origin:bottom;
+        }
+        .b2{
+            background:rgba(127, 255, 0, 0.6);
+            /*以X轴顺时针旋转90deg，“.b2”的上边为旋转中心*/
+            transform:rotateX(90deg);
+            transform-origin:top;
+        }
+        .b3{
+            background:rgba(205, 200, 177, 0.6);
+            /*以X轴顺时针旋转90deg，“.b3”的右边为旋转中心*/
+            transform:rotateY(90deg);
+            transform-origin:right;
+        }
+        .b4{
+            background:rgba(255, 182, 193, 0.6);
+            /*以X轴逆时针旋转90deg，“.b4”的左边为旋转中心*/
+            transform:rotateY(-90deg);
+            transform-origin:left;
+        }
+        .b5{
+            background:rgba(159, 121, 238, 0.6);
+            /*保持原来位置*/
+            transform:translateZ(0);
+        }
+        .b6{
+            background:rgba(138, 43, 226, 0.6);
+            /*沿着Z轴正方向移动200px*/
+            transform: translateZ(200px);
+        }
+        @keyframes rotate-box{ /*创建帧动画*/
+        /*设置关键帧*/
+        0%{
+            transform: rotateX(0deg) rotateY(0deg)
+        }
+        10%{
+            transform: rotateX(0deg) rotateY(180deg)
+        }
+        20%{
+            transform: rotateX(-180deg) rotateY(180deg)
+        }
+        30%{
+            transform: rotateX(-360deg) rotateY(180deg)
+        }
+        40%{
+            transform: rotateX(-360deg) rotateY(360deg)
+        }
+        50%{
+            transform: rotateX(-180deg) rotateY(360deg)
+        }
+        60%{
+            transform: rotateX(90deg) rotateY(180deg)
+        }
+        70%{
+            transform: rotateX(0deg) rotateY(180deg)
+        }
+        80%{
+            transform: rotateX(90deg) rotateY(90deg)
+        }
+        90%{
+            transform: rotateX(90deg) rotateY(0deg)
+        }
+        100%{
+            transform: rotateX(0deg) rotateY(0deg)
+        }
+        }
+    </style>
+</head>
+<body>
+<div class="stage">
+    <div id="box">
+        <div class="kind b1"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154041.png" alt="20200129154041"  title="" width="400" height="400" /></div>
+        <div class="kind b2"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154239.png" alt="20200129154239"  title="" width="400" height="400" /></div>
+        <div class="kind b3"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154431.png" alt="20200129154431"  title="" width="400" height="400" /></div>
+        <div class="kind b4"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154528.png" alt="20200129154528"  title="" width="400" height="400" /></div>
+        <div class="kind b5"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129154950.png" alt="20200129154950"  title="" width="400" height="400" /></div>
+        <div class="kind b6"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200129155400.png" alt="20200129155400"  title="" width="400" height="400" /></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>设计3D几何体</title>
+    <style>
+        .stage{
+            perspective:1600px; /*设置透视距离*/
+            position: relative;
+            left: 100px;
+            top: 100px;
+        }
+        #box{
+            width: 400px;
+            height: 400px;
+            transform-style: preserve-3d; /*设置展示的空间为3D*/
+        }
+        .kind{
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+        .b1{
+            background:rgba(0, 255, 255, 0.6);
+            /*以X轴逆时针旋转90deg，“.b1”的底边为旋转中心*/
+            transform:rotateX(-90deg);
+            transform-origin:bottom;
+        }
+        .b2{
+            background:rgba(127, 255, 0, 0.6);
+            /*以X轴顺时针旋转90deg，“.b2”的上边为旋转中心*/
+            transform:rotateX(135deg);
+            transform-origin:top;
+        }
+        .b3{
+            background:rgba(205, 200, 177, 0.6);
+            /*以X轴顺时针旋转90deg，“.b3”的右边为旋转中心*/
+            transform:rotateY(90deg);
+            transform-origin:right;
+        }
+        .b4{
+            background:rgba(255, 182, 193, 0.6);
+            /*以X轴逆时针旋转90deg，“.b4”的左边为旋转中心*/
+            transform:rotateY(-90deg);
+            transform-origin:left;
+        }
+        .b5{
+            background:rgba(159, 121, 238, 0.6);
+            /*保持原来位置*/
+            transform:translateZ(0);
+        }
+        .b6{
+            background:rgba(138, 43, 226, 0.6);
+            /*沿着Z轴正方向移动200px*/
+            transform: translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+<div class="stage">
+    <div id="box">
+        <div class="kind b1">1</div>
+        <div class="kind b2">2</div>
+        <div class="kind b3">3</div>
+        <div class="kind b4">4</div>
+        <div class="kind b5">5</div>
+        <div class="kind b6">6</div>
+    </div>
+</div>
+</body>
+</html>
