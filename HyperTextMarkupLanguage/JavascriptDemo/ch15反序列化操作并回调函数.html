@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>反序列化操作并回调函数</title>
+</head>
+<body>
+    <h2>使用可选参数，回调函数</h2>
+</body>
+<script>
+var jsonParse1 = JSON.parse('{"p":5}', function(k, v){
+    if (k == ''){
+        document.write("k==''" + "<br>")
+        return v;
+        }
+    document.write(k + "<br>")
+    return v;
+    
+});
+document.write(jsonParse1);
+document.write("<h2>---</h2>")
+var jsonParse2 = JSON.parse('{"1":1, "2":2, "3":{"A":4, "5":{"B":7}}}', function(k, v){
+    document.write(k); //输出当前属性，最后一个为“”
+    document.write("<br>");
+    return v; //返回修改的值
+})
+document.write(jsonParse2);
+</script>
+</html>

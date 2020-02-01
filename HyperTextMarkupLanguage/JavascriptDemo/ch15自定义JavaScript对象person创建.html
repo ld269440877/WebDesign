@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>创建JavaScript对象</title>
+</head>
+
+<body>
+    <script>
+        //创建构造函数person
+        function person(firstname, lastname, age, eyecolor) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.age = age;
+            this.eyecolor = eyecolor;
+        }
+        //实例化一个实例mySon
+        mySon = new person("刘", "天佑", 3, "black");
+        document.write(mySon.firstname + mySon.lastname + "现在" + mySon.age + " 岁了！");
+    </script>
+</body>
+
+</html>

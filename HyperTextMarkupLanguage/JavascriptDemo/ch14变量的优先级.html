@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>变量的优先级</title>
+
+<body>
+    <script language="javascript">
+        var scope = "全局变量"; //声明一个全局变量
+        function checkscope() {
+            var scope = "局部变量"; //声明一个局部变量
+            document.write(scope); //使用的是局部变量，而不是全局变量
+        }
+        checkscope(); //调用函数，输出结果
+    </script>
+</body>
+</head>
+
+</html>

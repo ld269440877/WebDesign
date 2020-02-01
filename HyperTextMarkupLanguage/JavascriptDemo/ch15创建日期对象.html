@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>创建日期对象</title>
+    <script>
+        //以当前时间创建一个日期对象
+        var myDate1 = new Date();
+        //将字符串转换成日期对象,该对象代表日期为2017年6月10日
+        var myDate2 = new Date("June 10,2017");
+        //将字符串转换成日期对象,该对象代表日期为2017年6月10日
+        var myDate3 = new Date("2017/6/10");
+        //创建一个日期对象,该对象代表日期和时间为2017年10月19日16时16分16秒
+        var myDate4 = new Date(2017, 10, 19, 16, 16, 16);
+        //创建一个日期对象,该对象代表距离1970年1月1日0分0秒20000毫秒的时间
+        var myDate5 = new Date(20000);
+        //分别输出以上日期对象的本地格式
+        document.write("myDate1所代表的时间为：" + myDate1.toLocaleString() + "<br>");
+        document.write("myDate2所代表的时间为：" + myDate2.toLocaleString() + "<br>");
+        document.write("myDate3所代表的时间为：" + myDate3.toLocaleString() + "<br>");
+        document.write("myDate4所代表的时间为：" + myDate4.toLocaleString() + "<br>");
+        document.write("myDate5所代表的时间为：" + myDate5.toLocaleString() + "<br>");
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>设计3D旋转的盒子</title>
+    <style>
+        body{
+            background-image: url("https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/8aac2c9632421a5891dd438cd85cb92.png");
+        }
+        .stage{
+            perspective:1600px; /*设置透视距离*/
+            position: relative;
+            left: 250px;
+            top: 30px;
+            
+        }
+        #box{
+            width: 1200px;
+            height: 1200px;
+            transform-style: preserve-3d; /*设置展示的空间为3D*/
+            animation: rotate-box 10s; /*设置帧动画名为rotate-box的帧动画旋转*/
+        }
+        .kind{
+            width: 600px;
+            height: 500px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            left: 400px;
+            top: 400px;
+        }
+        .b1{
+            background:rgba(0, 255, 255, 0.6);
+            /*以X轴逆时针旋转90deg，“.b1”的底边为旋转中心*/
+            transform:rotateX(-90deg);
+            transform-origin:bottom;
+        }
+        .b2{
+            background:rgba(127, 255, 0, 0.6);
+            /*以X轴顺时针旋转90deg，“.b2”的上边为旋转中心*/
+            transform:rotateX(105deg);
+            transform-origin:top;
+        }
+        .b3{
+            background:rgba(205, 200, 177, 0.6);
+            /*以X轴顺时针旋转90deg，“.b3”的右边为旋转中心*/
+            transform:rotateY(90deg);
+            transform-origin:right;
+        }
+        .b4{
+            background:rgba(255, 182, 193, 0.6);
+            /*以X轴逆时针旋转90deg，“.b4”的左边为旋转中心*/
+            transform:rotateY(-90deg);
+            transform-origin:left;
+        }
+        .b5{
+            background:rgba(159, 121, 238, 0.6);
+            /*保持原来位置*/
+            transform:translateZ(0);
+        }
+        .b6{
+            background:rgba(138, 43, 226, 0.6);
+            /*沿着Z轴正方向移动200px*/
+            transform: translateZ(600px);
+        }
+        @keyframes rotate-box{ /*创建帧动画*/
+        /*设置关键帧*/
+        0%{
+            transform: rotateX(0deg) rotateY(0deg)
+        }
+        10%{
+            transform: rotateX(0deg) rotateY(180deg)
+        }
+        20%{
+            transform: rotateX(-180deg) rotateY(180deg)
+        }
+        30%{
+            transform: rotateX(-360deg) rotateY(180deg)
+        }
+        40%{
+            transform: rotateX(-360deg) rotateY(360deg)
+        }
+        50%{
+            transform: rotateX(-180deg) rotateY(360deg)
+        }
+        60%{
+            transform: rotateX(90deg) rotateY(180deg)
+        }
+        70%{
+            transform: rotateX(0deg) rotateY(180deg)
+        }
+        80%{
+            transform: rotateX(90deg) rotateY(90deg)
+        }
+        90%{
+            transform: rotateX(90deg) rotateY(0deg)
+        }
+        100%{
+            transform: rotateX(0deg) rotateY(0deg)
+        }
+        }
+    </style>
+</head>
+<body>
+<div class="stage">
+    <div id="box">
+        
+        <div class="kind b1"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/cfb00002a82000d1866247677bb2f56.png"  title="" width="600" height="500" /></div>
+
+        <div class="kind b2"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/abe5c6ea0f4e211d2dda3e70593561b.png" alt="abe5c6ea0f4e211d2dda3e70593561b"  title="" width="600" height="500" /></div>
+
+
+        <div class="kind b3"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/e3401faec192090f5f3d47567779f4f.png" alt="e3401faec192090f5f3d47567779f4f"  title="" width="600" height="500" /></div>
+
+
+        <div class="kind b4"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/282954251b5f887a2985649041f2ba6.png" alt="db71a3a6b3a10788e4779656ac087ee"  title="" width="600" height="500" /></div>
+        
+
+        <div class="kind b5"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/db71a3a6b3a10788e4779656ac087ee.png" alt="282954251b5f887a2985649041f2ba6"  title="" width="600" height="500" /></div>
+
+        <div class="kind b6"><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/82e9260a49f8bbba4d12b2b8289bb59.png" alt="82e9260a49f8bbba4d12b2b8289bb59" alt="cfb00002a82000d1866247677bb2f56"  title="" width="600" height="500" /></div>
+
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>对象反序列化</title>
+</head>
+<body>
+<h2>从JSON字符串中创建一个对象</h2>
+<p id="demo"></p>
+<script>
+var text = '{"employees":[' +
+        '{"name":"Taobao","site":"http://www.taobao.com"},' +
+        '{"name":"Google","site":"http://www.google.com"},' +
+        '{"name":"Baidu","site":"http://www.baidu.com"}]}';
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.employees[1].name + "<br>" + obj.employees[1].site;
+</script>
+</body>
+</html>

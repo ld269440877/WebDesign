@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>把布尔值转换为字符串</title>
+</head>
+
+<body>
+    <p id="demo">单击"获取结果"按钮,以字符串的形式显示Boolean对象的值。</p>
+    <button onclick="myFunction()">获取结果</button>
+    <script>
+        function myFunction() {
+            var myvar = new Boolean(1);
+            var x = document.getElementById("demo");
+            x.innerHTML = myvar.toString();
+        }
+    </script>
+</body>
+
+</html>

@@ -1530,7 +1530,338 @@ perspective属性是设置查看者的位置，并将可视内容映射到一个
     ●　第16章　JavaScript对象与数组
     ●　第17章　JavaScript函数与闭包
     ●　第18章　JavaScript窗口与人机交互对话框">第三篇 核心技术</a></p>
-
+    <h1>第14章JavaScript基础</h1>
+    <h2><a title="JavaScript是一种由Netscape的Live Script发展而来的面向过程的客户端脚本语言，为客户提供更流畅的浏览效果。
+        另外，由于Windows操作系统对其拥有较为完善的支持，并提供二次开发的接口来访问操作系统中各个组件，从而可实现相应的管理功能。">JavaScript概述</a></h2>
+    <ol>
+        <li><a title="JavaScript是一种解释性的、基于对象的脚本语言（Object-based scripting language），其主要是基于客户端运行的，用户点击带有JavaScript脚本的网页，网页里的JavaScript就会被传到浏览器，由浏览器对此作处理。如下拉菜单、验证表单有效性等大量互动性功能，都是在客户端完成的，不需要和Web Server发生任何数据交换。因此，不会增加Web Server的负担。几乎所有浏览器都支持JavaScript，如Internet Explorer （IE）、Firefox、Netscape、Mozilla、Opera等。
+            在互联网上可看到很多应用了JavaScript的实例，下面介绍一些JavaScript的典型应用。
+            ●　改善导航功能——JavaScript最常见的应用就是网站导航系统，可以使用JavaScript创建一个导航工具。如用于选择下一个页面的下拉菜单，或者当鼠标指针移动到某导航链接上时所弹出的子菜单。只要正确应用，此类JavaScript交互功能就使得浏览网站更方便，而且该功能在不支持JavaScript的浏览器上也是可以使用的。
+            ●　验证表单——验证表单是JavaScript一个比较常用的功能。使用一个简单脚本就可以读取用户在表单中输入的信息，并确保输入格式的正确性，如要保证输入的是电话号码或者是电子邮箱。该项功能可提醒用户注意一些常见的错误并加以改正，而不必等待服务器的响应。
+            ●　特殊效果——JavaScript一个最早的应用就是创建引人注目的特殊效果，如在浏览器状态行显示滚动的信息，或者让网页背景颜色闪烁。
+            ●　远程脚本技术（AJAX）——长期以来，JavaScript最大的限制是不能和Web服务器进行通信的，如可以用JavaScript确保电话号码的位数正确，但不能利用电话号码来查找用户在数据库中的位置。
+            综上所述，JavaScript是一种新的描述语言，它可以被嵌入到HTML的文件之中。JavaScript语言可以做到回应使用者的需求事件（如：form的输入），而不用任何的网路来回传输资料，所以当一位使用者输入一项资料时，它不用经过传给服务端（Server）处理、再传回来的过程，而直接可以被客户端（Client）的应用程式所处理。">JavaScript能做什么？</a></li>
+        <li><a title="JavaScript的主要作用是与HTML超文本标记语言、Java脚本语言（Java小程序）一起实现在一个Web页面中连接多个对象，与Web客户交互作用，从而可以开发客户端的应用程序等，它是通过嵌入或调入到标准的HTML语言中实现的。它的出现弥补了HTML语言的缺陷，是Java与HTML折衷的选择，具有如下几个基本特点：
+            ●　脚本编写语言——JavaScript是一种采用小程序段方式来实现编程的脚本语言。同其他脚本语言一样，JavaScript是一种解释性语言，在程序运行过程中被逐行地解释。此外，它还可与HTML标识结合在一起，从而方便用户的使用。
+            ●　基于对象的语言——JavaScript是一种基于对象的语言，同时可以看作一种面向对象的语言。这意味着它能运用自己已经创建的对象。因此，许多功能可以来自脚本环境中对象的方法与脚本的相互作用。
+            ●　简单性——JavaScript的简单性主要体现在：首先它是一种基于Java基本语句和控制流之上的简单而紧凑的设计,从而对于学习Java是一种非常好的过渡。其次它的变量类型是采用弱类型，并未使用严格的数据类型。
+            ●　安全性——JavaScript是一种安全性语言。它不允许访问本地的硬盘，并不能将数据存入到服务器上，不允许对网络文档进行修改和删除，只能通过浏览器实现信息浏览或动态交互，从而有效地防止数据丢失。
+            ●　动态性——JavaScript是动态的，它可以直接对用户或客户输入做出响应，无须经过Web服务程序。它采用以事件驱动的方式对用户的反映作出响应。所谓事件（Event）驱动，就是指在主页（Home Page）中执行了某种操作所产生的动作。例如按下鼠标、移动窗口、选择菜单等均可视为事件。当事件发生后，可能会引起相应的事件响应。
+            ●　跨平台性——JavaScript依赖于浏览器本身，与操作环境无关。只要能运行浏览器的计算机，并支持JavaScript的浏览器就可正确执行。">JavaScript的基本特点</a></li>
+    </ol>
+    <h2><a title="在网页中添加JavaScript代码，需要使用标记来标识脚本代码的开始和结束。该标记就是<script>，它告诉浏览器，在<script>标记和</script>结束标记之间的文本块并不是要显示的网页内容，而是需要处理的脚本代码。">网页中的JavaScript</a></h2>
+    <ol>
+        <li><a title="在网页中执行JavaScript代码可以分为以下几种情况，分别是在网页头中执行、在网页中执行、在网页的元素事件中执行、调用已经存在的JavaScript文件、将JavaScript代码作为属性值执行等。">执行代码</a></li>
+        <ul>
+            <li><a title="如果不是通过JavaScript脚本生成HTML网页的内容，JavaScript脚本一般放在HTML网页的头部的<head>与</head>标签对之间。这样，不会因为JavaScript影响整个网页的显示结果。执行JavaScript的格式如下：
+                &lt;head&gt;
+                &lt;title&gt;在网页头中嵌入JavaScript代码&lt;title&gt;
+                &lt;script language=&quot;JavaScript&quot;&gt;
+                JavaScript脚本内容
+                &lt;/script&gt;
+                &lt;/head&gt;
+    在&lt;script&gt;与&lt;/script&gt;标签中添加相应的JavaScript脚本，这样就可以直接在HTML文件中调用JavaScript代码，以实现相应的效果。">在网页头中执行JavaScript代码</a></li>
+            <li><a title="当需要使用JavaScript脚本生成HTML网页内容时，如某些JavaScript实现的动态树，就需要把JavaScript放在HTML网页主题部分的&lt;body&gt;与&lt;/body&gt;标签对中。执行JavaScript的格式如下：
+                &lt;body&gt;
+                &lt;script language=&quot;JavaScript&quot;&gt;
+                JavaScript脚本内容
+                &lt;/script&gt;
+                &lt;/body&gt;
+          另外，JavaScript代码可以在同一个HTML网页的头部与主题部分同时嵌入，并且在同一个网页中可以多次嵌入JavaScript代码。">在网页中执行JavaScript代码</a></li>
+            <li><a title="如果JavaScript的内容较长，或者多个HTML网页中都调用相同的JavaScript程序，可以将较长的JavaScript或者通用的JavaScript写成独立的.js文件，直接在HTML网页中调用。执行JavaScript的格式如下。
+                &lt;script src = &quot;hello.js&quot;&gt;&lt;/script&gt;">在网页中调用已经存在的JavaScript文件</a></li>
+            <li><a title="在多数支持JavaScript脚本的浏览器中，可以通过JavaScript伪URL地址调用语句来引入JavaScript脚本代码。伪URL地址的一般格式如下：
+                JavaScript:alert(&quot;已点击文本框!&quot;)
+          由上可知，伪URL地址语句一般以JavaScript开始，后面就是要执行的操作。">通过JavaScript伪URL引入JavaScript脚本代码</a></li>
+            <li><a title="在开发Web应用程序的过程中，开发者可以给HTML文档设置不同的事件处理器，一般是设置某HTML元素的属性来引用一个脚本，如可以是一个简单的动作，该属性一般以on开头，如按下鼠标事件OnClick()等。这样，当需要对HTML网页中的该元素进行事件处理时（验证用户输入的值是否有效），如果事件处理的JavaScript代码量较少，就可以直接在对应的HTML网页的元素事件中嵌入JavaScript代码。">在网页的元素事件中执行JavaScript代码</a></li>
+        </ul>
+        <li><a title="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。在代码中，函数就是包裹在大括号中的代码块，前面使用了关键词function，格式如下：
+            function functionname()
+            {
+            执行代码
+            }
+           当调用该函数时，会执行函数内的代码，可以在某事件发生时直接调用函数（例如当用户单击按钮时），并且可由JavaScript在任何位置进行调用。注意：JavaScript对大小写敏感，关键词function必须是小写的，并且必须以与函数名称相同的大小写来调用函数。">函数</a></li>
+        <li><a title="JavaScript对象是拥有属性和方法的数据。在JavaScript中，对象是非常重要的，当你理解了对象，就可以了解JavaScript。对象也是一个变量，但对象可以包含多个值或多个变量。
+            例如下面一段代码：
+                  var car = {type:&quot;Fiat&quot;, model:500, color:&quot;white&quot;};
+            其中，3个值（&quot;Fiat&quot;、500、&quot;white&quot;）赋予变量car。3个变量（type、model、color）也赋予变量car。
+            另外，JavaScript对象可以使用字符来定义和创建，例如下面一段代码，就是创建了一个人对象，包括姓名、年龄等属性。
+            var person = {firstName:&quot;John&quot;, lastName:&quot;Doe&quot;, age:50, eyeColor:&quot;blue&quot;};">对象</a></li>
+    </ol>
+    <h2><a title="变量是用来临时存储数值的容器。在程序中，变量存储的数值是可以变化的，变量占据一段内存，通过变量的名字可以调用内存中的信息。">变量</a></h2>
+    <ol>
+        <li><a title="尽管JavaScript是一种弱类型的脚本语言，变量可以在不声明的情况下直接使用，但在实际使用过程中，最好还是先使用var关键字对变量进行声明。声明变量具有如下几种规则：
+            ●　可以使用一个关键字var同时声明多个变量，如语句&quot;var x,y;&quot;就同时声明了x和y两个变量。
+            ●　可以在声明变量的同时对其赋值（称为初始化），例如&quot;var president = &quot;henan&quot;;var x=5,y=12;&quot;声明了3个变量president、x和y，并分别对其进行了初始化。如果出现重复声明的变量，且该变量已有一个初始值，则此时的声明相当于对变量的重新赋值。
+            ●　如果只是声明了变量，并未对其赋值，其值缺省为undefined。
+            ●　var语句可以用作for循环和for/in循环的一部分，这样可以使得循环变量的声明成为循环语法自身的一部分，使用起来较为方便。
+    当给一个尚未声明的变量赋值时，JavaScript会自动用该变量名创建一个全局变量。在一个函数内部，通常创建的只是一个仅在函数内部起作用的局部变量，而不是一个全局变量。要确保创建的是一个局部变量，而不仅仅是赋值给一个已经存在的局部变量，就必须使用var语句进行变量声明。注意：JavaScript变量声明时，不指定变量的数据类型。一个变量一旦声明，可以存放任何数据类型的信息，JavaScript会根据存放的信息类型，自动为变量分配合适的数据类型。">变量的声明</a></li>
+        <li><a title="变量的作用范围又称为作用域，是指某变量在程序中的有效范围。根据作用域的不同，变量可划分为全局变量和局部变量。
+            ●　全局变量：全局变量的作用域是全局性的，即在整个JavaScript程序中，全局变量处处都存在。
+            ●　局部变量：局部变量是函数内部声明的，只作用于函数内部，其作用域是局部性的；函数的参数也是局部性的，只在函数内部起作用。">变量的作用域</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200130092837.png" alt="20200130092837"  title="变量定义" width="600" height="" /><figcaption><font color=green>变量定义</font></figcaption></center></figure>
+        <li><a title="在函数内部，局部变量的优先级高于同名的全局变量。也就是说，如果存在与全局变量名称相同的局部变量，或者在函数内部声明了与全局变量同名的参数，则该全局变量将不再起作用。
+            注意：虽然在全局作用域中可以不使用var声明变量，但声明局部变量时，一定要使用var语句。JavaScript没有块级作用域，函数中的所有变量无论是在哪里声明的，在整个函数中都有意义。">变量的优先级</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200130093851.png" alt="20200130093851"  title="变量的优先级" width="600" height="" /><figcaption><font color=green>变量的优先级</font></figcaption></center></figure>
+        <li><a title="在本例中，用户可能认为因为声明局部变量的var语句还没有执行而调用全局变量scope，但由于“无块级作用域”的限制，局部变量在整个函数体内是有定义的。这就意味着在整个函数体中都隐藏了同名的全局变量，因此，输出的并不是&quot;全局变量&quot;。虽然局部变量在整个函数体都是有定义的，但在执行var语句之前不会被初始化。">JavaScript无块级作用域</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200130094252.png" alt="20200130094252"  title="JavaScript无块级作用域" width="600" height="" /><figcaption><font color=green>JavaScript无块级作用域</font></figcaption></center></figure>
+    </ol>
+    <h2><a title="JavaScript中共有9种数据类型，分别是未定义（Undefined）、空（Null）、布尔型（Boolean）、字符串（String）、数值（Number）、对象（Object）、引用（Reference）、列表（List）和完成（Completion）。
+        其中后3种类型仅仅作为JavaScript运行时中间结果的数据类型，因此不能在代码中使用，下面讲解一些常用的数据类型。">数据类型</a></h2>
+    <ol>
+        <li><a title="Undefined是未定义类型的变量，表示变量还没有赋值，如var a;，或者赋予一个不存在的属性值，例如var a=String.notProperty。
+            此外，JavaScript中有一种特殊类型的数字常量NaN，表示&quot;非数字&quot;，当在程序中由于某种原因发生计算错误后，将产生一个没有意义的数字，此时JavaScript返回的数字值就是NaN。">未定义类型</a></li>
+        <li><a title="JavaScript中的关键字null是一个特殊的值，表示空值，用于定义空的或不存在的引用。不过，null不等同于空的字符串或0。由此可见，null与undefined的区别是：null表示一个变量被赋予了一个空值，而undefined则表示该变量还未被赋值。">空类型</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200130095148.png" alt="20200130095148"  title="空类型" width="600" height="" /><figcaption><font color=green>空类型</font></figcaption></center></figure>
+        <li><a title="数值数据类型和字符串数据类型可能的值都无穷多，但布尔型数据类型只有两个值，这两个合法的值分别用true和false表示。一个布尔值代表的是一个“真值”，它说明了某个事物是真还是假。通常，使用1表示真，0表示假。布尔值通常是在JavaScript程序中比较所得的结果。
+            Boolean类型的toString()方法只是输出true或false，结果由变量的值决定">布尔类型</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200130095510.png" alt="20200130095510"  title="布尔类型" width="600" height="" /><figcaption><font color=green>布尔类型</font></figcaption></center></figure>
+        <li><a title="字符串由零个或者多个字符构成，字符可以包括字母、数字、标点符号和空格，字符串必须放在单引号或者双引号里。JavaScript字符串定义方法：
+            方法一：
+          var str =&quot;字符串&quot;;
+    方法二：
+          var str = new String（&quot;字符串&quot;）;
+    JavaScript字符串使用注意事项。
+    ●　字符串类型可以表示一串字符，如&quot;www.haut.edu.cn&quot;、'中国'。
+    ●　字符串类型应使用双引号(&quot;)或单引号(')括起来。
+    在写JavaScript脚本时，可能会要在HTML文档中显示或使用某些特殊字符（例如：引号或斜线），例如：<img src=&quot;image5.jpg&quot;>，但是前面提过，声明一个字符串时，前后必须以引号括起来。如此一来，字符串当中引号可能会和标示字符串的引号搞混了，此时就要使用转义字符（Escape Character）。
+    JavaScript使用以下八种转义字符。这些字符都是以一个反斜线（\）开始。当JavaScript的解释器（Interpreter）看到反斜线时，就会特别注意，表现出程序员所要表达的意思。
+    下图-JavaScript的转义序列以及它们所代表的字符-列出了JavaScript的转义序列以及它们所代表的字符。
+    其中有两个转义序列是通用的，通过把Latin-1或Unicode字符编码表示为十六进制数，它们可以表示任意字符。例如，转义序列 \xA9表示的是版权符号，它采用十六进制数A9表示Latin-1编码。同样的，\u表示的是由四位十六进制数指定的任意Unicode字符，如\u03c0表示的是字符π（圆周率）。
+        注意，虽然ECMAScript v1标准要求使用Unicode字符转义，但是JavaScript 1.3之前的版本通常不支持转义符。有些JavaScript版本还允许用反斜线符合后加三位八进制数字来表示Latin-1字符，但是ECMAScript v3标准不支持这种转义序列，所以不应该再使用它们。">字符串</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200130095926.png" alt="20200130095926"  title="JavaScript的转义序列以及它们所代表的字符" width="600" height="" /><figcaption><font color=green>JavaScript的转义序列以及它们所代表的字符</font></figcaption></center></figure>
+        <ul>
+            <li><a title="JavaScript的内部特性之一就是能够连接字符串。如果将加号（+）运算符用于数字，那就是把两个数字相加。但是，如果将它作用于字符串，它就会把这两个字符串连起来，将第二个字符串连接在第一个字符串之后
+            </head>
+            <body>
+            <script>
+            var msg = &quot;hello&quot;;
+            msg = msg + &quot;world&quot;;    //连接字符串
+            alert(msg);
+            </script>
+            </body>
+    如果想要确定一个字符串的长度（它包含字符的个数），用户就可以使用字符串的length属性，如果变量s包含一个字符串，可以使用如下的方法访问它的长度：s.length：
+    <body>
+        <script>
+        var str = &quot;I love Javascript！&quot;;
+        alert(&quot;I love Javascript！的字符个数：&quot; + str.length);   //在页面弹出字符串长度
+        </script>
+        </body>
+    可以获取字符串s的最后一个字符：
+        last_char = s.charAt(s.length - 1);
+    因为length是一个字符串的长度，即字符串的个数，而字符串中的首字符是从0开始的，所以最后一个字符在字符串中的位置为length-1。">字符串的使用</a></li>
+        <li><a title="使用字符串对象中的toLocaleLowerCase()、toLocaleUpperCase()、toLowerCase()、toUpperCase()方法可以转换字符串的大小写。这四种方法的语法格式如下：
+            stringObject.toLocaleLowerCase()
+            stringObject.toLowerCase()
+            stringObject.toLocaleUpperCase()
+            stringObject. toUpperCase()">字符串的大小写转换</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131092821.png" alt="20200131092821"  title="字符串的大小写转换" width="600" height="" /><figcaption><font color=green>字符串的大小写转换</font></figcaption></center></figure>
+        <li><a title="JavaScript数值类型表示一个数字，如5、12、-5、2e5等，在JavaScript中数值类型有正数、负数、指数等类型。
+            提示：JavaScript中只有一种数字类型，而且内部使用的是64位浮点型，等同于C#或Java中的double。">数值类型</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131093105.png" alt="20200131093105"  title="数值类型" width="600" height="" /><figcaption><font color=green>数值类型</font></figcaption></center></figure>
+        <li><a title="Object是对象类型，该数据类型中包括Object、Function、String、Number、Boolean、Array、Regexp、Date、Globel、Math、Error，以及宿主环境提供的object类型。">对象类型</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131093355.png" alt="20200131093355"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+        </ul>
+    </ol>
+    <h2>运算符</h2>
+    <ol>
+        <li><a title="运算符用于执行程序代码运算，会针对一个以上操作数项目来进行运算。例如：2+3，其操作数是2和3，而运算符则是“+”。JavaScript的运算符可以分为算术运算符、逻辑运算符、位运算符、赋值运算符、条件运算符、位操作运算符和字符串运算符等。">运算符概述</a></li>
+        <li><a title="赋值运算符是将一个值赋给另一个变量或表达式的符号。最基本的赋值运算符为“=”，主要用于将运算符右边的操作数的值赋给左边的操作数。
+            另外，在JavaScript中，赋值运算符还可与算术运算符和位运算符组合，从而产生许多变种。在赋值运算符中，除“=”运算符之外，其他运算符都是先将运算符两边的操作数做相关处理，将处理之后的结果赋给运算符左操作符。如操作符“-=”，先将两个操作数相减，再将结果赋给左操作数。">赋值运算符</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131094056.png" alt="20200131094056"  title="赋值运算符" width="600" height="" /><figcaption><font color=green>赋值运算符</font></figcaption></center></figure>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131094350.png" alt="20200131094350"  title="赋值运算符的复杂应用" width="600" height="" /><figcaption><font color=green>赋值运算符的复杂应用</font></figcaption></center></figure>
+        <li><a title="算术运算符用于各类数值之间的运算，JavaScript的算术运算符包括加（+）、减（-）、乘（*）、除（/）、求余（%）、自增（++）、自减（--）共7种。算术运算符是比较简单的运算符，也是在实际操作中经常用到的操作符。
+            提示：算术运算符中需要注意自增与自减运算符。如果++或--运算符在变量后面，执行的顺序为“先赋值后运算”；如果++或--运算符在变量前面，执行顺序则为“先运算后赋值”。">算术运算符</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131100610.png" alt="20200131100610"  title="算术运算符" width="600" height="" /><figcaption><font color=green>算术运算符</font></figcaption></center></figure>
+        <li><a title="比较运算符在逻辑语句中使用，用于连接操作数组成比较表达式，并对操作符两边的操作数进行比较，其结果为逻辑值true或false。
+            注意：在各种运算符中，比较运算符“==”与赋值运算符&quot;=&quot;是完全不同的：运算符&quot;=&quot;是用于给操作数赋值；而运算符&quot;==&quot;则是用于比较两个操作数的值是否相等。
+    如果在需要比较两个表达式的值是否相等的情况下，错误的使用赋值运算符&quot;=&quot;，则会将右操作数的值赋给左操作数。">比较运算符</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131100846.png" alt="20200131100846"  title="比较运算符" width="600" height="" /><figcaption><font color=green>比较运算符</font></figcaption></center></figure>
+        <li><a title="逻辑运算符用于测定变量或值之间的逻辑，操作数一般是逻辑型数据。在JavaScript中，逻辑运算符包含逻辑与（&&）、逻辑或（||）、逻辑非（!）等。在逻辑与运算中，如果运算符左边的操作数为false，系统将不再执行运算符右边的操作数；在逻辑或运算中，如果运算符左边的操作数为true，系统同样不再执行右边的操作数。">逻辑运算符</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131101343.png" alt="20200131101343"  title="逻辑运算符" width="600" height="" /><figcaption><font color=green>逻辑运算符</font></figcaption></center></figure>
+        <li><a title="条件运算符是构造快速条件分支的三目运算符，可以看作是if…else语句的简写形式，其语法形式为&quot逻辑表达式?语句1:语句2;&quot。如果&quot?&quot前的逻辑表达式结果为true，则执行&quot?&quot与&quot:&quot之间的语句1，否则执行语句2。由于条件运算符构成的表达式带有一个返回值，因此，可通过其他变量或表达式对其值进行引用。">条件运算符</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131101808.png" alt="20200131101808"  title="条件运算符" width="600" height="" /><figcaption><font color=green>条件运算符</font></figcaption></center></figure>
+        <li><a title="字符串运算符是对字符串进行操作的符号，一般用于连接字符串。在JavaScript中，字符串连接符&quot;+=&quot;与赋值运算符类似：将两边的操作数（字符串）连接起来并将结果赋给左操作数。">字符串运算符</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131102205.png" alt="20200131102205"  title="字符串运算符" width="600" height="" /><figcaption><font color=green>字符串运算符</font></figcaption></center></figure>
+        <li><a title="位运算符是将操作数以二进制为单位进行操作的符号。在进行位运算之前，通常先将操作数转换为二进制整数，再进行相应的运算，最后的输出结果以十进制整数表示。此外，位运算的操作数和结果都应是整型。
+            在JavaScript中，位运算符包含按位与（&&）、按位或（||）、按位异或（||）、按位非（!）等。
+            ●　按位与运算：将操作数转换成二进制以后，如果两个操作数对应位的值均为1，则结果为1，否则结果为零。例如，对于表达式41&23， 41转换成二进制数00101001，而23转换成二进制数00010111，按位与运算后结果为00000001，转换成十进制数即为1。
+            ●　按位或运算：将操作数转换为二进制后，如果两个操作数对应位的值中任何一个为1，则结果为1，否则结果为零。例如，对于表达式41||23，按位或运算后结果为00111111，转换成十进制数为63。
+            ●　按位异或运算：将操作数转换成二进制后，如果两个操作数对应位的值互不相同时，则结果为1，否则结果为零。例如，对于表达式41^23，按位异或运算后结果为00111110，转换成十进制数为62。
+            ●　按位非的运算：将操作数转换成二进制后，对其每一位取反（即值为0则取1，值为1则取0）。如，对于表达式～41，将每一位取反后结果为11010110，转换成十进制数就是-42。">位运算符</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131102500.png" alt="20200131102500"  title="位运算符" width="600" height="" /><figcaption><font color=green>位运算符</font></figcaption></center></figure>
+        <li><a title="移位运算符与位运算符相似，都是将操作数转换成二进制，然后对转换之后的值进行操作。JavaScript位操作运算符有3个：<<、>>、>>>。
+            代码的运行过程如下：首先将十进制数25转换成二进制为00011001，然后将其左移2位，右边的空位由0补齐，结果为01100100，转换成十进制数即为100；
+            将其进行算术右移2位，结果是00000110，转换成十进制为6；
+            将其逻辑右移2位，因其为正数，结果仍为6。
+    同理，十进制数-28转换成二进制是11100100，将其左移2位后为10010000，转换成十进制数是-112；
+    将其进行算术右移2位，得到的结果是11111001，转换成十进制是-7。">移位运算符</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131102845.png" alt="20200131102845"  title="移位运算符" width="600" height="" /><figcaption><font color=green>移位运算符</font></figcaption></center></figure>
+        <li><a title="除前面介绍的几种之外，JavaScript运算符还有一些特殊运算符，下面对其进行简要介绍。">其他运算符</a></li>
+        <ul>
+            <li><a title="逗号运算符用于将多个表达式连接为一个表达式，新表达式的值为最后一个表达式的值。其语法形式为：&quot;变量=表达式1,表达式2&quot;。">逗号运算符</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131104223.png" alt="20200131104223"  title="逗号运算符" width="600" height="" /><figcaption><font color=green>逗号运算符</font></figcaption></center></figure>
+            <li><a title="">void运算符</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131104725.png" alt="20200131104725"  title="void运算符" width="600" height="" /><figcaption><font color=green>void运算符</font></figcaption></center></figure>
+            <li><a title="typeof运算符是返回一个字符串指明其操作数的数据类型，返回值有六种可能：number、string、boolean、object、function和undefined。typeof运算符的语法形式为“typeof表达式”。">typeof运算符</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131104949.png" alt="20200131104949"  title="typeof运算符" width="600" height="" /><figcaption><font color=green>typeof运算符</font></figcaption></center></figure>
+        </ul>
+    </ol>
+    <h2><a title="在JavaScript中，运算符具有明确的优先级与结合性。优先级用于控制运算符的执行顺序，具有较高优先级的运算符先于较低优先级的运算符执行；结合性则是指具有同等优先级的运算符将按照怎样的顺序进行运算，结合性有向左结合和向右结合。圆括号可用来改变运算符优先级所决定的求值顺序。
+        从运行结果中可以看到，由于乘法的优先级高于加法，因此，表达式“3+4*5”的计算结果为23；而在表达式“(3+4)*5”中则被圆括号“()”改变运算符的优先级，括号内部分将优先于任何运算符而被最先执行，因此该语句的结果为35。">运算符优先级</a></h2>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131105224.png" alt="20200131105224"  title="运算符优先级" width="600" height="" /><figcaption><font color=green></font>运算符优先级</figcaption></center></figure>
+    <h2><a title="表达式语句是JavaScript中最简单的语句，赋值、删除（delete）、函数调用这三类即是表达式，又是语句，所以叫作表达式语句。
+        提示：JavaScript语句以分号结束，但表达式不需要分号结尾。一旦在表达式后面添加分号，则JavaScript就将表达式视为语句，这样会产生一些没有任何意义的语句。
+          1+3 ;
+          'abc';">表达式语句</a></h2>
+    <ol>
+        <li><a title="赋值语句是JavaScript程序中最常用的语句，在程序中，往往需要大量的变量来存储程序中用到的数据，所以用来对变量进行赋值的赋值语句也会在程序中大量出现。赋值语句的语法格式如下：
+            变量名=表达式
+            当使用关键字var声明变量时，可以同时使用赋值语句对声明的变量进行赋值。
+            例如，声明一些变量，并分别给这些变量赋值，代码如下：
+                  var username=&quot;Rose&quot;
+                  var bue=true
+                  var variable=&quot;开怀大笑&quot;
+    另外，递增运算符（++）和递减运算符（--）和赋值语句有关，它们的作用是改变一个变量的值，就像执行一条赋值语句一样，代码如下：
+            counter++;">赋值语句(=)</a></li>
+        <li><a title="delete是JavaScript语言中使用频率较低的操作之一，但是有些时候，需要做delete或者清空动作时，就需要delete操作。如下面代码会删除对象的属性：
+            var Ball = {
+               &quot;name&quot;: &quot;足球&quot;,
+               &quot;url&quot; : &quot;http://www.zuqiu.com&quot;
+            };
+            delete Ball.name;
+            Outputs: Object { url: &quot;http://www.zuqiu.com&quot; }
+            console.log(Ball);">删除（delete）</a></li>
+        <li><a title="函数中的代码在函数被调用后执行，函数调用也属于表达式语句中的一种类型。">函数调用</a></li>
+    </ol>
+    <h2><a title="条件判断语句是一种比较简单的选择结构语句，它包括if语句及其各种变种，以及switch语句。这些语句各具特点，在一定条件下可以相互转换。">条件判断语句</a></h2>
+    <ol>
+        <li><a title="if语句是最常用的条件判断语句，通过判断条件表达式的值为true或false，来确定程序的执行顺序。在实际应用中，if语句有多种表现形式，最简单的if语句的应用格式为：
+            if(conditions)
+            {
+               statements;
+            }
+      条件表达式conditions必须放在小括号里，当且仅当该表达式为真时，执行大括号内包含的语句，否则将跳过该条件语句执行其下的语句。大括号&quot;{}&quot;的作用是将多余语句组合成一个语句块，系统将该语句块作为一个整体来处理。如果大括号中只有一条语句，则可省略&quot;{}&quot;。
+      注意：请使用小写的if，使用大写字母（IF）会生成JavaScript错误！">if语句</a></li>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131152413.png" alt="20200131152413"  title="if语句" width="600" height="" /><figcaption><font color=green>if语句</font></figcaption></center></figure>
+        <li><a title="if…else语句选择多个代码块之一来执行，具体语法格式如下：
+            if (condition)
+          {
+             当条件为true时执行的代码
+          }
+          else
+          {
+             当条件不为true时执行的代码
+          }">if…else语句</a></li>
+          <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131153809.png" alt="20200131153809"  title="if…else语句" width="600" height="" /><figcaption><font color=green>if…else语句</font></figcaption></center></figure>
+        <li><a title="使用该语句来选择多个代码块之一来执行，具体语法格式如下：">if…else if…else语句</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131153959.png" alt="20200131153959"  title="if…else if…else语句" width="600" height="" /><figcaption><font color=green>if…else if…else语句</font></figcaption></center></figure>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131154243.png" alt="20200131154243"  title="if…else if…else语句" width="600" height="" /><figcaption><font color=green>if…else if…else语句</font></figcaption></center></figure>
+        <li><a title="if（或if…else）结构可以嵌套使用，来表示所示条件的一种层次结构关系。不过，在使用if语句的嵌套应用时，最好使用大括号“{}”来确定相互的层次关系。">if语句的嵌套</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131154651.png" alt="20200131154651"  title="if语句的嵌套" width="600" height="" /><figcaption><font color=green>if语句的嵌套</font></figcaption></center></figure>
+        <li><a title="switch语句用于基于不同的条件来执行不同的动作。具体的语法格式如下：">switch语句</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131155107.png" alt="20200131155107"  title="switch语句" width="600" height="" /><figcaption><font color=green>switch语句</font></figcaption></center></figure>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131155419.png" alt="20200131155419"  title="switch语句" width="600" height="" /><figcaption><font color=green>switch语句</font></figcaption></center></figure>
+    </ol>
+    <h2><a title="循环语句的作用是反复地执行同一段代码，尽管其分为几种不同的类型，但基本原理几乎都是一样的，只要给定的条件仍能得到满足，包括再循环条件语句里面的代码就会重复执行下去，一旦条件不再满足则终止。">循环语句</a></h2>
+    <ol>
+        <li><a title="while循环会在指定条件为真时循环执行代码块，while语句的语法格式如下：
+            while （条件）
+            {
+               需要执行的代码
+            }
+      while语句为不确定性循环语句，当表达式的结果为真（true）时，执行循环中的语句；表达式的结果为假（false）时，不执行循环。">while语句</a></li>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131155938.png" alt="20200131155938"  title="while语句" width="600" height="" /><figcaption><font color=green>while语句</font></figcaption></center></figure>
+        <li><a title="do…while循环是while循环的变体，该循环会在检查条件是否为真之前执行一次代码块，然后如果条件为真，就会重复这个循环。do…while语句的语法格式如下：
+            do
+          {
+             需要执行的代码
+          }
+          while （条件）;
+    do…while为不确定性循环，先执行大括号中的语句，当表达式的结果为真（true）时，执行循环中的语句；表达式为假（false）时，不执行循环，并退出do…while循环。
+        提示：while与do…while的区别：do…while将先执行一遍大括号中的语句，再判断表达式的真假，这是它与while的本质区别。">do…while语句</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131160310.png" alt="20200131160310"  title="do…while语句" width="600" height="" /><figcaption><font color=green>do…while语句</font></figcaption></center></figure>
+        <li><a title="for语句非常灵活，完全可以代替while与do…while语句。执行的过程为：先执行“初始化表达式”，再根据“判断表达式”的结果判断是否执行循环，当判断表达式为真true时，执行循环中的语句，最后执行“循环表达式”，并继续返回循环的开始，并进行新一轮的循环；表达式为假false时，不执行循环，并退出for循环。
+            for语句语法如下：
+          for （语句1;语句2;语句3）
+          {
+             被执行的代码块
+          }
+    语句1：（代码块）开始前执行。
+    语句2：定义运行循环（代码块）的条件。
+    语句3：在循环（代码块）已被执行之后执行。
+    例如：计算1～100的所有整数之和（包括1与100）。">for语句</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131160552.png" alt="20200131160552"  title="for语句" width="600" height="" /><figcaption><font color=green>for语句</font></figcaption></center></figure>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131161227.png" alt="20200131161227"  title="for语句" width="600" height="" /><figcaption><font color=green>for语句</font></figcaption></center></figure>
+    </ol>
+    <h2><a title="在循环语句中，某些情况需要跳出循环或者跳过循环体内剩余语句，而直接执行下一次循环，此时可通过break和continue语句来实现这一目的。
+        break语句的作用是立即跳出循环，
+        continue语句的作用是停止正在进行的循环而直接进入下一次循环。">跳转语句</a></h2>
+    <ol>
+        <li><a title="break语句主要有以下3种作用：
+            （1）在switch语句中，用于终止case语句序列，跳出switch语句。
+            （2）用在循环结构中，用于终止循环语句序列，跳出循环结构。
+            （3）与标签语句配合使用，从内层循环或内层程序块中退出。
+            当break语句用于for、while、do…while循环语句中时，可使程序终止循环而执行循环后面的语句。">break语句</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131161817.png" alt="20200131161817"  title="break语句" width="600" height="" /><figcaption><font color=green>break语句</font></figcaption></center></figure>
+        <li><a title="continue语句只能出现在循环语句的循环体内，无标号的continue语句的作用是跳过当前循环的剩余语句，继续执行下一次循环。">continue语句</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131162109.png" alt="20200131162109"  title="continue语句" width="600" height="" /><figcaption><font color=green>continue语句</font></figcaption></center></figure>
+    </ol>
+    <h2>九九乘法表</h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131162602.png" alt="20200131162602"  title="九九乘法表" width="600" height="" /><figcaption><font color=green>九九乘法表</font></figcaption></center></figure>
+    <p><a title="应聘者：就我个人理解来说，JavaScript不是Java的变种。虽然，JavaScript最初的确是受Java启发而开始设计的，而且设计的目的之一就是&quot;看上去像Java&quot;，因此语法上有很多类似之处，许多名称和命名规范也借自Java。但是实际上，JavaScript的主要设计原则源自Self和Scheme，它与Java本质上是不同的。它与Java名称上的近似，是当时开发公司为了营销考虑与Sun公司达成协议的结果。其实，从本质上讲，JavaScript更像是一门函数式编程语言，而非面向对象的语言，它使用一些智能的语法和语义来仿真高度复杂的行为。其对象模型极为灵活、开放和强大，具有全部的反射性。">面试官：有些程序员认为JavaScript是Java的变种，对于这个问题，你是怎么看的？</a></p>
+    <p><a title="应聘者：就我个人理解来说，脚本语言是由传统编程语言简化而来的语言，它与传统编程语言有很多相似之处，也有不同之处。脚本语言的最显著特点：一是它不需要编译成二进制，以文本的形式存在；二是脚本语言一般都需要其他语言的调用执行，不能独立运行。">面试官：你认为什么是脚本语言？</a></p>
+    <h1><a title="学习指引
+        在程序开发过程中，总是需要对代码程序不断进行调试以及优化才能达到理想的效果，JavaScript也同样需要一套有力的开发工具。本章将详细介绍与JavaScript相关的工具的应用，主要内容包括JavaScript常用的编写工具、开发工具与调试工具。重点导读
+        ●　掌握JavaScript编写工具的使用。
+        ●　掌握JavaScript开发工具的使用。
+        ●　掌握JavaScript调试工具的使用。">第15章JavaScript开发应用工具</a></h1>
+    <h2><a title="JavaScript是一种脚本语言，代码不需要编译成二进制，而是以文本的形式存在，因此任何文本编辑器都可以作为其开发环境。通常使用的JavaScript编辑器有记事本、Ultra Edit-32和Dreamweaver。">JavaScript的编写工具</a></h2>
+    <ol>
+        <li><a title="记事本是Windows系统自带的文本编辑器，也是最简洁方便的文本编辑器，由于记事本的功能过于单一，所以要求开发者必须熟练掌握JavaScript语言的语法、对象、方法和属性等。对于初学者是个极大的挑战，因此，不建议使用记事本。但是由于记事本简单方便、打开速度快，所以常用来做局部修改">系统自带编辑器记事本</a></li>
+        <li><a title="UltraEdit是能够满足一切编辑需要的编辑器。它是一套功能强大的文本编辑器，可以编辑文本、十六进制、ASCII码，可以取代记事本，可同时编辑多个文件，而且即使开启很大的文件速度也不会慢。软件附有HTML标签颜色显示、搜寻替换以及无限制的还原功能，一般大家喜欢用其来代替记事本的文本编辑器">UltraEdit文本编辑器</a></li>
+        <li><a title="Adobe公司的Dreamweaver用户界面非常友好，是一个非常优秀的网页开发工具，深受广大用户的喜爱
+            提示：除了上述编辑器外，还有很多种编辑器可以用来编写JavaScript程序。如Aptana、1st Javascript Editor、Javascript Menu Master、Platypus Javascript Editor、SurfMap Javascript、Javascript Editor等。工欲善其事，必先利其器，选择一款适合自己的JavaScript编辑器，可以让程序员的编辑工程事半功倍。">Dreamweaver开发工具</a></li>
+    </ol>
+    <h2><a title="由于JavaScript缺少合适的开发工具的支持，编写JavaScript程序，特别是超过500行以上的JavaScript程序，就会变得非常复杂，在代码中不小心增加了一个多余的&quot;(&quot;或&quot;{&quot;，整段代码就有可能崩溃。">JavaScript常用的开发工具</a></h2>
+    <ol>
+        <li><a title="TestSwarm是Mozilla实验室推出的一个开源项目，它旨在为开发者提供在多个浏览器版本上快速轻松测试自己JavaScript代码的方法。
+            目前，TestSwarm正在测试许多开发人员都依靠的诸多流行的开源JavaScript库，其中包括jQuery、YUI、Dojo、MooTools和Prototype等。如果用户想在自己的项目中使用TestSwarm，可以下载并在自己的服务器上安装TestSwarm">附带测试的开发工具——TestSwarm</a></li>
+        <li><a title="在互联网领域，速度就是一切。这意味着当面对CSS和JavaScript文件的时候，文件大小是一个重要的要素。Minimee可以自动将文件最小化以及对文件进行组合，帮助用户化繁为简">半自动化开发工具—Minimee</a></li>
+        <li><a title="JavaScript Boilerplate是基于HTML/CSS/JavaScript的一个快速、健壮和面向未来的网站模板。经过多年的迭代开发，功能更加完善。包括跨浏览器的正常化显示、性能优化、AJAX跨域通信和Flash处理等。这个模板包含一个.htaccess配置文件，通过该配置文件可以设置Apache缓存、网站播放HTML 5视频、使用@font-face和是否允许使用gzip等
+            它同样可以在手机浏览器工作，它拥有iOS、Android、Opera所支持的标签和CSS骨架。Boilerplate有以下特性：
+    ●　支持HTML 5。
+    ●　跨浏览器兼容,包括对IE 6的支持。
+    ●　高速缓存和压缩规则，最佳实践配置。
+    ●　移动浏览器优化。
+    ●　单元测试套件JavaScript分析。
+    ●　移动与特定CSS规则的iOS和Android的浏览器支持。">轻松建立JS库的开发工具—Boilerplate</a></li>
+    </ol>
+    <h2><a title="JavaScript技术已经变得非常流行，每一天都有新的变化。JavaScript加强了很多东西，为了调试JavaScript代码会涉及各种各样的工作。
+        JavaScript调试器能帮忙找出JavaScript代码中的错误。要想成为一名高级JavaScript调试员，你需要知道自己要用到的一些调试器、典型的JavaScript调试工作流程及高效调试的核心条件。
+        当调查一个特定问题时，通常遵循以下过程：
+        （1）在调试器的代码查看窗口找出相关代码。
+        （2）在觉得将发生有趣的事的地方设置断点。
+        （3）若是行内脚本，则在浏览器中重载页面，若是一个事件处理器则点击按钮，以再次运行脚本。
+        （4）一直等到调试器暂停执行并通过代码。
+        （5）查看变量值。例如，看看那些本该包含一个值却显示未定义的变量，或者当你希望他们返回true却返回false时。
+        （6）如果需要，使用命令行对代码进行求值，或者为测试改变变量。
+        （7）通过学习导致错误情况发生的那段代码或输入，找出问题所在。">JavaScript常用的调试工具</a></h2>
+    <ol>
+        <li><a title="Drosera可以调试任何基于WebKit的应用程序">调试工具—Drosera</a></li>
+        <li><a title="Dragonfly可以高亮显示语法和断点，搜索功能强大，可以搜索当前选择的脚本。可以用文本、正则表达式来加载所有的JavaScript文件">规则的调试工具—Dragonfly</a></li>
+        <li><a title="Firefox集成了Firebug，它提供了一个丰富的Web开发工具，可以在任何网页编辑、调试和监控CSS、HTML与JavaScript">Firefox的集成工具—Firebug</a></li>
+        <li><a title="在IE 8之前，在IE中的调试就只有alert命令，虽然可以在Visual Studio中进行调试，但过程比较麻烦。一个做得比较好的工具就是Debugbar，不过该工具与Firebug比起来，还是有很大的差距的。
+            Debugbar虽然可以与Firebug一样获取页面元素、做源代码调试和CSS调试，但是，其功能实在有限">前端调试利器—Debugbar</a></li>
+        <li><a title="Venkman是Mozilla的JavaScript degugger代码名称，可以在用户界面上和控制台命令中使用断点管理、调用栈检查、检查变量/对象等功能，可以让用户以最习惯的方式调试。
+            Venkman可以从http://www.hacksrus.com/～ginda/venkman/下载，然后用firefox打开得到的xpi文件，它就会自动安装，重启firefox，选择工具->JavaScript Debugger启动venkman">支持浏览器多的工具—Venkman</a></li>
+    </ol>
+    <p><a title="应聘者：现在浏览器种类、版本繁多，不同浏览器对JavaScript代码的支持度均不一样。为了不影响网页的美观，可以使用HTML注释语句将代码注释，这样便不会在网页中输出这些代码。HTML注释语句使用&quot;<!--&quot;符号和&quot;-->&quot;标记JavaScript代码。">面试官：如果当前浏览器不支持JavaScript，如何做才能不影响网页的美观？</a></p>
+    <p><a title="应聘者：对于我个人来说，优化处理是必要的，而且主要优化的是脚本程序代码的下载时间和执行效率，因为JavaScript运行前不需要进行编译而直接在客户端运行，所以代码的下载时间和执行效率直接决定了网页的打开速度，从而影响着客户端的用户体验效果。
+        具体来讲，可以从下面三个方面来优化JavaScript代码。
+        （1）合理地声明变量。在JavaScript中，变量的声明方式可分为显式声明和隐式声明，使用var关键字进行声明的就是显式声明，而没有使用var关键字的就是隐式声明。在函数中显式声明的变量为局部变量，隐式声明的变量为全局变量。
+        （2）简化代码。简化JavaScript代码是优化代码的一个非要重要的方法。将工程上传到服务器前，尽量缩短代码的长度，去除不必要的字符，包括注释、不必要的空格、换行等。
+        （3）多使用内置的函数库。与C、java等语言一样，JavaScript也有自己的函数库，函数库里有很多内置函数，用户可以直接调用这些函数。当然，开发人员也可以自己去写那些函数，但是JavaScript中的内置函数的属性方法都是经过C、C++之类的语言编译的，而开发者自己编写的函数在运行前还要进行编译，所以在运行速度上JavaScript的内置函数要比自己编写的函数快很多。">面试官：使用JavaScript编写好应用程序后，你认为还需要对JavaScript代码进行优化处理吗？</a></p>
 
 
 <p>
@@ -1540,7 +1871,8 @@ perspective属性是设置查看者的位置，并将可视内容映射到一个
         <li><a title=""></a></li>
     </ol>
     
-    </p<a title=""></a>></p>
+    <p><a title=""></a></p>
+</p>
 </div>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>算术运算符的应用</title>
+    <script language="javascript" type="text/javascript">
+        function calcOprt()
+        {
+            var param=25;
+            document.write("数值 X=" + param + "<br/>");
+            param = param + 8;
+            document.write("加法运算（加8）结果=" + param + "<br/>");
+            param = param - 9;
+            document.write("减法运算（减9）结果=" + param + "<br/>");
+            param = param * 3;
+            document.write("乘法运算（乘3）结果=" + param + "<br/>");
+            param = param / 6;
+            document.write("除法运算（除6）结果=" + param + "<br/>");
+            param = param % 7;
+            document.write("取余运算（与7取余）结果=" + param + "<br/>");
+            param++;
+            document.write("自增运算结果" + param + "<br/>");
+            param--;
+            document.write("自减运算结果" + param + "<br/>");
+            var test1 = param++;
+            document.write("自增运算符在后的运算结果" + test1 +"，自增之后的值：" + param + "<br/>");
+            var test2 = ++param;
+            document.write("自增运算符在前的运算结果" + test2 +"，自增之后的值：" + param + "<br/>");
+        }
+    </script>
+</head>
+<body>
+<form method=post action="#">
+    <input type="button" value="算术运算" onclick="calcOprt()">
+</form>
+</body>
+</html>
