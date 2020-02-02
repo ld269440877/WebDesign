@@ -1862,7 +1862,339 @@ perspective属性是设置查看者的位置，并将可视内容映射到一个
         （1）合理地声明变量。在JavaScript中，变量的声明方式可分为显式声明和隐式声明，使用var关键字进行声明的就是显式声明，而没有使用var关键字的就是隐式声明。在函数中显式声明的变量为局部变量，隐式声明的变量为全局变量。
         （2）简化代码。简化JavaScript代码是优化代码的一个非要重要的方法。将工程上传到服务器前，尽量缩短代码的长度，去除不必要的字符，包括注释、不必要的空格、换行等。
         （3）多使用内置的函数库。与C、java等语言一样，JavaScript也有自己的函数库，函数库里有很多内置函数，用户可以直接调用这些函数。当然，开发人员也可以自己去写那些函数，但是JavaScript中的内置函数的属性方法都是经过C、C++之类的语言编译的，而开发者自己编写的函数在运行前还要进行编译，所以在运行速度上JavaScript的内置函数要比自己编写的函数快很多。">面试官：使用JavaScript编写好应用程序后，你认为还需要对JavaScript代码进行优化处理吗？</a></p>
-
+<h1><a title="学习指引
+    对象是JavaScript最基本的数据类型之一，是一种复合的数据类型；数组是JavaScript中唯一用来存储和操作有序数据集的数据结构。本章将详细介绍JavaScript的对象与数组，主要内容包括创建对象的方法、常用内置对象、对象的访问语句、对象的序列化、创建对象的常用模式、数组对象以及数组的应用方法等。重点导读
+    ●　掌握创建对象的方法。
+    ●　掌握常用内置对象的使用方法。
+    ●　掌握对象访问语句的使用方法。
+    ●　掌握对象的序列化应用。
+    ●　掌握创建对象常用模式的方法。
+    ●　掌握数组对象的使用方法。
+    ●　掌握使用数组的方法与技巧。">第16章 JavaScript对象与数组</a></h1>
+<h2><a title="JavaScript对象是拥有属性和方法的数据。例如，在真实生活中，一辆汽车是一个对象。对象具有自己的属性，如重量、颜色等，方法有启动、停止等。
+    JavaScript中创建对象有以下几种方法：
+    ●　使用内置对象创建。
+    ●　直接定义并创建。
+    ●　自定义对象构造创建。">创建对象的方法</a></h2>
+<ol>
+    <li><a title="JavaScript可用的内置对象可分为两种，
+        一种是语言级对象，如String、Object、Function等；
+        另一种是环境宿主级对象，如window、document、body等。
+通常，我们所说的使用内置对象，是指通过语言级对象的构造方法，创建出一个新的对象，具体代码格式如下：
+    var str = new String(&quot;初始化String&quot;)
+    var str1 = &quot;直接赋值的String&quot;
+    var func = new Function(&quot;x&quot;, &quot;alert(x)&quot;); //初始化func
+    var o = new Object(); //初始化一个Object对象">使用内置对象创建对象</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131192341.png" alt="20200131192341"  title="使用内置对象创建对象" width="600" height="" /><figcaption><font color=green>使用内置对象创建对象</font></figcaption></center></figure>
+    <li><a title="直接定义并创建对象，易于阅读和编写，同时也易于解析和生成。直接定义并创建采用&quot;键/值对&quot;集合的形式。在这种形式下，一个对象以&quot;{&quot;（左大括号）开始，&quot;}&quot;（右大括号）结束。每个&quot;名称&quot;后跟一个&quot;:&quot;（冒号），&quot;‘键/值'对&quot;之间使用&quot;,&quot;（逗号）分隔。具体代码如下：
+        person={firstname:&quot;刘&quot;,lastname:&quot;天佑&quot;,age:3,eyecolor:&quot;black&quot;}
+  直接定义并创建对象具有以下特点：
+  ●　简单格式化的数据交换。
+  ●　易于人们的读写习惯。
+  ●　易于机器的分析和运行。">直接定义并创建对象</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131192843.png" alt="20200131192843"  title="直接定义并创建对象" width="600" height="" /><figcaption><font color=green>直接定义并创建对象</font></figcaption></center></figure>
+    <li><a title="创建高级对象构造有两种方式，
+        一种是使用&quot;this&quot;关键字构造；
+        另一种是使用原型prototype构造。具体代码如下：
+        //使用this关键字
+        function person ()
+        {
+           this.name = &quot;刘天佑&quot;;
+           this.age = 3;
+        }
+        //使用prototype
+        function person (){}
+        person.prototype.name = &quot;刘天佑&quot;;
+        person.prototype.age = 3;
+        alert(new person ().name);
+  上例中的两种定义在本质上没有区别，都是定义person对象的属性信息。
+区别一：this与prototype的区别主要在于属性访问的顺序。具体代码如下：
+        function Test()
+        {
+            this.test = function()
+            {
+                alert(&quot;defined by this&quot;);
+            }
+        }
+        Test.prototype.test = function()
+        {
+            alert(&quot;defined by prototype&quot;);
+        }
+        var _o = new Test();
+        _o.test(); //输出&quot;defined by this&quot;
+区别二：this与prototype定义的另一个不同点是属性的占用空间不同。使用this关键字，实例初始化时为每个实例开辟构造方法所包含的所有属性、方法所需的空间，而使用prototype定义，由于prototype实际上是指向父级的一种引用，仅仅是个数据的副本，因此在初始化及存储上都比this节约资源。">自定义对象构造创建</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131194542.png" alt="20200131194542"  title="自定义JavaScript对象person创建" width="600" height="" /><figcaption><font color=green>自定义JavaScript对象person创建</font></figcaption></center></figure>
+</ol>
+<h2><a title="JavaScript作为一门基于对象的编程语言，以其简单、快捷的对象操作获得Web应用程序开发者的认可，而其内置的几个核心对象，则构成了JavaScript脚本语言的基础。">常用内置对象</a></h2>
+<ol>
+    <li><a title="字符串（String）对象是JavaScript的内置对象，属于动态对象，需要创建对象实例后才能引用该对象的属性和方法，该对象主要用于处理或格式化文本字符串及确定和定位字符串中的子字符串。
+        1. 创建String对象
+String对象用于处理文本或字符串。创建String对象的方法有两种。
+第一种是直接创建，例如：
+      var txt = &quot;string&quot;;
+其中，var是可选项，&quot;string&quot;就是给对象txt赋的值。
+第二种是使用new关键字来创建，例如：
+      var txt = new String(&quot;string&quot;);
+其中，var是可选项，字符串构造函数String()的第一个字母必须为大写字母。注意：上述两种语句效果是一样的，因此声明字符串时可以采用new关键字，也可以不采用new关键字。
+2. String对象属性
+String（字符串）对象的属性及说明
+属性                描述
+constuctor      对创建该对象的函数的引用
+length              字符串的长度
+prototype          允许用户向对象添加属性和方法
+3. String对象的方法
+String（字符串）对象的方法可以定义字符串的属性，如以大号字体显示字符串、指定字符串的显示颜色等。">字符串对象</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131195404.png" alt="20200131195404"  title="String对象的方法" width="600" height="" /><figcaption><font color=green>String对象的方法</font></figcaption></center></figure>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131195709.png" alt="20200131195709"  title="转换字符串的大小写" width="600" height="" /><figcaption><font color=green>转换字符串的大小写</font></figcaption></center></figure>
+    <li><a title="Date（日期）对象用于处理日期与时间，是一种内置式JavaScript对象。
+        1. 创建Date对象
+        创建Date对象的方法有以下四种：
+        var d = new Date(); //当前日期和时间
+        var d = new Date(milliseconds); //返回从1970年1月1日至今的毫秒数
+        var d = new Date(dateString);
+        var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+        上述创建方法中的参数大多数都是可选的，在不指定的情况下，默认参数是0。
+实例化一个日期，代码如下：
+      var today = new Date()
+      var d1 = new Date(&quot;October 13, 1975 11:13:00&quot;)
+      var d2 = new Date(79,5,24)
+      var d3 = new Date(79,5,24,11,33,0)
+      2. Date对象的属性
+        Date日期对象只包含两个属性，分别是constructor和prototype
+属性                    描述
+constructor         返回对创建此对象的Date函数的引用
+prototype           允许用户向对象添加属性和方法
+    3. Date对象的常用方法
+    日期对象的方法可分为三大组：setXxx、getXxx、toXxx。
+        setXxx方法用于设置时间和日期值；
+        getXxx方法用于获取时间和日期值；
+        toXxx主要是将日期转换成指定格式。">日期对象</a></li>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131200751.png" alt="20200131200751"  title="创建日期对象" width="600" height="" /><figcaption><font color=green>创建日期对象</font></figcaption></center></figure>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131201848.png" alt="20200131201848"  title="显示当前系统的月份" width="600" height="" /><figcaption><font color=green>显示当前系统的月份</font></figcaption></center></figure>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131202224.png" alt="20200131202224"  title="Date对象的方法1" width="600" height="" /><figcaption><font color=green>Date对象的方法1</font></figcaption></center></figure>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131202318.png" alt="20200131202318"  title="Date对象的方法2" width="600" height="" /><figcaption><font color=green>Date对象的方法2</font></figcaption></center></figure>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131202856.png" alt="20200131202856"  title="在网页中显示时钟" width="600" height="" /><figcaption><font color=green>在网页中显示时钟</font></figcaption></center></figure>
+      <li><a title="Array（数组）对象是JavaScript中常用的内置对象之一，通过调用Array（数组）对象的各种方法，可以方便地对数组进行排序、删除、合并等操作。">数组对象</a></li>
+      <li><a title="Boolean（逻辑）对象用于转换一个不是Boolean类型的值，转换的结果为Boolean类型值，包括true和false。
+        1. 创建Boolean对象
+        Boolean对象代表两个值：true或者false，下面的代码定义了一个名为myBoolean的布尔对象，具体格式如下：
+              var myBoolean=new Boolean();
+        如果布尔对象无初始值或者其值为：0、-0、null、&quot;&quot;、false、undefined和NaN，那么对象的值为false。否则，其值为true。
+        2. 创建Boolean的属性
+        Boolean日期对象只包含两个属性，分别是constructor和prototype
+属性                描述
+constructor      返回对创建此对象的Boolean函数的引用
+prototype          允许用户向对象添加属性和方法
+        3. Boolean对象的方法
+        Boolean对象的方法包括两个
+方法                描述
+toString()       把布尔值转换为字符串，并返回结果
+valueOf()        返回Boolean对象的原始值 
+注意：当需要把Boolean对象转换成字符串的情况，JavaScript会自动调用此方法。">逻辑对象</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131203557.png" alt="20200131203557"  title="获取颜色" width="600" height="" /><figcaption><font color=green>获取颜色</font></figcaption></center></figure>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131214615.png" alt="20200131214615"  title="把布尔值转换为字符串并返回结果" width="600" height="" /><figcaption><font color=green>把布尔值转换为字符串并返回结果</font></figcaption></center></figure>
+<li><a title="算数（Math）对象的作用是执行常见的算数任务。这是因为Math对象提供了大量的数学常量和数学函数。在使用Math对象时，不能使用关键字new来创建对象实例，而应直接使用“对象名.成员”的格式来访问其属性和方法。
+    1. 创建Math对象
+    创建Math对象的语法结构如下。
+      Math.[{property|method}]
+其中，property为必选项，为Math对象的一个属性名；
+method也是必选项，为Math对象的一个方法名。
+具体应用实例代码格式如下：
+var x = Math.PI;  //返回PI
+var y  = Math.sqrt(16); //返回16的平方根
+    2. Math对象的属性
+    Math对象的属性是数学中常用的常量
+    3. Math对象的方法
+Math对象的方法是数学中常用的函数">算数对象</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131215024.png" alt="20200131215024"  title="Math对象的属性" width="600" height="" /><figcaption><font color=green>Math对象的属性</font></figcaption></center></figure>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131215309.png" alt="20200131215309"  title="Math对象的方法" width="600" height="" /><figcaption><font color=green>Math对象的方法</font></figcaption></center></figure>
+    <li><a title="Number对象是原始数值的包装对象，代表数值数据类型和提供数值的对象，如果一个参数值不能转换为一个数字将返回NaN（非数字值）。
+        1. 创建Number对象
+        在创建Number对象时，可以不与运算符new一起使用，而直接作为转换函数来使用。以这种方式调用Number对象时，它会把自己的参数转化成一个数字，然后返回转换后的原始数值。
+        创建Number对象的语法结构如下：
+              var num = new Number(value);
+        其中，num表示要赋值为Number对象的变量名；value为可选项，是新对象的数字值。如果忽略Boolvalue，则返回值为0。
+        var numObj1=new Number()             //创建Number对象 0
+      var numObj2=new Number(0) //0
+      var numObj3=new Number(-1)//-1
+      2. Number对象的属性
+      3. Number对象的方法
+Number对象包含的方法并不多，这些方法主要用于数据类型的转换">数值对象</a></li>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131215702.png" alt="20200131215702"  title="Number对象的属性" width="600" height="" /><figcaption><font color=green>Number对象的属性</font></figcaption></center></figure>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131215813.png" alt="20200131215813"  title="Number对象的方法" width="600" height="" /><figcaption><font color=green>Number对象的方法</font></figcaption></center></figure>
+</ol>
+<h2><a title="在JavaScript中，用于对象访问的语句有两种，分别是for…in循环语句和with语句。">对象访问语句</a></h2>
+<ol>
+    <li><a title="for…in循环语句和for语句十分相似，该语句用来遍历对象的每一个属性。每次都会将属性名作为字符串保存在变量中。
+        for…in语句的语法格式如下：
+              for(variable in object){
+              _statement
+              }
+        其中，variable是一个变量名，声明一个变量的var语句、数组的一个元素或者对象的一个属性。Object是一个对象名，或者是计算结果为对象的表达式。statement是一个原始语句或者语句块，由它构建循环的主体。">for…in循环语句</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131220236.png" alt="20200131220236"  title="for…in循环语句的应用" width="600" height="" /><figcaption><font color=green>for…in循环语句的应用</font></figcaption></center></figure>
+    <li><a title="有了with语句，在存取对象属性和方法时就不用重复指定参考对象了，在with语句块中，凡是JavaScript不识别的属性和方法都和该语句块指定的对象有关。
+        With语句的语法格式如下：
+                with object {
+                    statements
+                 }">with语句</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200131220711.png" alt="20200131220711"  title="with语句" width="600" height="" /><figcaption><font color=green>with语句</font></figcaption></center></figure>
+</ol>
+<h2><a title="对象序列化是指将对象的状态转换为字符串，从而存储在计算机中，以供程序员连续使用">对象序列化</a></h2>
+<ol>
+    <li><a title="使用JavaScript JSON中的JSON.stringify()方法可以序列化对象，而使用JSON.parse()可以还原JavaScript对象，也就是对象的反序列化。
+        JSON，全称是JavaScript Object Notation。它是基于JavaScript编程语言标准的一种轻量级的数据交换格式，主要用于与服务器进行交换数据。与XML相类似，它独立语言，在跨平台数据传输上有很大的优势。">认识对象序列化</a></li>
+    <li><a title="世间万物，都有其存在的原因，为什么会有对象序列化呢？因为程序员需要它。既然是对象序列化，那就需要先从一个对象说起，例如下面一个实例代码：
+        var obj = {x:1, y:2};
+  当这句代码运行时，对象obj的内容会存储在一块内存中，而obj本身存储的只是这块内存的地址的映射而已。简单地说，对象obj就是我们的程序在计算机通电时，在内存中维护的一种东西，如果我们的程序停止运行了，或者是计算机断电了，对象obj将不复存在。
+  那么如何把对象obj的内容保存在磁盘上呢？也就是说在没电时继续保留着，这时就需要把对象obj序列化，也就是说把obj的内容转换成一个字符串的形式，然后再保存在磁盘上。
+  另外，我们又怎么通过HTTP协议把对象obj的内容发送到客户端呢？没错，还是需要先把对象obj序列化，然后客户端根据接收到的字符串再反序列化，也就是将字符串还原为对象，从而解析出相应的对象，这也正是对象序列化与反序列化的意义所在。">对象序列化的意义</a></li>
+    <li><a title="JavaScript中的对象序列化是通过JSON.stringify()来实现的，具体的语法格式如下：
+        JSON.stringify(value[, replacer[, space]])
+  参数说明：
+  ●　value：必选项，是指一个有效的JSON字符串。
+  ●　replacer：可选项，用于转换结果的函数或数组。如果replacer为函数，则JSON.stringify将调用该函数，并传入每个成员的键和值。使用返回值而不是原始值。如果此函数返回undefined，则排除成员。根对象的键是一个空字符串：&quot;&quot;。如果replacer是一个数组，则仅转换该数组中具有键值的成员。成员的转换顺序与键在数组中的顺序一样。当value参数也为数组时，将忽略replacer数组。
+  ●　space：可选项，文本添加缩进、空格和换行符，如果space是一个数字，则返回值文本在每个级别缩进指定数目的空格，如果space大于10，则文本缩进10个空格。space有可以使用非数字，如：\t。
+  ●　返回值：返回包含JSON文本的字符串。">对象序列化</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201204923.png" alt="20200201204923"  title="对象序列化" width="600" height="" /><figcaption><font color=green>对象序列化</font></figcaption></center></figure>
+    <li><a title="JavaScript中的对象反序列化是通过JSON.parse()来实现的，该方法用于将一个JSON字符串转换为对象。具体的语法格式如下：
+        JSON.parse(text[, reviver])
+  参数说明：
+  ●　text：必选项，是指一个有效的JSON字符串。
+  ●　reviver：可选项，一个转换结果的函数，将为对象的每个成员调用此函数。
+  ●　返回值：返回给定JSON字符串转换后的对象。">对象反序列化</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201210301.png" alt="20200201210301"  title="对象反序列化" width="600" height="" /><figcaption><font color=green>对象反序列化</font></figcaption></center></figure>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201213628.png" alt="20200201213628"  title="反序列化操作并回调函数" width="600" height="" /><figcaption><font color=green>反序列化操作并回调函数</font></figcaption></center></figure>
+</ol>
+<h2><a title="创建对象的常用模式包括工厂模式、自定义构造函数模式、原型模式、原型模式和构造函数模式、动态原型模式等。">创建对象的常用模式</a></h2>
+<ol>
+    <li><a title="工厂模式，顾名思义，这是一个类似于机器的方法，只要把原料（参数）放入机器，经过机器加工，就能获得想要的对象。具体实例代码如下：
+        使用工厂模式创建对象时注意以下几点：
+●　在函数中定义对象，并定义对象的各种属性，虽然属性可以为方法，但是建议将属性为方法的属性定义到函数之外，这样可以避免重复创建该方法。
+●　引用该对象的时候，这里使用的是var x=Parent()而不是var x=new Parent();因为后者会可能出现很多问题（前者也成为工厂经典方式，后者称为混合工厂方式），不推荐使用new的方式使用该对象。
+为混合工厂方式），不推荐使用new的方式使用该对象。
+●　在函数的最后返回该对象。
+●　在创建对象时，不推荐使用这种方式创建对象，但应该了解。">工厂模式</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201214143.png" alt="20200201214143"  title="工厂模式" width="600" height="" /><figcaption><font color=green>工厂模式</font></figcaption></center></figure>
+    <li><a title="与工厂方式相比，使用构造函数方式创建对象，无须在函数内部重建创建对象，而使用this指代，并且函数无须明确return。具体实例代码如下：
+        使用自定义构造函数模式创建对象时注意以下几点：
+●　同工厂模式一样，虽然属性的值可以为方法，仍然建议将该方法定义在函数之外。
+●　同样的，不推荐使用这种方式创建对象，但仍需要了解。">自定义构造函数模式</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201214441.png" alt="20200201214441"  title="自定义构造函数模式" width="600" height="" /><figcaption><font color=green>自定义构造函数模式</font></figcaption></center></figure>
+    <li><a title="在使用原型模式创建对象时，函数中不对属性进行定义，而是利用prototype属性对属性进行定义。但是，在具体实际应用的过程中，不推荐使用这样方式创建对象。具体的实例代码如下：">原型模式</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201214700.png" alt="20200201214700"  title="原型模式" width="600" height="" /><figcaption><font color=green>原型模式</font></figcaption></center></figure>
+    <li><a title="原型模式和构造函数模式是指混合搭配使用构造函数方式和原型方式，这种创建对象的模式是将所有属性不是方法的属性定义在函数中（构造函数方式），同时，将所有属性值为方法的属性利用prototype在函数之外定义（原型方式），具体的实例代码如下：
+        提示：在实际应用的过程中，推荐使用这种方法创建对象。">原型模式和构造函数模式</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201215153.png" alt="20200201215153"  title="原型模式和构造函数模式" width="600" height="" /><figcaption><font color=green>原型模式和构造函数模式</font></figcaption></center></figure>
+    <li><a title="动态原型方式可以理解为混合构造函数，它是原型方式的一个特例，具体的实例代码如下：
+        在该模式中，属性为方法的属性直接在函数中进行了定义，但是需要保证创建该对象的实例时，属性的方法不会被重复创建，具体的实例代码如下：
+      if(typeof Parent._lev==&quot;undefined&quot;){
+         Parent._lev=true;
+      }">动态原型模式</a></li>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201215510.png" alt="20200201215510"  title="动态原型模式" width="600" height="" /><figcaption><font color=green>动态原型模式</font></figcaption></center></figure>
+</ol>
+<h2><a title="数组对象是使用单独的变量名来存储一系列的值，并且可以用变量名访问任何一个值，数组中的每个元素都有自己的ID，以便它可以很容易地被访问到。
+    例如：如果你有一组数据（例如车名字），存在单独变量如下：
+      var car1=&quot;Saab&quot;;
+      var car2=&quot;Volvo&quot;;
+      var car3=&quot;BMW&quot;;
+然而，如果你想从中找出某一辆车，并且不是3辆，而是300辆呢？这将不是一件容易的事！最好的方法就是用数组。">数组对象</a></h2>
+<ol>
+    <li><a title="数组是具有相同数据类型的变量集合，这些变量都可以通过索引进行访问。数组中的变量称为数组的元素，数组能够容纳元素的数量称为数组的长度。创建数组对象有以下3种方法。
+        第一种：常规方式，具体格式如下：
+              var 数组名=new Array( );
+        例如，定义一个名为myCars的数组对象，具体代码如下：
+        var myCars = new Array(); //创建数组myCars
+        myCars[0] = &quot;
+        Saab&quot;
+        myCars[1] = &quot;
+        Volvo&quot;
+        myCars[2] = &quot;
+        BMW&quot;
+        第二种：简洁方式，具体格式如下：
+      var 数组名=new Array( n );
+例如，定义一个名为myCars的数组对象，具体代码如下：
+      var myCars=new Array(&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;);
+第三种：字面方式，具体格式如下：
+      var 数组名=[元素1,元素2,元素3,…];
+例如，定义一个名为myCars的数组对象，具体代码如下：
+      var myCars=[&quot;Saab&quot;,&quot;Volvo&quot;,&quot;BMW&quot;];
+下面创建一个长度为4的数组，为其添加数组对象后，使用for循环语句枚举数组对象。
+只要构造了一个数组，就可以使用中括号&quot;[ ]&quot;，通过索引和位置（它也是基于0的）来访问它的元素。数组元素的下标从零开始索引，第一个下标为0，后面依次加1。访问数据的语法格式如下：
+      document.write(mycars[0])">创建数组</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201220146.png" alt="20200201220146"  title="创建数组" width="600" height="" /><figcaption><font color=green>创建数组</font></figcaption></center></figure>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201220416.png" alt="20200201220416"  title="使用中括号访问并直接构造数组" width="600" height="" /><figcaption><font color=green>使用中括号访问并直接构造数组</font></figcaption></center></figure>
+    <li><a title="访问数组，通过指定数组名以及索引号码，用户可以访问数组中的某个特定元素。例如可以访问myCars数组的第一个值，具体代码如下：
+        var name=myCars[0];注意：[0]是数组的第一个元素，[1]是数组的第二个元素。另外，还可以修改数组中的第一个元素，具体代码如下：
+      myCars[0]=&quot;Opel&quot;;
+在一个数组中可以有不同的对象，几乎所有的JavaScript变量都可以是对象，甚至数组本身也可以是对象，函数也可以是对象。下面创建一个数组，其中包括对象元素、函数与数组，具体代码如下：
+      myArray[0]=Date.now;
+      myArray[1]=myFunction;
+      myArray[2]=myCars;">访问数组</a></li>
+    <li><a title="数组对象的属性有3个，常用属性是length属性和prototype属性
+        constructor                             返回创建数组对象的原型函数
+        length                                      设置或返回数组元素的个数
+        prototype                                 允许你向数组对象添加属性或方法
+下面详细介绍prototype属性，该属性是所有JavaScript对象所共有的属性，让用户向数组对象中添加属性和方法。当构建一个属性时，所有的数组将被设置属性，它是默认值，在构建一个方法时，所有的数组都可以使用该方法。其语法格式为：
+        Array.prototype.name=value。
+注意：Array.prototype不能单独引用数组，Array()对象可以。
+下面创建一个新的数组，将数组值转为大写。">数组属性</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201221403.png" alt="20200201221403"  title="数组prototype属性的应用" width="600" height="" /><figcaption><font color=green>数组prototype属性的应用</font></figcaption></center></figure>
+    <li><a title="使用数组属性中的length属性可以计算数组长度，该属性的作用是指定数组中元素数量的非从零开始的整数，当将新元素添加到数组时，此属性会自动更新。其语法格式为：
+        my_array.length
+  下面创建一个新的数组，并返回数组元素的个数，即数组长度。">数组长度</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201221831.png" alt="20200201221831"  title="获取数组的长度" width="600" height="" /><figcaption><font color=green>获取数组的长度</font></figcaption></center></figure>
+</ol>
+<h2><a title="在JavaScript当中，数据对象的方法有25种，常用的方法有连接方法concat、分隔方法join、追加方法push、倒转方法reverse、切片方法slice等">数组方法</a></h2>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200201222029.png" alt="20200201222029"  title="数组对象的方法及描述" width="600" height="" /><figcaption><font color=green>数组对象的方法及描述</font></figcaption></center></figure>
+<ol>
+    <li><a title="使用concat()方法可以连接两个或多个数组。该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。语法格式如下：
+        arrayObject.concat(array1,array2,...,arrayN)
+  其中，arrayN是必选项，该参数可以是具体的值，也可以是数组对象，可以是任意多个。">连接两个或更多的数组</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202161615.png" alt="20200202161615"  title="concat方法连接三个数组并返回连接后的结果" width="600" height="" /><figcaption><font color=green>concat方法连接三个数组并返回连接后的结果</font></figcaption></center></figure>
+  <li><a title="使用join()方法可以把数组中的所有元素放入一个字符串。语法格式如下：
+    arrayObject.join(separator)
+其中，separator为可选项，用于指定要使用的分隔符，如果省略该参数，则使用逗号作为分隔符。">join将数组元素连接为字符串</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202162158.png" alt="20200202162158"  title="join将数组元素连接为字符串" width="600" height="" /><figcaption><font color=green>join将数组元素连接为字符串</font></figcaption></center></figure>
+    <li><a title="使用pop()方法可以移除并返回数组中最后一个元素。语法格式如下：
+        arrayObject.pop()
+    提示：pop()方法将移除arrayObject的最后一个元素，把数组长度减1，并且返回它移除的元素的值。如果数组已经为空，则pop()不改变数组，并返回undefined值。">pop移除数组中最后一个元素</a></li>
+    <li><a title="使用push()方法可向数组的末尾添加一个或多个元素，并返回新的长度。语法格式如下：
+        arrayObject.push(newelement1,newelement2,...,newelementN)
+  其中，arrayObject为必选项，该参数为数组对象。
+            newelement1为可选项，表示添加到数组中的元素。
+    提示：push()方法可把它的参数顺序添加到arrayObject的尾部。它直接修改arrayObject，而不是创建一个新的数组。
+push()方法和pop()方法使用数组提供的先进后出栈的功能。">push将指定的数值添加到数组中</a></li>
+    <li><a title="使用reverse()方法可以颠倒数组中元素的顺序。语法格式如下：
+        arrayObject.reverse()
+    提示：该方法会改变原来的数组，而不会创建新的数组。">reverse反序排列数组中的元素</a></li>
+    <li><a title="使用shift()方法可以把数组的第一个元素从其中删除，并返回第一个元素的值。语法格式如下：
+        arrayObject.shift()
+        其中，arrayObject为必选项，是数组对象。
+        提示：如果数组是空的，那么shift()方法将不进行任何操作，返回undefined值。请注意，该方法不创建新数组，而是直接修改原有的arrayObject。">shift删除数组中的第一个元素</a></li>
+    <li><a title="使用slice()方法可从已有的数组中返回选定的元素。语法格式如下：
+        arrayObject.slice(start,end)
+        其中，arrayObject为必选项，为数组对象，
+        start为必选项，表示开始元素的位置，是从0开始计算的索引。
+        end为可选项，表示结束元素的位置，也是从0开始计算的索引。">slice获取数组中的一部分数据</a></li>
+        <li><a title="使用sort()方法可以对数组的元素进行排序，排序顺序可以是字母或数字，并按升序或降序排序，默认排序顺序为按字母升序。语法格式如下：
+            arrayObject.sort(sortby)
+            其中，
+            rrayObject为必选项，为数组对象。
+            sortby为可选项，用来确定元素顺序的函数的名称，如果这个参数被省略，那么元素将按照ASCII字符顺序进行升序排序。
+            注意：当数字是按字母顺序排列时，&quot;40&quot;将排在&quot;5&quot;前面。使用数字排序，用户必须通过一个函数作为参数来调用，函数指定数字是按照升序还是降序排列，这种方法会改变原始数组！">sort对数组中的元素进行排序</a></li>
+            <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202163341.png" alt="20200202163341"  title="sort对数组中的元素进行排序" width="600" height="" /><figcaption><font color=green>sort对数组中的元素进行排序</font></figcaption></center></figure>
+    <li><a title="按照显示方式的不同，字符串可以分为字符串与本地字符串，使用toString()方法可把数组转换为字符串，并返回结果。语法格式如下：
+        arrayObject.toString()
+  使用toLocaleString()方法可以把数组转换为本地的字符串。语法格式如下：
+        arrayObject.toLocaleString()提示：首先调用每个数组元素的toLocaleString()方法，然后使用地区特定的分隔符把生成的字符串连接起来，形成一个字符串。">toString将数组转换成字符串</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202164631.png" alt="20200202164631"  title="toString将数组转换为字符串" width="600" height="" /><figcaption><font color=green>toString将数组转换为字符串</font></figcaption></center></figure>
+</ol>
+<h2><a title="许多编程语言中都提供定义和使用二维或多维数组的功能。
+    JavaScript通过Array对象创建的数组都是一维的，但是可以通过在数组元素中使用数组来实现二维数组。
+    下面制作一个动态下拉列表">制作二级关联菜单</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202192315.png" alt="20200202192315"  title="数组制作二级关联菜单" width="600" height="" /><figcaption><font color=green>数组制作二级关联菜单</font></figcaption></center></figure>
+    <p><a tile="应聘者：我的朋友都说我是一个可以信赖的人。因为，我答应别人的事情，就一定会做到。如果我做不到，我就不会轻易许诺。">面试官：朋友对你的评价，你知道吗？</a></p>
+    <p><a title="应聘者：一段时间发现工作不适合我，我会从我个人身上找原因，不断学习，虚心向领导和同事学习业务知识和处事经验，了解这个职业的精神内涵和职业要求，力争胜任这份工作。">面试官：如果通过这次面试我们单位录用了你，但工作一段时间却发现你根本不适合这个职位，你怎么办？</a></p>
 
 <p>
     参考：
