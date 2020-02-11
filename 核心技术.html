@@ -45,87 +45,21 @@
     </style>
 </head>
 <body>
-<h1>第17章 JavaScript函数与闭包</h1>
-<h2><a title="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块，是实现一个特殊功能和作用的程序接口，可以被当作一个整体来引用和执行。在JavaScript中，函数的定义通常由4部分组成：关键字、函数名、参数列表和函数内部实现语句，具体语法格式如下：
-    function functionname()
-    {
-       执行代码
-    }
-当调用该函数时，会执行函数内的代码。同时，可以在某事件发生时直接调用函数（例如当用户单击按钮时），并且可由JavaScript在任何位置进行调用。注意：JavaScript对大小写敏感，关键词function必须是小写的，并且必须以与函数名称相同的大小写来调用函数。
-提示：如果函数中引用的外部函数较多或函数的功能很复杂，将因函数代码过长而降低脚本代码的可读性。因此，在编写函数时，应尽量降低代码的复杂度及难度，保持函数功能的单一性，简化程序设计，以使脚本代码结构清晰、简单易懂。">函数是什么</a></h2>
-<h2><a title="使用函数前，必须先定义函数，JavaScript使用关键字function定义函数，除此之外，函数可以通过声明和一个表达式定义。">定义函数</a></h2>
-<ol>
-    <li><a title="提示：分号用来分隔可执行JavaScript语句，由于函数声明不是一个可执行语句，所以不以分号结束。使用函数前，必须先定义函数。
-        function functionName(parameters) {
-           执行的代码
-        }
-  函数声明后不会立即执行，会在用户需要的时候调用。">声明式函数定义</a></li>
-  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202201227.png" alt="20200202201227"  title="声明式函数定义" width="600" height="" /><figcaption><font color=green>声明式函数定义</font></figcaption></center></figure>
-  <li><a title="JavaScript函数可以通过一个表达式定义，其中，函数表达式可以存储在变量中，具体代码如下：
-    var x = function (a, b) {return a * b};">函数表达式定义</a></li>
-    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202201756.png" alt="20200202201756"  title="函数表达式定义" width="600" height="" /><figcaption><font color=green>函数表达式定义</font></figcaption></center></figure>
-    <li><a title="JavaScript内置的函数构造器为（Function()），通过该构造器可以进行函数定义，具体代码如下：
-        var myFunction = new Function(&quot;a&quot;, &quot;b&quot;, &quot;return a * b&quot;);">函数构造器定义</a></li>
-    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202201423.png" alt="20200202201423"  title="函数构造器定义" width="600" height="" /><figcaption><font color=green>函数构造器定义</font></figcaption></center></figure>
-    <p>在JavaScript中，很多时候，用户不必使用构造函数，需要避免使用new关键字。因此上面的函数定义实例可以修改为如下代码：</p>
-    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202202700.png" alt="20200202202700"  title="构造函数需要避免使用new关键字" width="600" height="" /><figcaption><font color=green>构造函数需要避免使用new关键字</font></figcaption></center></figure>
-</ol>
-<h2><a title="定义函数的目的是为了后续的代码中使用函数。调用自己不会执行，必须调用函数，函数体内的代码才会执行。
-    在JavaScript中调用函数的方法有简单调用、在表达式中调用、在事件响应中调用等。">函数的调用</a></h2>
-<li><a title="作为一个函数调用函数是调用JavaScript函数常用的方法，但不是良好的编程习惯，因为全局变量、方法或函数容易造成命名冲突的bug。
-    全局函数myFunction不属于任何对象，但是在JavaScript中它始终是默认的全局对象。在HTML中默认的全局对象是HTML页面本身，所以函数属于HTML页面。在浏览器中的页面对象是浏览器窗口（window对象），以上函数会自动变为window对象的函数。因此，myFunction()和window.myFunction()的作用是一样的。">作为一个函数调用</a></li>
-    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202205511.png" alt="20200202205511"  title="作为一个函数调用" width="600" height="" /><figcaption><font color=green>作为一个函数调用</font></figcaption></center></figure>
-    <li><a title="在JavaScript中，用户可以将函数定义为对象的方法，从而进行调用。例如：创建一个对象(myObject)，对象有两个属性，分别是firstName和lastName，还有一个方法是fullName。
-        ">将函数作为方法调用</a></li>
-        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202210119.png" alt="20200202210119"  title="将函数作为方法调用" width="600" height="" /><figcaption><font color=green>将函数作为方法调用</font></figcaption></center></figure>
-        <p>fullName方法是一个函数，函数属于对象，myObject是函数的所有者，当加入this对象后，this的值为myObject对象，这里修改fullName方法并返回this值。</p>
-        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202210444.png" alt="20200202210444"  title="this的值为myObject对象" width="600" height="" /><figcaption><font color=green>this的值为myObject对象</font></figcaption></center></figure>
-        <li><a title="如果函数调用前使用了new关键字，则是调用了构造函数。构造函数的调用会创建一个新的对象，新对象会继承构造函数的属性和方法。
-提示：构造函数中this关键字没有任何的值，this的值在函数调用时实例化对象(new object)时创建的。">使用构造函数调用函数</a></li>
-<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202210839.png" alt="20200202210839"  title="使用构造函数调用函数" width="600" height="" /><figcaption><font color=green>使用构造函数调用函数</font></figcaption></center></figure>
-    <li><a title="在JavaScript中，函数是对象，JavaScript函数有它的属性和方法，call()和apply()是预定义的函数方法。两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。">作为函数方法调用函数</a></li>
-    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202211828.png" alt="20200202211828"  title="作为函数方法调用函数" width="600" height="" /><figcaption><font color=green>作为函数方法调用函数</font></figcaption></center></figure>
-<h2><a title="内置函数是语言内部事先定义好的函数，使用JavaScript的内置函数，可提高编程效率">内置常规函数</a></h2>
-<ol>
-    <li><a title="eval()函数计算JavaScript字符串，并把它作为脚本代码来执行。如果参数是一个表达式，eval()函数将执行表达式；如果参数是Javascript语句，eval()将执行Javascript语句。语法结构如下：
-        eval(string)
-  其中，参数string是必选项。要计算的字符串，其中含有要计算的JavaScript表达式或要执行的语句。">eval()函数</a></li>
-  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202212251.png" alt="20200202212251"  title="eval函数" width="600" height="" /><figcaption><font color=green>eval函数</font></figcaption></center></figure>
-    <li><a title="isFinite()函数用于检查其参数是否是无穷大，如果该参数为非数字、正无穷数或负无穷数，则返回false，否则返回true。如果是字符串类型的数字，则将会自动转化为数字型。语法结构如下：
-        isFinite(value)
-  其中，参数value是必选项，为要检测的数值。">isFinite()函数</a></li>
-  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202212603.png" alt="20200202212603"  title="isFinite函数" width="600" height="" /><figcaption><font color=green>isFinite函数</font></figcaption></center></figure>
-  <li><a title="isNaN()函数用于检查其参数是否是非数字值。如果参数值为NaN或字符串、对象、undefined等非数字值，则返回true，否则返回false。语法结构如下：
-    isNaN(value)">isNaN()函数</a></li>
-    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202212821.png" alt="20200202212821"  title="isNaN函数" width="600" height="" /><figcaption><font color=green>isNaN函数</font></figcaption></center></figure>
-    <li><a title="parseInt()函数可解析一个字符串，并返回一个整数。语法结构如下：
-        parseInt(string, radix)
-  参数说明如下。
-  ●　string：必选。要被解析的字符串。
-●　radix：可选。表示要解析的数字的基数，该值介于2～36。
-当参数radix的值为0，或没有设置该参数时，parseInt()会根据string来判断数字的基数。当忽略参数radix，JavaScript默认数字的基数如下：
-●　如果string以&quot;0x&quot;开头，parseInt()会把string的其余部分解析为十六进制的整数。
-●　如果string以0开头，那么ECMAScript v3允许parseInt()的一个实现把其后的字符解析为八进制或十六进制的数字。
-●　如果string以1～9的数字开头，parseInt()将把它解析为十进制的整数。">parseInt()函数</a></li>
-<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202213327.png" alt="20200202213327"  title="parseInt函数" width="600" height="" /><figcaption><font color=green>parseInt函数</font></figcaption></center></figure>
-    <li><a title="parseFloat()函数可解析一个字符串，并返回一个浮点数。该函数指定字符串中的首个字符是否是数字。如果是，则对字符串进行解析，直到到达数字的末端为止，然后以数字返回该数字，而不是作为字符串。语法结构如下。
-        parseFloat(string)
-其中，参数string为必选项，为要被解析的字符串。注意：字符串中只返回第一个数字，开头和结尾的空格是允许的，如果字符串的第一个字符不能被转换为数字，那么parseFloat()会返回NaN。">parseFloat()函数</a></li>
-    <li><a title="escape()函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。
-        该方法不会对ASCII字母和数字进行编码，
-        也不会对下面这些ASCII标点符号进行编码： * @ - _ + . /。其他所有的字符都会被转义序列替换。语法结构如下：
-        escape(string)
-  其中，参数string为必选项，是要被转义或编码的字符串。">escape()函数</a></li>
-  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202213909.png" alt="20200202213909"  title="escape函数" width="600" height="" /><figcaption><font color=green>escape函数</font></figcaption></center></figure>
-    <li><a title="unescape()函数可对通过escape()编码的字符串进行解码。语法结构如下：
-        unescape(string)
-  其中，参数string为必选项，是要解码的字符串。">unescape()函数</a></li>
-  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202214141.png" alt="20200202214141"  title="unescape函数" width="600" height="" /><figcaption><font color=green>unescape函数</font></figcaption></center></figure>
 
-</ol>
-<h2>JavaScript特殊函数</h2>
+<p style="color:rgb(255, 0, 0); text-align: center; background-color: #FFFF00; font-size: 30px;">第4篇 高级应用></p>
+<h1><a title="学习指引
+    文档对象（Document）代表浏览器窗口中的文档，多数用来获取HTML页面中某个元素。DOM （Document Object Model）模型，即文档对象模型，是面向HTML和XML的应用程序接口。
+    本章将详细介绍文档对象与对象模型的应用，主要内容包括使用文档对象、DOM模型中节点、操作DOM模型中的节点等。
+    重点导读
+    ●　掌握文档对象的属性与方法。
+    ●　掌握使用文档对象的方法。
+    ●　掌握DOM技术的简单应用。
+    ●　掌握DOM模型中节点的应用。
+    ●　操作DOM中的节点。
+    ●　掌握DOM与CSS的结合应用。">第19章 文档对象与对象模型</a></h1>
+<h2><a title="当浏览器载入HTML文档，它就会成为Document对象，Document对象使用户可以从脚本中对HTML页面中的所有元素进行访问。Document对象是Window对象的一部分，可通过window.document属性对其进行访问。">熟悉文档对象</a></h2>
 <ol>
-    <li><a title="">嵌套函数</a></li>
+    <li><a title="window对象具有Document属性，该属性表示在窗口中显示HTML文件的Document对象。客户端JavaScript可以把静态HTML文档转换成交互式的程序，因为Document对象提供交互访问静态文档内容的功能。除了提供文档整体信息的属性外，Document对象还有很多的重要属性，这些属性提供文档内容的信息。">文档对象属性</a></li>
 </ol>
 </body>
 </html>

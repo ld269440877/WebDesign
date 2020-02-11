@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- 步骤1：设计HTML网页框架 -->
+<html>
+<head>
+<title >制作#較两级菜单</title>
+</head>
+<body>
+<div id="navigation">
+    <ul id="listUL">
+        <li><a href=’’#’’>个人中心</a>
+            <ul>
+                <li><a href="#">个人资料</a></li>
+                <li><a href="#">与我相关</a></li>
+                <li><a href="#">好友动态</a></li>
+            </ul>
+        </li>
+        <li><a href="#">我的主页</a>
+            <ul>
+                <li><a href="#">日志</a></li>
+                <li><a href="#">相册</a></li>
+                <li><a href="#">状态</a></li>
+            </ul>
+        </li>
+        <li><a href="#">留言板</a></li>
+        <li><a href="#">应用中心</a>
+            <ul>
+                <li><a href="#">游戏</a></li>
+                <li><a href="#">音乐</a></li>
+            </ul>
+        </li>
+        <li><a href="#">更多</a></li>
+</ul>
+</div>
+</body>
+</html>
+<!-- 步骤2：在网页中添加CSS代码，先对一级菜单进行风格设置 -->
+<style>
+body{
+    background-color: #eed0e0;
+}
+#navigation{
+    width: 200px;
+    font-family: Arial;
+}
+#navigation >ul > li{
+    border-bottom: 1px solid #AD9F9F; /*添加下划线*/
+}
+#navigation > ul > li > a{
+    display: block;
+    padding: 5px 5px 5px 0.5em;
+    text-decoration: none;
+    border-left: 12px solid #711111; /*左边的粗边*/
+}
+#navigation > ul > li > a:link, #navigation > ul > li > a:visited{ 
+    background-color:#c11136;/*改变背景*/
+    color:#ffffff; /*改变文字颜色*/
+}
+#navigation > ul > li:hover{ /*鼠标指针经过时*/
+    background-color:#880020;/*改变背景*/
+    color:#ff0000; /*改变文字颜色*/
+}
+h1{
+    color:red; /*文字颜色*/
+    background-color:#49ff01;
+    text-align: center;
+    padding: 20px; /*边距*/
+}
+img{ float:left; /*设置左浮动*/
+border: 2px solid #F00; /*设置边框*/
+margin: 5px; /*设置边框*/
+}
+
+</style>
+<!-- 步骤3：在网页中添加CSS代码，对二级子菜单做相应的风格设置 -->
+<style>
+#navigation ul li ul {
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+#navigation ul li ul li{
+    border-top: 1px solid #ED9F9F;
+}
+#navigation ul li ul li a{
+    display: block;
+    padding: 3px 3px 3px 0.5em;
+    text-decoration: none;
+    border-left: 28px solid #a71f1f;
+    border-right: 1px solid #711515;
+}
+#navigation ul li ul li a:link, #navigation ul li ul li a:visited{
+    background-color: #e85070;
+    color: #ffffff;
+}
+#navigation ul li ul li a:hover{
+    background-color: : #c2425d;
+    color: #ffff00;
+    font-size: 16px;
+}
+#navigation ul li ul.myHide{
+    display: none; /*隐藏子菜单*/
+}
+#navigation ul li ul.myShow{
+    display: block; /*显示子菜单*/
+}
+</style>
+<!-- 步骤4：添加JavaScript代码，为菜单添加上伸缩效果 -->
+<script type="text/javascript" src="jquery.min.js">
+</script>
+<script type="text/javascript">
+function change(){
+    var SecondDiv = this.parentNode.getElementByIdTagName("ul")[0];
+    if(SecondDiv.className == "myHide") //通过CSS交替更换实现显隐
+        SecondDiv.className = "myShow"
+    else
+        SecondDiv.className = "myHide";
+}
+window.onload = function(){
+    var Ul = document.getElementById("listUL");
+    var aLi = Ul.childNodes;
+    var A;
+    for(var i=0; i<aLi.length; i++){
+        //如果子元素为li，且这个li有子菜单ul
+        if(aLi[i].tagName == "LI" && aLi[i].getElementByIdTagName("ul").length){
+            A = aLi[i].firstChild; //找到超链接
+            A.onclick = change; //动态添加点击函数
+        }
+    }
+}
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>窗口框架</title>
+    <script language="javascript" type="text/javascript">
+    function getFrame(){ //获取当前窗口所在的框架
+        var frameObj = window.frameElement;
+        window.alert("当前窗口所在框架的名称：" + frameObj.name);
+        window.alert("当前窗口的框架数量：" + window.length);
+    }
+    function openWin(){ //打开一个窗口
+        window.open("ch18top.html", "_blank");
+    }
+    </script>
+</head>
+<body>
+    <form name="frmData" method="post" action="#">
+        <input type="hidden" name="hidObj" value="隐藏变量 /">
+        <p>
+            <center>
+                <h1>显示框架页面的内容</h1>
+            </center>
+        </p>
+        <p>
+            <center>
+                <input type="button" value="窗口框架" onclick="getFrame()"/>
+            </center>
+        </p>
+        <br>
+        <center>
+            <input type="button" value="打开窗口" onclick="openWin()" />
+        </center>
+    </form>
+</body>
+</html>

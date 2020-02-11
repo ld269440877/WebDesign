@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>直接打开新窗口</title>
+    <script>
+        window.open('', '', 'width=200,height=100');
+    </script>
+</head>
+
+<body>
+    <p>这是'我的新窗口'直接打开</p>
+</body>
+<hr>
+
+<head>
+    <title>通过按钮打开新窗口</title>
+    <script>
+        function open_win() {
+            window.open("http://www.baidu.com");
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="button" value="打开窗口" onclick="open_win()">
+    </form>
+</body>
+
+</html>

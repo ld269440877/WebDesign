@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>弹出"Hello"信息提示框</title>
+</head>
+
+<body>
+    <p>单击"开始"按钮,3秒后会弹出"Hello"。</p>
+    <button onclick="myFunction()">开始</button>
+    <script>
+        var myVar;
+        function myFunction() {
+            myVar = setTimeout(alertFunc, 3000);   //调用setTimeout方法指定3秒数后调用函数或计算表达式
+        }
+        function alertFunc() {
+            alert("Hello!");
+        }
+    </script>
+</body>
+
+</html>

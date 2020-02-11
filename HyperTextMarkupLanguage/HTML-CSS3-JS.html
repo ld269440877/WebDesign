@@ -2195,6 +2195,362 @@ push()方法和pop()方法使用数组提供的先进后出栈的功能。">push
     <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202192315.png" alt="20200202192315"  title="数组制作二级关联菜单" width="600" height="" /><figcaption><font color=green>数组制作二级关联菜单</font></figcaption></center></figure>
     <p><a tile="应聘者：我的朋友都说我是一个可以信赖的人。因为，我答应别人的事情，就一定会做到。如果我做不到，我就不会轻易许诺。">面试官：朋友对你的评价，你知道吗？</a></p>
     <p><a title="应聘者：一段时间发现工作不适合我，我会从我个人身上找原因，不断学习，虚心向领导和同事学习业务知识和处事经验，了解这个职业的精神内涵和职业要求，力争胜任这份工作。">面试官：如果通过这次面试我们单位录用了你，但工作一段时间却发现你根本不适合这个职位，你怎么办？</a></p>
+<h1>第17章 JavaScript函数与闭包</h1>
+<h2><a title="函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块，是实现一个特殊功能和作用的程序接口，可以被当作一个整体来引用和执行。在JavaScript中，函数的定义通常由4部分组成：关键字、函数名、参数列表和函数内部实现语句，具体语法格式如下：
+    function functionname()
+    {
+       执行代码
+    }
+当调用该函数时，会执行函数内的代码。同时，可以在某事件发生时直接调用函数（例如当用户单击按钮时），并且可由JavaScript在任何位置进行调用。注意：JavaScript对大小写敏感，关键词function必须是小写的，并且必须以与函数名称相同的大小写来调用函数。
+提示：如果函数中引用的外部函数较多或函数的功能很复杂，将因函数代码过长而降低脚本代码的可读性。因此，在编写函数时，应尽量降低代码的复杂度及难度，保持函数功能的单一性，简化程序设计，以使脚本代码结构清晰、简单易懂。">函数是什么</a></h2>
+<h2><a title="使用函数前，必须先定义函数，JavaScript使用关键字function定义函数，除此之外，函数可以通过声明和一个表达式定义。">定义函数</a></h2>
+<ol>
+    <li><a title="提示：分号用来分隔可执行JavaScript语句，由于函数声明不是一个可执行语句，所以不以分号结束。使用函数前，必须先定义函数。
+        function functionName(parameters) {
+           执行的代码
+        }
+  函数声明后不会立即执行，会在用户需要的时候调用。">声明式函数定义</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202201227.png" alt="20200202201227"  title="声明式函数定义" width="600" height="" /><figcaption><font color=green>声明式函数定义</font></figcaption></center></figure>
+  <li><a title="JavaScript函数可以通过一个表达式定义，其中，函数表达式可以存储在变量中，具体代码如下：
+    var x = function (a, b) {return a * b};">函数表达式定义</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202201756.png" alt="20200202201756"  title="函数表达式定义" width="600" height="" /><figcaption><font color=green>函数表达式定义</font></figcaption></center></figure>
+    <li><a title="JavaScript内置的函数构造器为（Function()），通过该构造器可以进行函数定义，具体代码如下：
+        var myFunction = new Function(&quot;a&quot;, &quot;b&quot;, &quot;return a * b&quot;);">函数构造器定义</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202201423.png" alt="20200202201423"  title="函数构造器定义" width="600" height="" /><figcaption><font color=green>函数构造器定义</font></figcaption></center></figure>
+    <p>在JavaScript中，很多时候，用户不必使用构造函数，需要避免使用new关键字。因此上面的函数定义实例可以修改为如下代码：</p>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202202700.png" alt="20200202202700"  title="构造函数需要避免使用new关键字" width="600" height="" /><figcaption><font color=green>构造函数需要避免使用new关键字</font></figcaption></center></figure>
+</ol>
+<h2><a title="定义函数的目的是为了后续的代码中使用函数。调用自己不会执行，必须调用函数，函数体内的代码才会执行。
+    在JavaScript中调用函数的方法有简单调用、在表达式中调用、在事件响应中调用等。">函数的调用</a></h2>
+<li><a title="作为一个函数调用函数是调用JavaScript函数常用的方法，但不是良好的编程习惯，因为全局变量、方法或函数容易造成命名冲突的bug。
+    全局函数myFunction不属于任何对象，但是在JavaScript中它始终是默认的全局对象。在HTML中默认的全局对象是HTML页面本身，所以函数属于HTML页面。在浏览器中的页面对象是浏览器窗口（window对象），以上函数会自动变为window对象的函数。因此，myFunction()和window.myFunction()的作用是一样的。">作为一个函数调用</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202205511.png" alt="20200202205511"  title="作为一个函数调用" width="600" height="" /><figcaption><font color=green>作为一个函数调用</font></figcaption></center></figure>
+    <li><a title="在JavaScript中，用户可以将函数定义为对象的方法，从而进行调用。例如：创建一个对象(myObject)，对象有两个属性，分别是firstName和lastName，还有一个方法是fullName。
+        ">将函数作为方法调用</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202210119.png" alt="20200202210119"  title="将函数作为方法调用" width="600" height="" /><figcaption><font color=green>将函数作为方法调用</font></figcaption></center></figure>
+        <p>fullName方法是一个函数，函数属于对象，myObject是函数的所有者，当加入this对象后，this的值为myObject对象，这里修改fullName方法并返回this值。</p>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202210444.png" alt="20200202210444"  title="this的值为myObject对象" width="600" height="" /><figcaption><font color=green>this的值为myObject对象</font></figcaption></center></figure>
+        <li><a title="如果函数调用前使用了new关键字，则是调用了构造函数。构造函数的调用会创建一个新的对象，新对象会继承构造函数的属性和方法。
+提示：构造函数中this关键字没有任何的值，this的值在函数调用时实例化对象(new object)时创建的。">使用构造函数调用函数</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202210839.png" alt="20200202210839"  title="使用构造函数调用函数" width="600" height="" /><figcaption><font color=green>使用构造函数调用函数</font></figcaption></center></figure>
+    <li><a title="在JavaScript中，函数是对象，JavaScript函数有它的属性和方法，call()和apply()是预定义的函数方法。两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。">作为函数方法调用函数</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202211828.png" alt="20200202211828"  title="作为函数方法调用函数" width="600" height="" /><figcaption><font color=green>作为函数方法调用函数</font></figcaption></center></figure>
+<h2><a title="内置函数是语言内部事先定义好的函数，使用JavaScript的内置函数，可提高编程效率">内置常规函数</a></h2>
+<ol>
+    <li><a title="eval()函数计算JavaScript字符串，并把它作为脚本代码来执行。如果参数是一个表达式，eval()函数将执行表达式；如果参数是Javascript语句，eval()将执行Javascript语句。语法结构如下：
+        eval(string)
+  其中，参数string是必选项。要计算的字符串，其中含有要计算的JavaScript表达式或要执行的语句。">eval()函数</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202212251.png" alt="20200202212251"  title="eval函数" width="600" height="" /><figcaption><font color=green>eval函数</font></figcaption></center></figure>
+    <li><a title="isFinite()函数用于检查其参数是否是无穷大，如果该参数为非数字、正无穷数或负无穷数，则返回false，否则返回true。如果是字符串类型的数字，则将会自动转化为数字型。语法结构如下：
+        isFinite(value)
+  其中，参数value是必选项，为要检测的数值。">isFinite()函数</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202212603.png" alt="20200202212603"  title="isFinite函数" width="600" height="" /><figcaption><font color=green>isFinite函数</font></figcaption></center></figure>
+  <li><a title="isNaN()函数用于检查其参数是否是非数字值。如果参数值为NaN或字符串、对象、undefined等非数字值，则返回true，否则返回false。语法结构如下：
+    isNaN(value)">isNaN()函数</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202212821.png" alt="20200202212821"  title="isNaN函数" width="600" height="" /><figcaption><font color=green>isNaN函数</font></figcaption></center></figure>
+    <li><a title="parseInt()函数可解析一个字符串，并返回一个整数。语法结构如下：
+        parseInt(string, radix)
+  参数说明如下。
+  ●　string：必选。要被解析的字符串。
+●　radix：可选。表示要解析的数字的基数，该值介于2～36。
+当参数radix的值为0，或没有设置该参数时，parseInt()会根据string来判断数字的基数。当忽略参数radix，JavaScript默认数字的基数如下：
+●　如果string以&quot;0x&quot;开头，parseInt()会把string的其余部分解析为十六进制的整数。
+●　如果string以0开头，那么ECMAScript v3允许parseInt()的一个实现把其后的字符解析为八进制或十六进制的数字。
+●　如果string以1～9的数字开头，parseInt()将把它解析为十进制的整数。">parseInt()函数</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202213327.png" alt="20200202213327"  title="parseInt函数" width="600" height="" /><figcaption><font color=green>parseInt函数</font></figcaption></center></figure>
+    <li><a title="parseFloat()函数可解析一个字符串，并返回一个浮点数。该函数指定字符串中的首个字符是否是数字。如果是，则对字符串进行解析，直到到达数字的末端为止，然后以数字返回该数字，而不是作为字符串。语法结构如下。
+        parseFloat(string)
+其中，参数string为必选项，为要被解析的字符串。注意：字符串中只返回第一个数字，开头和结尾的空格是允许的，如果字符串的第一个字符不能被转换为数字，那么parseFloat()会返回NaN。">parseFloat()函数</a></li>
+    <li><a title="escape()函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。
+        该方法不会对ASCII字母和数字进行编码，
+        也不会对下面这些ASCII标点符号进行编码： * @ - _ + . /。其他所有的字符都会被转义序列替换。语法结构如下：
+        escape(string)
+  其中，参数string为必选项，是要被转义或编码的字符串。">escape()函数</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202213909.png" alt="20200202213909"  title="escape函数" width="600" height="" /><figcaption><font color=green>escape函数</font></figcaption></center></figure>
+    <li><a title="unescape()函数可对通过escape()编码的字符串进行解码。语法结构如下：
+        unescape(string)
+  其中，参数string为必选项，是要解码的字符串。">unescape()函数</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200202214141.png" alt="20200202214141"  title="unescape函数" width="600" height="" /><figcaption><font color=green>unescape函数</font></figcaption></center></figure>
+
+</ol>
+<h2>JavaScript特殊函数</h2>
+<ol>
+    <li><a title="    嵌套函数就是在函数的内部再定义一个函数，这样定义的优点在于可以使用内部函数轻松获得外部函数的参数以及函数的全局变量。嵌套函数的语法格式如下：
+        function 外部函数名(参数1, 参数2){
+            function 内部函数名(){
+                函数体
+            }
+        }
+注意：嵌套函数在JavaScript语言中的功能非常强大，但是使用嵌套函数会使程序可读性降低。">嵌套函数</a></li>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200203102040.png" alt="20200203102040"  title="嵌套函数" width="600" height="" /><figcaption><font color=green>嵌套函数</font></figcaption></center></figure>
+    <li><a title="递归是一种重要的编程技术，它用于让一个函数从其内部调用其自身。
+        在定义递归函数时，需要两个必要条件：
+                首先包括一个结束递归的条件；
+                其次包括一个递归调用的语句。
+        递归函数的语法格式如下：
+              function递归函数名（参数1）{
+                 递归函数名（参数2）;
+              }
+提示：在上述代码中，为了求取30以内的偶数和定义了递归函数sum(m)，而函数Test()对其进行调用，并利用alert方法弹出相应的提示信息。">递归函数</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200203103019.png" alt="20200203103019"  title="递归函数" width="600" height="" /><figcaption><font color=green>递归函数</font></figcaption></center></figure>
+    <li<<a title="所有函数都能访问全局变量，实际上，在JavaScript中，所有函数都能访问它们上一层的作用域。JavaScript支持内嵌函数，内嵌函数可以访问上一层的函数变量，内嵌函数plus()可以访问父函数的counter变量。">内嵌函数</li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200203103441.png" alt="20200203103441"  title="内嵌函数" width="600" height="" /><figcaption><font color=green>内嵌函数</font></figcaption></center></figure>
+</ol>
+<h2><a title="闭包可以用在许多地方，它的最大用处有两个，
+            一个是前面提到的可以读取函数内部的变量，
+            另一个就是让这些变量的值始终保持在内存中。">JavaScript的闭包</a></h2>
+    <ol>
+        <li><a title="闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。在JavaScript中，所有的function都是一个闭包，不过一般来说，嵌套的function所产生的闭包更为强大，也是大部分时候所谓的“闭包”。
+            function closure(){
+                var str = &quot;I'm a part variable.&quot;
+                return function(){
+                    alert(str);
+                }
+            }
+            var fObj = closure(); //函数closure赋给变量fObj
+            fObj(); //调用fObj函数
+在上面代码中，str是定义在函数closure中的局部变量，若str在closure函数调用完成以后不能再被访问，则在函数执行完成后str将被释放。
+
+但是由于函数closure返回了一个内部函数，且这个返回的函数引用了str变量，导致了str可能会在closure函数执行完成以后还会被引用，所以str所占用的资源不会被回收，这样closure就形成了一个闭包。">什么是闭包</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200203104738.png" alt="20200203104738"  title="使用闭包统计计数" width="600" height="" /><figcaption><font color=green>使用闭包统计计数</font></figcaption></center></figure>
+    <li><a title="JavaScript允许使用内部函数，即函数定义和函数表达式位于另一个函数的函数体内。
+        而且，这些内部函数可以访问它们所在的外部函数中声明的所有局部变量、参数和声明的其他内部函数，
+        当其中一个这样的内部函数在包含它们的外部函数之外被调用时，就会形成闭包，这就是闭包的原理。">闭包的原理</a></li>
+    <li><a title="JavaScript中的&quot;类&quot;其实不是真正的类，它只是表现的像其他面向对象的语言中的类而已，它的本质是函数+原型对象（prototype）
+        新建一个类，代码如下：
+        function MyClass(x) {
+            this.x = x;
+      }
+      var obj = new MyClass('Hello class');
+      alert(obj.x);
+      在上述代码中，obj具有一个x属性，现在的值是Hello class，MyClass是一个函数，我们称之为构造函数，在其他编程语言中，构造函数是要放在class关键字内部的，也就是先要声明一个类。
+在JavaScript的函数中，this关键字表示的是调用该函数的作用域（scope），可以简单地理解为它是调用函数的对象，再来看MyClass函数，如果把代码修改为如下代码：
+      var obj = MyClass('Hello class');
+这是完全合乎语法的，如果这段代码是在浏览器中运行的，调试一下可以发现，内部的this是window对象，而与obj没有任何关系，obj还是undefined，alert也不会有结果。原来的代码之所以可以工作，都是因为new关键字起的作用。
+new关键字把一个普通的函数变成了构造函数。也就是说，MyClass还是一个普通的函数，它之所以能构造出一个obj，基本上是new的功劳。当函数之前有new关键字的时候，JavaScript会创造一个匿名对象，并且把当前函数的作用域设置为这个匿名对象。然后在那个函数内部引用this的话就是引用的这个匿名对象，最后，即使这个函数没有return，它也会把这个匿名对象返回出去。那么obj自然就具有了x属性，现在这个MyClass就具有一点类的特性了。
+一个对象具有类特性，这并不是new关键字的工作的全部，JavaScript同样可以方便地实现继承，依靠是prototype，prototype也是一个对象，毕竟除了原始类型，所有的东西都是对象，包括函数。更为重要的是，前面提到的JavaScript是prototype基础，它的含义就是在JavaScript中没有类的概念，类是不存在的，一个函数，它之所以表现得像类，就是因为prototype，prototype可以有各种属性，也包括函数。
+关键字new在构造对象的过程中，并在最终返回那个匿名对象之前，还会把那个函数的prototype中的属性一一复制给这个对象。这里的复制是复制的引用，而不是新建的一个对象，把内容复制过来，在其内部，相当于保留了一个构造它的函数的prototype的引用，该属性对外是不可见的，只有函数对象是有prototype属性的，函数对象的prototype默认有一个constructor属性。
+    此代码说明了对象内部保留的是构造函数的prototype的引用，要注意的是，proObj中也是保留的它的构造函数的prototype的引用。">闭包与类</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200203110546.png" alt="20200203110546"  title="闭包与类" width="600" height="" /><figcaption><font color=green>闭包与类</font></figcaption></center></figure>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200203111016.png" alt="20200203111016"  title="闭包与类" width="600" height="" /><figcaption><font color=green>闭包与类</font></figcaption></center></figure>
+<p>事实上，在上述代码中，这些prototype逐层引用，构成了一个prototype链。当读取一个对象的属性时，首先寻找自己定义的属性，如果没有，就逐层向内部隐含的prototype属性寻找。但是在写属性时，就会把它的引用覆盖掉，是不会影响prototype的值的。</p>
+    <li><a title="在使用闭包的过程中，需要注意以下两点：
+        （1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。
+        （2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果用户把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。">闭包中需要注意的地方</a></li>
+    </ol>
+    <h2><a title="回调函数是程序设计的一种方法，所谓回调，就是程序C调用程序S中的某个函数A，然后S又在某个时候反过来调用C中的某个函数B，对于C来说，这个B便叫作回调函数。">回调函数设计模式</a></h2>
+<ol>
+    <li><a title="回调函数这种方法是指在传递了可能会进行调用的函数或对象之后，在需要时再分别对其进行调用，由于调用方与被调用方的依赖关系与通常相反，所以也成为控制反转（IoC，Inversion of Control）。
+        由于历史原因，在JavaScript开发中我们常常会用到回调函数这一方法，这是多种因素导致的。
+            第一个原因是在客户端JavaScript中基本都是GUI程序设计。
+                GUI程序设计是一种很适合使用所谓事件驱动的程序设计方式。事件驱动正是一种回调函数设计模式。
+                客户端JavaScript程序设计是一种基于DOM的事件驱动式程序设计。
+        第二个原因是源于客户端无法实现多线程程序设计（最近HTML 5 Web Works支持多线程了）。而通过将回调函数与异步处理相结合，就能够实现并行处理。由于不支持多线程，所以为了实现并行处理，不得不使用回调函数，这逐渐成为一种惯例。
+        最后一个原因与JavaScript中的函数声明表达式和闭包有关。">回调函数与控制反转</a></li>
+    <li><a title="在JavaScript中，回调函数是需要定义的
+        在上述代码中，定义的两个匿名函数就是回调函数，它们的调用由emitter.onOpen()完成。对emitter来说，这仅仅是对注册的函数进行了调用，不过根据回调函数的定义，更应该关注使用了emitter部分的情况。从这个角度来看，注册过的回调函数与之形成的是一种调用与被调用的关系。">JavaScript与回调函数</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200203142437.png" alt="20200203142437"  title="回调函数的应用" width="600" height="" /><figcaption><font color=green>回调函数的应用</font></figcaption></center></figure>
+    </ol>
+    <h2><a title="对于菜单一般都会有一级菜单、二级菜单，并且根据实际情况菜单的级数是不定的，所以，要想制作一个菜单，需要先建立一个好的HTML框架，设计好菜单的级数。下面制作一个伸缩两级菜单。
+        代码路径&quot;HyperTextMarkupLanguage\JavascriptDemo\ch17制作伸缩两级菜单.html&quot;
+        步骤1：设计HTML网页框架，具体的代码如下：
+        步骤2：在网页中添加CSS代码，先对一级菜单进行风格设置，具体代码如下：
+        步骤3：在网页中添加CSS代码，对二级子菜单做相应的风格设置，具体代码如下：
+        步骤4：添加JavaScript代码，为菜单添加上伸缩效果，具体代码如下：">制作伸缩两级菜单</a></h2>
+<p><a title="应聘者：原则上我会尊重和服从领导的工作安排，同时私底下找机会以请教的口吻，婉转地表达自己的想法，看看领导是否能改变想法。如果领导没有采纳我的建议，我也同样会按领导的要求认真地去完成这项工作。还有一种情况，假如领导要求的方式违背原则，我会坚决提出反对意见，如领导仍固执己见，我会毫不犹豫地再向上级领导反映。">面试官：在完成某项工作时，你认为领导要求的方式不是最好的，自己还有更好的方法，你会怎么做？</a></p>
+<p><a title="应聘者：成绩比较突出，得到领导的肯定是件好事情，以后我会更加努力。针对被孤立的事情，需要检讨一下自己是不是对工作的热心度超过了同事间交往的热心，在工作之余加强同事间的交往和发掘共同的兴趣爱好。在工作中，不伤害别人的自尊心，不在领导面前搬弄是非。">面试官：假设你在某单位工作成绩比较突出，得到领导的肯定。但同时你发现同事们越来越孤立你，你怎么看这个问题？你准备怎么办？</a></p>
+
+<h1><a title="学习指引
+    窗口与对话框是用户浏览网页中最常遇到的元素，在JavaScript中使用window对象可以操作窗口与对话框，本章将详细介绍JavaScript窗口与人机交互对话框的应用，主要内容包括window对象、打开与关闭窗口、操作窗口对象、调用对话框等。重点导读
+    ●　掌握window对象的使用方法。
+    ●　掌握打开与关闭窗口的方法。
+    ●　掌握操作窗口对象的方法。
+    ●　掌握获取窗口历史记录的方法。
+    ●　掌握JavaScript对话框的使用方法。
+    ●　掌握JavaScript其他对象的使用方法。">第18章 JavaScript窗口与人机交互对话框</a></h1>
+<h2><a title="window对象表示浏览器中打开的窗口，如果文档包含框架（&lt;frame&gt;或&lt;iframe&gt;标签），浏览器会为HTML文档创建一个window对象，并为每个框架创建一个额外的window对象。
+    熟悉并了解window对象的各种属性，将有助于一个Web应用开发者的设计开发。">window对象</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200204162724.png" alt="20200204162724"  title="window对象常用的属性及描述" width="600" height="" /><figcaption><font color=green>window对象常用的属性及描述</font></figcaption></center></figure>
+<ol>
+    <li><a title="几乎所有的Web浏览器都有状态条（栏），如果需要打开浏览器即在其状态条显示相关信息，可以为浏览器设置默认的状态条信息，window对象的defaultStatus属性可实现此功能，其语法格式如下：
+        window.defaultStatus=&quot;statusMsg&quot;;
+  其中，statusMsg代表了需要在状态条显示的默认信息。
+        注意：defaultStatus属性在Firefox、Chrome或Safari的默认配置下是不工作的。">defaultStatus属性</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200207091811.png" alt="20200207091811"  title="defaultStatus属性" width="600" height="" /><figcaption><font color=green>defaultStatus属性</font></figcaption></center></figure>
+    <li><a title="框架可以把浏览器窗口分成几个独立的部分，每部分显示单独的页面，页面的内容是互相联系的，框架是一种特殊的窗口，在网页设计中经常遇到。
+        如果当前窗口是在框架&lt;frame&gt;或&lt;iframe&gt;中，通过window对象的frameElement属性可获取当前窗口所在的框架对象，其语法格式如下：
+              var documentObj=window. frameElement;
+        其中，frameObj是当前窗口所在的框架对象。使用该属性获得框架对象后，可使用框架对象的各种属性与方法，从而实现对框架对象进行各种操作。">frames属性</a></li>
+    <li><a title="parent属性返回当前窗口的父窗口。
+        语法格式如下：
+                window.parent">parent属性</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211103557.png" alt="20200211103557"  title="parent属性" width="600" height="" /><figcaption><font color=green>parent属性</font></figcaption></center></figure>
+    <li><a title="当页面中存在多个框架时，可以使用window对象的top属性直接获取当前浏览器窗口中各子窗口的最顶层对象。
+        其语法格式为：
+                window.top">top属性</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211104001.png" alt="20200211104001"  title="top属性" width="600" height="" /><figcaption><font color=green>top属性</font></figcaption></center></figure>
+    <li><a title="注意：在使用open()方法时，需要注意以下几点。
+        ●　通常浏览器窗口中，总有一个文档是打开的，因为不需要为输出建立一个新文档。
+        ●　在完成对Web文档的写操作后，要使用或调用close()方法来实现对输出流的关闭。
+        ●　在使用open()方法打开一个新流时，可为文档指定一个有效的文档类型，有效文档类型包括text/HTML、text/gif、text/xim等。">window对象方法</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211104337.png" alt="20200211104337"  title="window对象常用的方法及描述" width="600" height="" /><figcaption><font color=green>window对象常用的方法及描述</font></figcaption></center></figure>
+</ol>
+<h2><a title="窗口的打开与关闭主要是通过使用open()和close()方法来实现，也可以在打开窗口时指定窗口的大小及位置。">打开与关闭窗口</a></h2>
+<ol>
+    <li><a title="使用open()方法可以打开一个新的浏览器窗口或查找一个已命名的窗口。语法格式如下：
+        window.open(URL,name,specs,replace)
+  参数说明如下。
+●　URL：可选。打开指定的页面的URL，如果没有指定URL，打开新的空白窗口。
+●　name：可选。指定target属性或窗口的名称●　specs：可选。一个逗号分隔的项目列表
+●　specs：可选。一个逗号分隔的项目列表
+●　replace Optional.Specifies规定了装载到窗口的URL是在窗口的浏览历史中创建一个新条目，还是替换浏览历史中的当前条目">JavaScript打开窗口</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211104818.png" alt="20200211104818"  title="name可选参数及说明" width="600" height="" /><figcaption><font color=green>name可选参数及说明</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211104906.png" alt="20200211104906"  title="specs可选参数及说明" width="600" height="" /><figcaption><font color=green>specs可选参数及说明</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211105000.png" alt="20200211105000"  title="replace可选参数及说明" width="600" height="" /><figcaption><font color=green>replace可选参数及说明</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211110411.png" alt="20200211110411"  title="JavaScript打开窗口" width="600" height="" /><figcaption><font color=green>JavaScript打开窗口</font></figcaption></center></figure>
+    <li><a title="用户可以在JavaScript中使用window对象的close()方法关闭指定的已经打开的窗口。语法格式如下：
+        window.close()
+  例如，如果想要关闭窗口，可以使用下面任何一种语句来实现。
+        window.close()
+        close()
+        this.close()
+提示：在JavaScript中使用window.close()方法关闭当前窗口时，如果当前窗口是通过JavaScript打开的，则不会有提示信息。在某些浏览器中，如果打开需要关闭窗口的浏览器只有当前窗口的历史访问记录，使用window.close()关闭窗口时，同样不会有提示信息。">JavaScript关闭窗口</a></li>
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211110953.png" alt="20200211110953"  title="JavaScript关闭窗口" width="600" height="" /><figcaption><font color=green>JavaScript关闭窗口</font></figcaption></center></figure>
+</ol>
+<h2><a title="通过window对象除了可以打开与关闭窗口外，还可以控制窗口的大小和位置">操作窗口对象</a></h2>
+<ol>
+    <li><a title="利用window对象的resizeBy()方法可以根据指定的像素来调整窗口的大小，具体语法格式如下：
+        resizeBy(width,height)
+  参数说明如下。
+  ●　width：必需。要使窗口宽度增加的像素数，可以是正、负数值。
+  ●　height：可选。要使窗口高度增加的像素数，可以是正、负数值。注意：此方法定义指定窗口的右下角移动的像素，左上角将不会被移动（它停留在其原来的坐标）。">改变窗口大小</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211111955.png" alt="20200211111955"  title="改变窗口大小" width="600" height="" /><figcaption><font color=green>改变窗口大小</font></figcaption></center></figure>
+  <li><a title="使用moveTo()方法可把窗口的左上角移动到一个指定的坐标。
+    语法格式如下： 
+    window.moveTo(x,y)">移动窗口位置</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211112516.png" alt="20200211112516"  title="移动窗口位置" width="600" height="" /><figcaption><font color=green>移动窗口位置</font></figcaption></center></figure>
+</ol>
+
+<h2><a title="利用history对象可以获取窗口历史记录，history对象是一个只读URL字符串数组，该对象主要用来存储一个最新所访问网页的URL地址的列表，可通过window.history属性对其进行访问。
+    注意：当前没有应用于history对象的公开标准，不过所有浏览器都支持该对象。
+    
+    例如，利用history对象中的back()方法和forward()方法可以引导用户在页面中跳转，具体的代码如下：
+      <a href=&quot;javascrip:window.history.forward();&quot;>forward</a>
+      <a href=&quot;javascrip:window.history.back();&quot;>back</a>
+还可以使用history.go()方法指定要访问的历史记录，若参数为正数，则向前移动；或参数为负数，则向后移动，具体代码如下：
+      <a href=&quot;javascrip:window.history.go(-1);&quot;>向后退一次</a>
+      <a href=&quot;javascrip:window.history.back(2);&quot;>向后前进两次</a>
+      使用history.Length()属性能够访问history数组的长度，可以很容易地转移到列表的末尾，例如：
+      <a href=&quot;javascrip:window.history.go(window.historylength-1);&quot;>末尾</a>">获取窗口历史记录</a></h2>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211112703.png" alt="20200211112703"  title="history对象常用的属性及描述" width="600" height="" /><figcaption><font color=green>history对象常用的属性及描述</font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211112742.png" alt="20200211112742"  title="history对象常用的方法及描述" width="600" height="" /><figcaption><font color=green>history对象常用的方法及描述</font></figcaption></center></figure>
+
+<h2><a title="用户可以设置一个窗口在某段时间后执行何种操作，这被称为窗口定时器，使用window对象中的setTimeout()方法可以在指定的毫秒数后调用函数或计算表达式，用于设置窗口定时器。语法格式如下：
+    setTimeout(code, milliseconds, param1, param2, ...)
+    setTimeout(function, milliseconds, param1, param2, ...)">窗口定时器</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211113808.png" alt="20200211113808"  title="3秒后弹出Hello信息提示框" width="600" height="" /><figcaption><font color=green>3秒后弹出Hello信息提示框</font></figcaption></center></figure>
+    
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211114555.png" alt="20200211114555"  title="网页计数器" width="600" height="" /><figcaption><font color=green>网页计数器</font></figcaption></center></figure>
+
+<h2><a title="对话框是网页与浏览者进行交流的桥梁，具有提示、选择和获取信息的功能。JavaScript提供了三个标准的对话框，分别是
+    弹出对话框
+    选择对话框
+    输入对话框
+    这三个对话框都是基于window对象产生，即作为window对象的方法而使用的。">JavaScript对话框</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211114807.png" alt="20200211114807"  title="window对象的对话框" width="600" height="" /><figcaption><font color=green>window对象的对话框</font></figcaption></center></figure>
+<h2>调用对话框</h2>
+
+<ol>
+    <li><a title="采用alert()方法可以调用警告对话框或信息提示框对话框，语法格式如下：
+        alert(message)
+  其中，message是在对话框中显示的提示信息。当使用alert()方法打开消息框时，整个文档的加载以及所有脚本的执行等操作都会暂停，直到用户单击消息框中的“确定”按钮，所有的动作才继续进行。 b">采用alert()方法调用</a></li>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211193027.png" alt="20200211193027"  title="采用alert()方法调用" width="600" height="" /><figcaption><font color=green>采用alert()方法调用</font></figcaption></center></figure>
+
+    <li><a title="采用confirm()方法可以调用一个带有指定消息和确认及取消按钮的对话框。如果访问者单击“确定”按钮，此方法返回true，否则返回false。
+        语法格式如下：
+      confirm(message)">采用confirm()方法调用</a></li>
+      <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211193857.png" alt="20200211193857"  title="采用confirm()方法调用" width="600" height="" /><figcaption><font color=green>采用confirm()方法调用</font></figcaption></center></figure>
+
+    <li><a title="采用prompt()方法可以在浏览器窗口中弹出一个提示框，与警告框和确认框不同，在提示框中会有一个文本框。当显示文本框时，在其中显示提示字符串，并等待用户输入，当用户在该文本框中输入文字后，并单击“确定”按钮时，返回用户输入的字符串，当单击&quot;取消&quot;按钮时，返回null值。语法格式如下：
+        prompt(msg,defaultText)
+  其中，参数msg为可选项，要在对话框中显示的纯文本（而不是HTML格式的文本）。defaultText也为可选项，默认的输入文本。">采用prompt()方法调用</a></li>
+  <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211194531.png" alt="20200211194531"  title="采用prompt()方法调用" width="600" height="" /><figcaption><font color=green>采用prompt()方法调用</font></figcaption></center></figure>
+</ol>
+<h2><a title="Browser对象除了包含window对象外，还具有其他对象，如用于统计浏览器信息的Navigator对象、用于统计屏幕信息的Screen信息等">其他</a></h2>
+<ol>
+    <li><a title="Location对象是window对象的一部分，可通过window.Location属性对其进行访问。">Location对象</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211194812.png" alt="20200211194812"  title="Location对象常用的属性及描述" width="600" height="" /><figcaption><font color=green>Location对象常用的属性及描述</font></figcaption></center></figure>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211194931.png" alt="20200211194931"  title="Location对象常用的方法及描述" width="600" height="" /><figcaption><font color=green>Location对象常用的方法及描述</font></figcaption></center></figure>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211195301.png" alt="20200211195301"  title="window.location.replace使用新的文档替换当前文档" width="600" height="" /><figcaption><font color=green>window.location.replace使用新的文档替换当前文档</font></figcaption></center></figure>
+
+    <li><a title="Navigator对象的使用可以统计当前浏览器的基本信息，如代码名、名称、版本信息等。">Navigator对象</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211195444.png" alt="20200211195444"  title="Navigator对象常用的属性及描述" width="600" height="" /><figcaption><font color=green>Navigator对象常用的属性及描述</font></figcaption></center></figure>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211195531.png" alt="20200211195531"  title="Navigator对象常用的方法及描述" width="600" height="" /><figcaption><font color=green>Navigator对象常用的方法及描述</font></figcaption></center></figure>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211195903.png" alt="20200211195903"  title="统计当前浏览器的信息" width="600" height="" /><figcaption><font color=green>统计当前浏览器的信息</font></figcaption></center></figure>
+
+    <li><a title="使用Screen对象的属性可以统计当前屏幕的基本信息，如屏幕宽度、高度等">Screen对象</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211200049.png" alt="20200211200049"  title="Screen对象常用的属性及描述" width="600" height="" /><figcaption><font color=green>Screen对象常用的属性及描述</font></figcaption></center></figure>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211200302.png" alt="20200211200302"  title="统计当前屏幕的信息" width="600" height="" /><figcaption><font color=green>统计当前屏幕的信息</font></figcaption></center></figure>
+    <li><a title="cookie用于存储Web页面的用户信息，当Web服务器向浏览器发送Web页面时，在连接关闭后，服务端不会记录用户的信息。cookie就是用于解决“如何记录客户端的用户信息”。
+        当用户访问Web页面时，他的名字可以记录在cookie中。在用户下一次访问该页面时，可以在cookie中读取用户访问记录。cookie以名/值对形式存储，代码如下：
+              username=John Doe
+        当浏览器从服务器上请求Web页面时，属于该页面的cookie会被添加到该请求中。服务端通过这种方式来获取用户的信息。
+        1. 使用JavaScript创建cookie
+        JavaScript可以使用document.cookie属性来创建、读取、删除cookie。JavaScript中，创建cookie的代码如下：
+              document.cookie=&quot;username=John Doe&quot;;
+        用户还可以为cookie添加一个过期时间（以UTC或GMT时间）。默认情况下，cookie在浏览器关闭时删除，代码如下：
+              document.cookie=&quot;username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT&quot;;
+              用户可以使用path参数告诉浏览器cookie的路径。默认情况下，cookie属于当前页面，代码如下：
+      document.cookie=&quot;username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/&quot;;
+        2. 使用JavaScript读取cookie
+        在JavaScript中，可以使用以下代码来读取cookie：
+            var x = document.cookie;注意：document.cookie将以字符串的方式返回所有的cookie，类型格式如下：
+            cookie1=value; cookie2=value; cookie3=value;
+        3. 使用JavaScript修改cookie
+        在JavaScript中，修改cookie类似于创建cookie，代码如下：
+            document.cookie=&quot;username=John Smith; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/&quot;;
+        这样，旧的cookie将被覆盖。
+        4. 使用JavaScript删除cookie
+        删除cookie非常简单，用户只需要设置expires参数为以前的时间即可，如下所示，设置为Thu, 01 Jan 1970 00:00:00 GMT：
+            document.cookie = &quot;username=; expires=Thu, 01 Jan 1970 00:00:00 GMT&quot;;
+            注意：当用户删除时不必指定cookie的值。
+        5. JavaScript cookie实例
+        下面给出一个实例，创建cookie来存储访问者名称。首先，访问者访问Web页面，他将被要求填写自己的名字，该名字会存储在cookie中。访问者下一次访问该页面时，他会看到一个欢迎的消息。具体步骤如下：
+        在这个实例中会创建3个JavaScript函数，第一个函数：设置cookie值的函数。">cookie对象</a></li>
+        <p>JavaScript cookie实例</p>
+        首先，创建一个函数用于存储访问者的名字，代码如下：
+        <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211200838.png" alt="20200211200838"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+
+        在上述代码中，cookie的名称为cname，cookie的值为cvalue，并设置了cookie的过期时间expires。该函数设置了cookie名、cookie值、cookie过期时间。
+
+第二个函数：获取cookie值的函数。
+然后，创建一个函数用户返回指定cookie的值，代码如下：
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211200953.png" alt="20200211200953"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211201516.png" alt="20200211201516"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211201059.png" alt="20200211201059"  title="" width="600" height="" /><figcaption><font color=green></font></figcaption></center></figure>
+</ol>
+<figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211201805.png" alt="20200211201805"  title="Cookie应用实例" width="600" height="" /><figcaption><font color=green>Cookie应用实例</font></figcaption></center></figure>
+
+<h2><a title="制作一个音乐网页，当访问该网页时，弹出一个询问式对话框，让用户自己选择。
+    步骤1：设计HTML框架，具体代码如下：
+    步骤2：在页面中添加JavaScript代码，弹出询问式对话框，具体代码如下：">制作询问式对话框</a></h2>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200211202455.png" alt="20200211202455"  title="制作一个音乐网页" width="600" height="" /><figcaption><font color=green>制作一个音乐网页</font></figcaption></center></figure>
+
+<p><a title="应聘者：我比较欣赏诚实、不死板而且容易相处、有“实际行动”的人。">面试官：你欣赏哪种性格的人？</a></p>
+<p><a title="应聘者：沉默是金，不必说什么，否则情况更糟，不过我会接受建设性的批评；而且我会等大家冷静下来再讨论。">面试官：你通常如何处理别人的批评？</a></p>
+
 
 <p>
     参考：

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>关闭新窗口</title>
+    <script>
+        function openWin() {
+            myWindow = window.open("", "", "width=200,height=100");
+            myWindow.document.write("<p>这是'我的新窗口'</p>");
+        }
+        function closeWin() {
+            myWindow.close();
+        }
+    </script>
+</head>
+
+<body>
+    <p><input type="button" value="打开我的窗口" onclick="openWin()" /></p>
+
+    <input type="button" value="关闭我的窗口" onclick="closeWin()" />
+</body>
+
+</html>

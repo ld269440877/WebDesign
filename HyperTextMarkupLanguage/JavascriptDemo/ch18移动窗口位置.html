@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>移动窗口位置</title>
+    <script>
+        function openWin() {
+            myWindow = window.open('', '', 'width=200,height=100');
+            myWindow.document.write("<p>这是我的新窗口</p>");
+        }
+        function moveWin() {
+            myWindow.moveTo(0, 0);
+            myWindow.focus();
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="打开窗口" onclick="openWin()" />
+    <br><br>
+    <input type="button" value="移动窗口" onclick="moveWin()" />
+</body>
+
+</html>
