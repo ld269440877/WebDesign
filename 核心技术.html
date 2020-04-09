@@ -59,7 +59,26 @@
     ●　掌握DOM与CSS的结合应用。">第19章 文档对象与对象模型</a></h1>
 <h2><a title="当浏览器载入HTML文档，它就会成为Document对象，Document对象使用户可以从脚本中对HTML页面中的所有元素进行访问。Document对象是Window对象的一部分，可通过window.document属性对其进行访问。">熟悉文档对象</a></h2>
 <ol>
-    <li><a title="window对象具有Document属性，该属性表示在窗口中显示HTML文件的Document对象。客户端JavaScript可以把静态HTML文档转换成交互式的程序，因为Document对象提供交互访问静态文档内容的功能。除了提供文档整体信息的属性外，Document对象还有很多的重要属性，这些属性提供文档内容的信息。">文档对象属性</a></li>
+    <li><a title="window对象具有Document属性，该属性表示在窗口中显示HTML文件的Document对象。客户端JavaScript可以把静态HTML文档转换成交互式的程序，因为Document对象提供交互访问静态文档内容的功能。除了提供文档整体信息的属性外，Document对象还有很多的重要属性，这些属性提供文档内容的信息。
+        Document对象提供了一系列属性，可以对页面元素进行各种属性设置。">文档对象属性</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200212134332.png" alt="20200212134332"  title="Document对象常用的属性及描述1" width="600" height="" /><figcaption><font color=green>Document对象常用的属性及描述1</font></figcaption></center></figure>
+
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200212134635.png" alt="20200212134635"  title="Document对象常用的属性及描述2" width="600" height="" /><figcaption><font color=green>Document对象常用的属性及描述2</font></figcaption></center></figure>
+    <ol type="I">
+        <li><a title="anchors属性用于返回当前页面的所有超级链接数组。语法格式如下：
+            document.anchors[].property">anchors属性</a></li>
+        <li><a title="lastModified属性用于返回文档最后被修改的日期和时间。语法格式如下：
+            document.lastModified">lastModified属性</a></li>
+        <li><a title="forms属性返回当前页面所有表单的数组集合，语法格式如下：
+            document.forms[].property">forms属性</a></li>
+    </ol>
+    <li><a title="Document对象有很多方法，其中包括以前程序中经常看到的document.write()方法">文档对象方法</a></li>
+    <figure><center><img src="https://raw.githubusercontent.com/ld269440877/images/master/HTMLNotebook/20200309151136.png" alt="20200309151136"  title="Document对象常用的方法及描述" width="600" height="" /><figcaption><font color=green>Document对象常用的方法及描述</font></figcaption></center></figure>
+    <ol>
+        <li><a title="Document对象提供的属性和方法主要用于设置浏览器当前载入文档的相关信息、管理页面中已存在的标记元素对象、往目标文档中添加新文本内容、产生并操作新的元素等方面。
+    使用createElement()方法可以动态添加一个HTML标记，该方法可以根据一个指定的类型来创建一个HTML标记，语法格式如下：
+    document.createElement(nodename)">createElement()方法</a></li>
+    </ol>
 </ol>
 </body>
 </html>
